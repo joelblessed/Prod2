@@ -16,7 +16,7 @@ import ShowAlert from './components/globalAlert';
 import CartCount from './components/cartCount';
 import ProductSearch from './components/search';
 import ProductPreview from './components/productPreview';
-
+import PaymentForm from './components/paymentForm';
 
 function App() {
   
