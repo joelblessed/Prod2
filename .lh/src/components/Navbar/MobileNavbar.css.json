@@ -1,0 +1,286 @@
+{
+    "sourceFile": "src/components/Navbar/MobileNavbar.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 67,
+            "patches": [
+                {
+                    "date": 1736962450793,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1736963235895,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n .mobile-navbar {\n-    background-color: #333;\n+    background-color: #cf0808;\n     color: white;\n     padding: 10px;\n     position: relative;\n }\n"
+                },
+                {
+                    "date": 1736963254106,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n .mobile-navbar {\n-    background-color: #cf0808;\n+    background-color:;\n     color: white;\n     padding: 10px;\n     position: relative;\n }\n"
+                },
+                {
+                    "date": 1736963259581,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n .mobile-navbar {\n-    background-color:;\n+    background-color:green;\n     color: white;\n     padding: 10px;\n     position: relative;\n }\n"
+                },
+                {
+                    "date": 1736968218010,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,5 +34,6 @@\n }\n \n .mobile-menu li:hover {\n     background-color: #555;\n-}\n\\ No newline at end of file\n+}\n+\n"
+                },
+                {
+                    "date": 1736968238233,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,4 +36,7 @@\n .mobile-menu li:hover {\n     background-color: #555;\n }\n \n+li{\n+    tes\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1736968245037,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,6 +37,6 @@\n     background-color: #555;\n }\n \n li{\n-    tes\n+    text-decoration: ;\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1736968251357,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,6 +37,6 @@\n     background-color: #555;\n }\n \n li{\n-    text-decoration: ;\n+    text-decoration: none;\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1736968278264,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,8 +30,9 @@\n     padding: 10px 20px;\n     border-bottom: 1px solid #444;\n     color: white;\n     cursor: pointer;\n+    \n }\n \n .mobile-menu li:hover {\n     background-color: #555;\n"
+                },
+                {
+                    "date": 1736968286217,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     padding: 10px 20px;\n     border-bottom: 1px solid #444;\n     color: white;\n     cursor: pointer;\n-    \n+    text-decoration: dashed;\n }\n \n .mobile-menu li:hover {\n     background-color: #555;\n"
+                },
+                {
+                    "date": 1736968291433,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     padding: 10px 20px;\n     border-bottom: 1px solid #444;\n     color: white;\n     cursor: pointer;\n-    text-decoration: dashed;\n+    text-decoration: ;\n }\n \n .mobile-menu li:hover {\n     background-color: #555;\n"
+                },
+                {
+                    "date": 1736968315640,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     padding: 10px 20px;\n     border-bottom: 1px solid #444;\n     color: white;\n     cursor: pointer;\n-    text-decoration: ;\n+    t\n }\n \n .mobile-menu li:hover {\n     background-color: #555;\n"
+                },
+                {
+                    "date": 1736968340132,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,14 +30,15 @@\n     padding: 10px 20px;\n     border-bottom: 1px solid #444;\n     color: white;\n     cursor: pointer;\n-    t\n+    \n }\n \n .mobile-menu li:hover {\n     background-color: #555;\n }\n \n li{\n     text-decoration: none;\n+    \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1736968345297,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,6 +39,6 @@\n }\n \n li{\n     text-decoration: none;\n-    \n+    color: ;\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1736968365589,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,6 +39,7 @@\n }\n \n li{\n     text-decoration: none;\n-    color: ;\n+    color: black;\n+    de\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1736968371706,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,6 +40,6 @@\n \n li{\n     text-decoration: none;\n     color: black;\n-    de\n+    deco\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1736968405195,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,6 +40,6 @@\n \n li{\n     text-decoration: none;\n     color: black;\n-    deco\n+    \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1736968493229,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,6 +40,7 @@\n \n li{\n     text-decoration: none;\n     color: black;\n+    lis\n     \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1736968498408,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,7 +40,7 @@\n \n li{\n     text-decoration: none;\n     color: black;\n-    lis\n+    list-style: none;\n     \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1736968513706,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,8 +39,8 @@\n }\n \n li{\n     text-decoration: none;\n-    color: black;\n+    color:;\n     list-style: none;\n     \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1736968541441,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,8 +39,8 @@\n }\n \n li{\n     text-decoration: none;\n-    color:;\n+    \n     list-style: none;\n     \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1736968547510,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,8 +39,8 @@\n }\n \n li{\n     text-decoration: none;\n-    \n+    marging\n     list-style: none;\n     \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1736968554469,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,8 +39,8 @@\n }\n \n li{\n     text-decoration: none;\n-    marging\n+    margin:\"auto\"\n     list-style: none;\n     \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1736968561164,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,8 +39,8 @@\n }\n \n li{\n     text-decoration: none;\n-    margin:\"auto\"\n+    margin:\"auto\",\n     list-style: none;\n     \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1736968579659,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,8 +39,8 @@\n }\n \n li{\n     text-decoration: none;\n-    margin:\"auto\",\n+    margin:\"auto\";\n     list-style: none;\n     \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1736968588765,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,8 +39,8 @@\n }\n \n li{\n     text-decoration: none;\n-    margin:\"auto\";\n+    margin:\"\";\n     list-style: none;\n     \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1736968595469,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,8 +39,8 @@\n }\n \n li{\n     text-decoration: none;\n-    margin:\"\";\n+    margin:\"2px\";\n     list-style: none;\n     \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1736968606995,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,8 +39,8 @@\n }\n \n li{\n     text-decoration: none;\n-    margin:\"2px\";\n+    margin:\"20px\";\n     list-style: none;\n     \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1736968614667,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,8 +39,8 @@\n }\n \n li{\n     text-decoration: none;\n-    margin:\"20px\";\n+    margin:\"\";\n     list-style: none;\n     \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1736971339398,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n .mobile-navbar {\n-    background-color:green;\n+    background-color:rgba(0, 128, 0, 0.249);\n     color: white;\n     padding: 10px;\n     position: relative;\n }\n"
+                },
+                {
+                    "date": 1736971345667,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n .mobile-navbar {\n-    background-color:rgba(0, 128, 0, 0.249);\n+    background-color:rgba(0, 128, 0, 0);\n     color: white;\n     padding: 10px;\n     position: relative;\n }\n"
+                },
+                {
+                    "date": 1736971351800,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n .mobile-navbar {\n-    background-color:rgba(0, 128, 0, 0);\n+    background-color:rgba(202, 207, 202, 0);\n     color: white;\n     padding: 10px;\n     position: relative;\n }\n"
+                },
+                {
+                    "date": 1736971359956,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n .mobile-navbar {\n-    background-color:rgba(202, 207, 202, 0);\n+    background-color:rgba(202, 202, 207, 0.403);\n     color: white;\n     padding: 10px;\n     position: relative;\n }\n"
+                },
+                {
+                    "date": 1736971590719,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n .mobile-navbar {\n-    background-color:rgba(202, 202, 207, 0.403);\n+    background-color:;\n     color: white;\n     padding: 10px;\n     position: relative;\n }\n"
+                },
+                {
+                    "date": 1736971596161,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n .mobile-navbar {\n-    background-color:;\n+    background-color:orange;\n     color: white;\n     padding: 10px;\n     position: relative;\n }\n"
+                },
+                {
+                    "date": 1736971676235,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n .mobile-navbar {\n-    background-color:orange;\n+    background-color:orangered;\n     color: white;\n-    padding: 10px;\n+    padding: 0px;\n     position: relative;\n }\n \n .menu-toggle {\n"
+                },
+                {
+                    "date": 1736974010571,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n     background-color:orangered;\n     color: white;\n     padding: 0px;\n     position: relative;\n+    \n }\n \n .menu-toggle {\n     font-size: 24px;\n"
+                },
+                {
+                    "date": 1736974017475,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n     background-color:orangered;\n     color: white;\n     padding: 0px;\n     position: relative;\n-    \n+    pos\n }\n \n .menu-toggle {\n     font-size: 24px;\n"
+                },
+                {
+                    "date": 1736974023112,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n     background-color:orangered;\n     color: white;\n     padding: 0px;\n     position: relative;\n-    pos\n+    position: ;\n }\n \n .menu-toggle {\n     font-size: 24px;\n"
+                },
+                {
+                    "date": 1736974106731,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n     background-color:orangered;\n     color: white;\n     padding: 0px;\n     position: relative;\n-    position: ;\n+    position: st;\n }\n \n .menu-toggle {\n     font-size: 24px;\n"
+                },
+                {
+                    "date": 1736974112767,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n     background-color:orangered;\n     color: white;\n     padding: 0px;\n     position: relative;\n-    position: st;\n+    position: sti;\n }\n \n .menu-toggle {\n     font-size: 24px;\n"
+                },
+                {
+                    "date": 1736974121386,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n     background-color:orangered;\n     color: white;\n     padding: 0px;\n     position: relative;\n-    position: sti;\n+    position: sticky;\n }\n \n .menu-toggle {\n     font-size: 24px;\n"
+                },
+                {
+                    "date": 1736974153089,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n     color: white;\n     padding: 0px;\n     position: relative;\n     position: sticky;\n+    \n }\n \n .menu-toggle {\n     font-size: 24px;\n"
+                },
+                {
+                    "date": 1736974159010,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n     color: white;\n     padding: 0px;\n     position: relative;\n     position: sticky;\n-    \n+    top: ;\n }\n \n .menu-toggle {\n     font-size: 24px;\n"
+                },
+                {
+                    "date": 1736974164768,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n     color: white;\n     padding: 0px;\n     position: relative;\n     position: sticky;\n-    top: ;\n+    top: 0px;\n }\n \n .menu-toggle {\n     font-size: 24px;\n"
+                },
+                {
+                    "date": 1736974207544,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n     position: absolute;\n     top: 100%;\n     left: 0;\n     width: 100%;\n-    background-color: #333;\n+    background-color: #a21313;\n     padding: 10px 0;\n     list-style: none;\n     margin: 0;\n }\n"
+                },
+                {
+                    "date": 1736974238568,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n     flex-direction: column;\n     position: absolute;\n     top: 100%;\n     left: 0;\n-    width: 100%;\n+    width: 0%;\n     background-color: #a21313;\n     padding: 10px 0;\n     list-style: none;\n     margin: 0;\n"
+                },
+                {
+                    "date": 1736974258228,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n     flex-direction: column;\n     position: absolute;\n     top: 100%;\n     left: 0;\n-    width: 0%;\n+    width: 40%\\\\;\n     background-color: #a21313;\n     padding: 10px 0;\n     list-style: none;\n     margin: 0;\n"
+                },
+                {
+                    "date": 1736974289537,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,10 +20,10 @@\n     flex-direction: column;\n     position: absolute;\n     top: 100%;\n     left: 0;\n-    width: 40%\\\\;\n-    background-color: #a21313;\n+    width: auto;\n+    background-color: #fce1e1;\n     padding: 10px 0;\n     list-style: none;\n     margin: 0;\n }\n"
+                },
+                {
+                    "date": 1736974298876,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n     position: absolute;\n     top: 100%;\n     left: 0;\n     width: auto;\n-    background-color: #fce1e1;\n+    background-color: #f0f0f0;\n     padding: 10px 0;\n     list-style: none;\n     margin: 0;\n }\n"
+                },
+                {
+                    "date": 1736974323365,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n     top: 100%;\n     left: 0;\n     width: auto;\n     background-color: #f0f0f0;\n-    padding: 10px 0;\n+    padding: 0px 0;\n     list-style: none;\n     margin: 0;\n }\n \n"
+                },
+                {
+                    "date": 1736974331659,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n     top: 100%;\n     left: 0;\n     width: auto;\n     background-color: #f0f0f0;\n-    padding: 0px 0;\n+    \n     list-style: none;\n     margin: 0;\n }\n \n"
+                },
+                {
+                    "date": 1736974338724,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n     top: 100%;\n     left: 0;\n     width: auto;\n     background-color: #f0f0f0;\n-    \n+    padding: 0px 0;\n     list-style: none;\n     margin: 0;\n }\n \n"
+                },
+                {
+                    "date": 1736974389651,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,8 +23,9 @@\n     left: 0;\n     width: auto;\n     background-color: #f0f0f0;\n     padding: 0px 0;\n+    \n     list-style: none;\n     margin: 0;\n }\n \n"
+                },
+                {
+                    "date": 1736974397130,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n     left: 0;\n     width: auto;\n     background-color: #f0f0f0;\n     padding: 0px 0;\n-    \n+    border\n     list-style: none;\n     margin: 0;\n }\n \n"
+                },
+                {
+                    "date": 1736974404388,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n     left: 0;\n     width: auto;\n     background-color: #f0f0f0;\n     padding: 0px 0;\n-    border\n+    border-radius: 10px;\n     list-style: none;\n     margin: 0;\n }\n \n"
+                },
+                {
+                    "date": 1736974431186,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,8 +26,9 @@\n     padding: 0px 0;\n     border-radius: 10px;\n     list-style: none;\n     margin: 0;\n+    de\n }\n \n .mobile-menu li {\n     padding: 10px 20px;\n"
+                },
+                {
+                    "date": 1736974439284,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n     padding: 0px 0;\n     border-radius: 10px;\n     list-style: none;\n     margin: 0;\n-    de\n+    text-decoration: ;\n }\n \n .mobile-menu li {\n     padding: 10px 20px;\n"
+                },
+                {
+                    "date": 1736974459047,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n     padding: 0px 0;\n     border-radius: 10px;\n     list-style: none;\n     margin: 0;\n-    text-decoration: ;\n+    \n }\n \n .mobile-menu li {\n     padding: 10px 20px;\n"
+                },
+                {
+                    "date": 1736974472177,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n }\n \n .mobile-menu li {\n     padding: 10px 20px;\n-    border-bottom: 1px solid #444;\n+    border-bottom: 1px solid #810505;\n     color: white;\n     cursor: pointer;\n     \n }\n"
+                },
+                {
+                    "date": 1736974485655,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n }\n \n .mobile-menu li {\n     padding: 10px 20px;\n-    border-bottom: 1px solid #810505;\n+    border-bottom: 1px solid #05813d;\n     color: white;\n     cursor: pointer;\n     \n }\n"
+                },
+                {
+                    "date": 1736974610596,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,8 +35,9 @@\n     border-bottom: 1px solid #05813d;\n     color: white;\n     cursor: pointer;\n     \n+    \n }\n \n .mobile-menu li:hover {\n     background-color: #555;\n"
+                },
+                {
+                    "date": 1736974616146,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,10 +34,10 @@\n     padding: 10px 20px;\n     border-bottom: 1px solid #05813d;\n     color: white;\n     cursor: pointer;\n+    b\n     \n-    \n }\n \n .mobile-menu li:hover {\n     background-color: #555;\n"
+                },
+                {
+                    "date": 1736974621475,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n     padding: 10px 20px;\n     border-bottom: 1px solid #05813d;\n     color: white;\n     cursor: pointer;\n-    b\n+    border-radius: ;\n     \n }\n \n .mobile-menu li:hover {\n"
+                },
+                {
+                    "date": 1736974683132,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n     position: absolute;\n     top: 100%;\n     left: 0;\n     width: auto;\n-    background-color: #f0f0f0;\n+    background-color: #d50f0f;\n     padding: 0px 0;\n     border-radius: 10px;\n     list-style: none;\n     margin: 0;\n@@ -34,9 +34,9 @@\n     padding: 10px 20px;\n     border-bottom: 1px solid #05813d;\n     color: white;\n     cursor: pointer;\n-    border-radius: ;\n+    border-radius: 10px;\n     \n }\n \n .mobile-menu li:hover {\n"
+                },
+                {
+                    "date": 1736974691150,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n     position: absolute;\n     top: 100%;\n     left: 0;\n     width: auto;\n-    background-color: #d50f0f;\n+    background-color: #f0f0f0;\n     padding: 0px 0;\n     border-radius: 10px;\n     list-style: none;\n     margin: 0;\n"
+                },
+                {
+                    "date": 1736974703341,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n     padding: 10px 20px;\n     border-bottom: 1px solid #05813d;\n     color: white;\n     cursor: pointer;\n-    border-radius: 10px;\n+    border-radius: 1px;\n     \n }\n \n .mobile-menu li:hover {\n"
+                },
+                {
+                    "date": 1736974709777,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n     padding: 10px 20px;\n     border-bottom: 1px solid #05813d;\n     color: white;\n     cursor: pointer;\n-    border-radius: 1px;\n+    border-radius: 5px;\n     \n }\n \n .mobile-menu li:hover {\n"
+                }
+            ],
+            "date": 1736962450793,
+            "name": "Commit-0",
+            "content": ".mobile-navbar {\n    background-color: #333;\n    color: white;\n    padding: 10px;\n    position: relative;\n}\n\n.menu-toggle {\n    font-size: 24px;\n    background: none;\n    color: white;\n    border: none;\n    cursor: pointer;\n}\n\n.mobile-menu {\n    display: flex;\n    flex-direction: column;\n    position: absolute;\n    top: 100%;\n    left: 0;\n    width: 100%;\n    background-color: #333;\n    padding: 10px 0;\n    list-style: none;\n    margin: 0;\n}\n\n.mobile-menu li {\n    padding: 10px 20px;\n    border-bottom: 1px solid #444;\n    color: white;\n    cursor: pointer;\n}\n\n.mobile-menu li:hover {\n    background-color: #555;\n}"
+        }
+    ]
+}
