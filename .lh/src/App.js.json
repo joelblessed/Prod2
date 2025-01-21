@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 280,
+            "activePatchIndex": 291,
             "patches": [
                 {
                     "date": 1736878664953,
@@ -1128,6 +1128,50 @@
                 {
                     "date": 1737112487233,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,9 +55,9 @@\n   const handleSignIn = () => {\n     setIsAuthenticated(true); // Update auth state after login\n   };\n   const handlesignout =()=>{\n-    setIsAuthenticated\n+    setIsAuthenticated(false);\n   }\n \n   \n \n"
+                },
+                {
+                    "date": 1737201304076,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n import MobileNavbar from \"./components/Navbar/MobileNavbar\";\n import SignIN from './components/signIN';\n import SignUP from './components/signUP';\n import LogIN from './components/logIN';\n-import Dashboard from './dashboard';\n+import Dashboard from './components/dashboard';\n \n \n function App() {\n   \n"
+                },
+                {
+                    "date": 1737202145398,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,8 +25,9 @@\n import LogIN from './components/logIN';\n import Dashboard from './components/dashboard';\n \n \n+\n function App() {\n   \n   \n   const [data, setData] = useState(\"\");\n"
+                },
+                {
+                    "date": 1737202154141,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,11 +23,11 @@\n import SignIN from './components/signIN';\n import SignUP from './components/signUP';\n import LogIN from './components/logIN';\n import Dashboard from './components/dashboard';\n+import p\n \n \n-\n function App() {\n   \n   \n   const [data, setData] = useState(\"\");\n"
+                },
+                {
+                    "date": 1737202180898,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n import SignIN from './components/signIN';\n import SignUP from './components/signUP';\n import LogIN from './components/logIN';\n import Dashboard from './components/dashboard';\n-import p\n+import Protected\n \n \n function App() {\n   \n"
+                },
+                {
+                    "date": 1737202187132,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n import SignIN from './components/signIN';\n import SignUP from './components/signUP';\n import LogIN from './components/logIN';\n import Dashboard from './components/dashboard';\n-import Protected\n+import ProtectedR\n \n \n function App() {\n   \n"
+                },
+                {
+                    "date": 1737202194759,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n import SignIN from './components/signIN';\n import SignUP from './components/signUP';\n import LogIN from './components/logIN';\n import Dashboard from './components/dashboard';\n-import ProtectedR\n+import ProtectedRoute fr\n \n \n function App() {\n   \n"
+                },
+                {
+                    "date": 1737202221611,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n import SignIN from './components/signIN';\n import SignUP from './components/signUP';\n import LogIN from './components/logIN';\n import Dashboard from './components/dashboard';\n-import ProtectedRoute fr\n+import ProtectedRoute from \n \n \n function App() {\n   \n"
+                },
+                {
+                    "date": 1737202231431,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n import SignIN from './components/signIN';\n import SignUP from './components/signUP';\n import LogIN from './components/logIN';\n import Dashboard from './components/dashboard';\n-import ProtectedRoute from \n+import ProtectedRoute from \"./P\"\n \n \n function App() {\n   \n"
+                },
+                {
+                    "date": 1737202237299,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n import SignIN from './components/signIN';\n import SignUP from './components/signUP';\n import LogIN from './components/logIN';\n import Dashboard from './components/dashboard';\n-import ProtectedRoute from \"./P\"\n+import ProtectedRoute from \"./ProtectedR\"\n \n \n function App() {\n   \n"
+                },
+                {
+                    "date": 1737202257307,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -167,9 +167,9 @@\n               }\n             />\n         {/* Redirect unknown routes */}\n         <Route path=\"*\" element={<Navigate to=\"logIN\" />} />\n-      <\n+      </\n  \n     </Routes>\n    \n   </Router>\n"
+                },
+                {
+                    "date": 1737202265348,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -167,9 +167,9 @@\n               }\n             />\n         {/* Redirect unknown routes */}\n         <Route path=\"*\" element={<Navigate to=\"logIN\" />} />\n-      </Protected\n+      </ProtectedR\n  \n     </Routes>\n    \n   </Router>\n"
                 }
             ],
             "date": 1736878664953,
