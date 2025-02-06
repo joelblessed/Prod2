@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 4,
+            "activePatchIndex": 7,
             "patches": [
                 {
                     "date": 1738245009901,
@@ -24,6 +24,18 @@
                 {
                     "date": 1738245059503,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,9 +47,9 @@\n         {filteredProducts.map((product) => (\n             <div key={product._id} className='box2'  >\n                        \n             <img className='image'\n-                src={'http://localhost:5000/images/'+product.image}\n+                src={`${api}/images/'+product.image}\n                 alt={product.name}\n                 onClick={() => handleProductClick(product)}\n                \n                 />\n"
+                },
+                {
+                    "date": 1738849469498,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,40 +39,9 @@\n   };\n \n   \n   return (\n-    <div>\n-      \n-<h1>cat</h1>\n-      <div style={{ display: 'flex', flexWrap: 'wrap' }} >\n-        {filteredProducts.map((product) => (\n-            <div key={product._id} className='box2'  >\n-                       \n-            <img className='image'\n-                src={`${api}/images/'+product.image}\n-                alt={product.name}\n-                onClick={() => handleProductClick(product)}\n-               \n-                />\n-                 <span className='text'>\n-                    <a  className='name'><span style={{color:\"black\"}} \n-                        dangerouslySetInnerHTML={{\n-                        __html: highlightText(product.name, searchTerm),\n-                               }}\n-                         ></span> </a>\n-                    <a>Description: {product.desc}</a>\n-                    <a>Price: {product.price}</a>\n-                 </span>\n-                 <div className='cart'>\n-                    <button className='btn btn-warning' onClick={() => addToCart(product)} >Add to Cart</button>\n-                    \n-                 </div>\n-                  \n-                 \n-            </div>\n-        ))}\n-      </div>\n-    </div>\n+   \n   );\n }\n \n export default Category\n"
+                },
+                {
+                    "date": 1738849475657,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,9 +39,53 @@\n   };\n \n   \n   return (\n-   \n+   <>\n+    <div style={{  marginTop: \"20px\",display: 'flex', flexWrap: 'wrap' }}>\n+       \n+       {filteredProducts.length > 0 ? (\n+           filteredProducts.map((product) => (\n+               <div key={product.id} style={{ \n+                   border: \"1px solid #ddd\", \n+                   borderRadius: \"8px\", \n+                   maxWidth: \"400px\",\n+                   maxHeight:\"600px\",\n+                   margin: \"15px\"\n+               }}>\n+                   {product.images.length > 0 ? (\n+                       <img\n+                           src={product.images[0]} // Display first image only\n+                           alt={product.name}\n+                           style={{\n+                               width: \"300px\",\n+                               height: \"300px\",\n+                               objectFit: \"cover\",\n+                               borderRadius: \"8px\",\n+                           }}\n+                       />\n+                   ) : (\n+                       <p>No image available</p>\n+                   )}\n+                      <span className='text'>\n+                         <h5  className='name'><span style={{color:\"black\"}} \n+                             dangerouslySetInnerHTML={{\n+                             __html: highlightText(product.name, searchTerm),\n+                                    }}\n+                              ></span> </h5>\n+                         <h5>Description: {product.desc}</h5>\n+                         <h5>Price: {product.price}</h5>\n+                         <div><button>addToCart</button> <button>+wisList</button></div>\n+                      </span>\n+\n+                 \n+               </div>\n+           ))\n+       ) : (\n+           <p>Loading...</p>\n+       )}\n+   </div>\n+         </></>\n   );\n }\n \n export default Category\n"
+                },
+                {
+                    "date": 1738849481242,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -83,9 +83,9 @@\n        ) : (\n            <p>Loading...</p>\n        )}\n    </div>\n-         </></>\n+         </>\n   );\n }\n \n export default Category\n"
                 }
             ],
             "date": 1738245009901,
