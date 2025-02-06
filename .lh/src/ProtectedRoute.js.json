@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/ProtectedRoute.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1738184419474,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1738184425392,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n const ProtectedRoute = ({ children, allowedRoles }) => {\n   const { user } = useContext(AuthContext);\n \n-  if (!user) return <Navigate to=\"/lo\" />;\n+  if (!user) return <Navigate to=\"/Sign\" />;\n   if (!allowedRoles.includes(user.role)) return <Navigate to=\"/unauthorized\" />;\n \n   return children;\n };\n"
+                },
+                {
+                    "date": 1738231374745,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n const ProtectedRoute = ({ children, allowedRoles }) => {\n   const { user } = useContext(AuthContext);\n \n-  if (!user) return <Navigate to=\"/Sign\" />;\n+  if (!user) return <Navigate to=\"/SignIN\" />;\n   if (!allowedRoles.includes(user.role)) return <Navigate to=\"/unauthorized\" />;\n \n   return children;\n };\n"
+                }
+            ],
+            "date": 1738184419474,
+            "name": "Commit-0",
+            "content": "import { useContext } from \"react\";\nimport { Navigate } from \"react-router-dom\";\nimport { AuthContext } from \"./AuthContext\";\n\nconst ProtectedRoute = ({ children, allowedRoles }) => {\n  const { user } = useContext(AuthContext);\n\n  if (!user) return <Navigate to=\"/lo\" />;\n  if (!allowedRoles.includes(user.role)) return <Navigate to=\"/unauthorized\" />;\n\n  return children;\n};\n\nexport default ProtectedRoute"
+        }
+    ]
+}

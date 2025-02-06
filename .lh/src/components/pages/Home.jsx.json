@@ -1,0 +1,98 @@
+{
+    "sourceFile": "src/components/pages/Home.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 20,
+            "patches": [
+                {
+                    "date": 1738243293856,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1738243302052,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n \n // import { createContext,useState,useContext } from 'react';\n \n const Home = ({\n+  \n   filteredProducts,\n   setSelectedProduct,\n   addToCart,\n   loading,\n"
+                },
+                {
+                    "date": 1738243308152,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n // import { createContext,useState,useContext } from 'react';\n \n const Home = ({\n-  \n+  api={api},\n   filteredProducts,\n   setSelectedProduct,\n   addToCart,\n   loading,\n"
+                },
+                {
+                    "date": 1738243327339,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n               {filteredProducts.map((product, index) => (\n                 <div key={product._id} className=\"box2\">\n                   <img\n                     className=\"image\"\n-                    src={\"http://localhost:5000/images/\" + product.image}\n+                    src={/images/\" + product.image}\n                     alt={product.name}\n                     onClick={() => handleProductClick(product)}\n                   />\n                   <span className=\"text\">\n"
+                },
+                {
+                    "date": 1738243333173,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n               {filteredProducts.map((product, index) => (\n                 <div key={product._id} className=\"box2\">\n                   <img\n                     className=\"image\"\n-                    src={/images/\" + product.image}\n+                    src={`/images/` + product.image}\n                     alt={product.name}\n                     onClick={() => handleProductClick(product)}\n                   />\n                   <span className=\"text\">\n"
+                },
+                {
+                    "date": 1738243339483,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n               {filteredProducts.map((product, index) => (\n                 <div key={product._id} className=\"box2\">\n                   <img\n                     className=\"image\"\n-                    src={`/images/` + product.image}\n+                    src={`$/images/` + product.image}\n                     alt={product.name}\n                     onClick={() => handleProductClick(product)}\n                   />\n                   <span className=\"text\">\n"
+                },
+                {
+                    "date": 1738245650333,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n // import { createContext,useState,useContext } from 'react';\n \n const Home = ({\n-  api={api},\n+  api=,\n   filteredProducts,\n   setSelectedProduct,\n   addToCart,\n   loading,\n@@ -44,9 +44,9 @@\n               {filteredProducts.map((product, index) => (\n                 <div key={product._id} className=\"box2\">\n                   <img\n                     className=\"image\"\n-                    src={`$/images/` + product.image}\n+                    src={`${api}/images/` + product.image}\n                     alt={product.name}\n                     onClick={() => handleProductClick(product)}\n                   />\n                   <span className=\"text\">\n"
+                },
+                {
+                    "date": 1738245699329,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n // import { createContext,useState,useContext } from 'react';\n \n const Home = ({\n-  api=,\n+  api,\n   filteredProducts,\n   setSelectedProduct,\n   addToCart,\n   loading,\n@@ -33,8 +33,9 @@\n           <h1></h1>\n           {loading ? (\n             <p>Loading...</p>\n           ) : (\n+            \n             <div style={{ display: \"flex\", flexWrap: \"wrap\" }}>\n               {/* <div>\n                         <a className='btn btn-primary btn-sm me-1' href=\"\">\n                             Edit\n"
+                },
+                {
+                    "date": 1738245705326,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n           <h1></h1>\n           {loading ? (\n             <p>Loading...</p>\n           ) : (\n-            \n+            <h1\n             <div style={{ display: \"flex\", flexWrap: \"wrap\" }}>\n               {/* <div>\n                         <a className='btn btn-primary btn-sm me-1' href=\"\">\n                             Edit\n"
+                },
+                {
+                    "date": 1738245712495,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n           <h1></h1>\n           {loading ? (\n             <p>Loading...</p>\n           ) : (\n-            <h1\n+           \n             <div style={{ display: \"flex\", flexWrap: \"wrap\" }}>\n               {/* <div>\n                         <a className='btn btn-primary btn-sm me-1' href=\"\">\n                             Edit\n"
+                },
+                {
+                    "date": 1738245722184,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n   };\n \n   return (\n     <div>\n-      <div>\n+      <div> \n         <div className=\"box1\">\n           <h1></h1>\n           {loading ? (\n             <p>Loading...</p>\n"
+                },
+                {
+                    "date": 1738245729273,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n   };\n \n   return (\n     <div>\n-      <div> \n+      <div> <h1></h1>\n         <div className=\"box1\">\n           <h1></h1>\n           {loading ? (\n             <p>Loading...</p>\n"
+                },
+                {
+                    "date": 1738245734961,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n   };\n \n   return (\n     <div>\n-      <div> <h1></h1>\n+      <div> <h1>{</h1>\n         <div className=\"box1\">\n           <h1></h1>\n           {loading ? (\n             <p>Loading...</p>\n"
+                },
+                {
+                    "date": 1738245800125,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n   };\n \n   return (\n     <div>\n-      <div> <h1>{</h1>\n+      <div> <h1>{api}</h1>\n         <div className=\"box1\">\n           <h1></h1>\n           {loading ? (\n             <p>Loading...</p>\n@@ -45,9 +45,9 @@\n               {filteredProducts.map((product, index) => (\n                 <div key={product._id} className=\"box2\">\n                   <img\n                     className=\"image\"\n-                    src={`${api}/images/` + product.image}\n+                    src={`{api}/images/` + product.image}\n                     alt={product.name}\n                     onClick={() => handleProductClick(product)}\n                   />\n                   <span className=\"text\">\n"
+                },
+                {
+                    "date": 1738245805792,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,9 @@\n               {filteredProducts.map((product, index) => (\n                 <div key={product._id} className=\"box2\">\n                   <img\n                     className=\"image\"\n-                    src={`{api}/images/` + product.image}\n+                    src={`${api}/images/` + product.image}\n                     alt={product.name}\n                     onClick={() => handleProductClick(product)}\n                   />\n                   <span className=\"text\">\n"
+                },
+                {
+                    "date": 1738245869576,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,9 @@\n               {filteredProducts.map((product, index) => (\n                 <div key={product._id} className=\"box2\">\n                   <img\n                     className=\"image\"\n-                    src={`${api}/images/` + product.image}\n+                    src={`/images/` + product.image}\n                     alt={product.name}\n                     onClick={() => handleProductClick(product)}\n                   />\n                   <span className=\"text\">\n"
+                },
+                {
+                    "date": 1738245894941,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,9 @@\n               {filteredProducts.map((product, index) => (\n                 <div key={product._id} className=\"box2\">\n                   <img\n                     className=\"image\"\n-                    src={`/images/` + product.image}\n+                    src={http://localhost:5000/images/` + product.image}\n                     alt={product.name}\n                     onClick={() => handleProductClick(product)}\n                   />\n                   <span className=\"text\">\n"
+                },
+                {
+                    "date": 1738245907039,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,9 @@\n               {filteredProducts.map((product, index) => (\n                 <div key={product._id} className=\"box2\">\n                   <img\n                     className=\"image\"\n-                    src={http://localhost:5000/images/` + product.image}\n+                    src={'http://localhost:5000/images/` + product.image}\n                     alt={product.name}\n                     onClick={() => handleProductClick(product)}\n                   />\n                   <span className=\"text\">\n"
+                },
+                {
+                    "date": 1738246488692,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,9 @@\n               {filteredProducts.map((product, index) => (\n                 <div key={product._id} className=\"box2\">\n                   <img\n                     className=\"image\"\n-                    src={'http://localhost:5000/images/` + product.image}\n+                    src={'/images/' + product.image}\n                     alt={product.name}\n                     onClick={() => handleProductClick(product)}\n                   />\n                   <span className=\"text\">\n"
+                },
+                {
+                    "date": 1738247161593,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,9 @@\n               {filteredProducts.map((product, index) => (\n                 <div key={product._id} className=\"box2\">\n                   <img\n                     className=\"image\"\n-                    src={'/images/' + product.image}\n+                    src={'http://localhost:5000/images/' + product.image}\n                     alt={product.name}\n                     onClick={() => handleProductClick(product)}\n                   />\n                   <span className=\"text\">\n"
+                },
+                {
+                    "date": 1738247169254,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,9 @@\n               {filteredProducts.map((product, index) => (\n                 <div key={product._id} className=\"box2\">\n                   <img\n                     className=\"image\"\n-                    src={'http://localhost:5000/images/' + product.image}\n+                    src={`http://localhost:5000/images/` + product.image}\n                     alt={product.name}\n                     onClick={() => handleProductClick(product)}\n                   />\n                   <span className=\"text\">\n"
+                }
+            ],
+            "date": 1738243293856,
+            "name": "Commit-0",
+            "content": "import React, { useState, useEffect } from \"react\";\nimport { useNavigate, Link } from \"react-router-dom\";\nimport \"./products.css\";\n\n// import { createContext,useState,useContext } from 'react';\n\nconst Home = ({\n  filteredProducts,\n  setSelectedProduct,\n  addToCart,\n  loading,\n  handleShowAlert,\n  showAlert,\n  searchTerm,\n  highlightText,\n}) => {\n  // const DataContext = createContext();\n\n  // Handle product click\n  // const {setSelectedProduct} = useContext(DataContext)\n\n  const navigate = useNavigate();\n  const handleProductClick = (product) => {\n    setSelectedProduct(product);\n    navigate(\"/selectedProduct\");\n  };\n\n  return (\n    <div>\n      <div>\n        <div className=\"box1\">\n          <h1></h1>\n          {loading ? (\n            <p>Loading...</p>\n          ) : (\n            <div style={{ display: \"flex\", flexWrap: \"wrap\" }}>\n              {/* <div>\n                        <a className='btn btn-primary btn-sm me-1' href=\"\">\n                            Edit\n                        </a>\n                        <button type='button' className='btn btn-danger btn-sm'>Delete</button>\n                    </div> */}\n              {filteredProducts.map((product, index) => (\n                <div key={product._id} className=\"box2\">\n                  <img\n                    className=\"image\"\n                    src={\"http://localhost:5000/images/\" + product.image}\n                    alt={product.name}\n                    onClick={() => handleProductClick(product)}\n                  />\n                  <span className=\"text\">\n                    <a className=\"name\">\n                      {\" \"}\n                      <span\n                        style={{ color: \"black\" }}\n                        dangerouslySetInnerHTML={{\n                          __html: highlightText(product.name, searchTerm),\n                        }}\n                      ></span>{\" \"}\n                    </a>\n                    <a>Description: {product.desc}</a>\n                    <a>Price: {product.price}</a>\n                  </span>\n                  <div className=\"cart\">\n                    <button\n                      className=\"btn btn-warning\"\n                      onClick={() => addToCart(product)}\n                    >\n                      Add to Cart\n                    </button>\n                  </div>\n                  <span\n                  // dangerouslySetInnerHTML={{\n                  //   __html: highlightText(product.name, searchTerm),\n                  // }}\n                  ></span>\n                </div>\n              ))}\n\n              <button onClick={handleShowAlert}>Show Custom Alert</button>\n              {showAlert && (\n                <div\n                  style={{\n                    padding: \"10px\",\n                    backgroundColor: \"red\",\n                    color: \"white\",\n                  }}\n                >\n                  This is a custom alert!\n                </div>\n              )}\n\n              {/* <h3>Total: ${totalPrice}</h3>  */}\n            </div>\n          )}\n        </div>\n        {/* <div style={{display:\"\"}}>\n        {cart.map((item, index) => (\n        <ProductView key={index}\n      id={item.id} name={item.name} desc={item.desc} price={item.price} numberInStock={item.quantity}  />\n        \n      ))}\n        </div> */}\n      </div>\n    </div>\n  );\n};\n\nexport default Home;\n"
+        }
+    ]
+}

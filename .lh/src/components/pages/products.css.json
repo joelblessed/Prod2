@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/components/pages/products.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1738070906263,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1738070906263,
+            "name": "Commit-0",
+            "content": ".box1{\n     width:85%;\n     background:rgba(0, 0, 255, 0.051);\n     float:right;\n    \n    \n}\n\n.box2{\n    background:rgba(255, 192, 203, 0.01);\n    border-radius:8px; \n    margin:10px;\n    height:222.5px;\n    width:150px;\n    box-shadow:0px 0px 2px orangered;\n   \n   \n}\n .image{\n    width:100%;\n    height:150px;\n    border-radius:8px 8px 0px 0px;\n }\n .text{\n    \n   display: grid;\n   \n\n }\n a{\n    margin-top:0%;\n    padding: 0%;\n    font-size: 10px;\n    text-decoration: none;\n    margin-left: 2px;\n    \n }\n .name{\n    width:60%;\n    text-decoration: none;\n }\n .cart{\n    margin:0% ;\n    \n }\n .btn{\n    width:100%;\n    height:25px;\n    text-align: center;\n    padding: 0px;\n    margin-top: 0px;\n    border-radius: 0px 0px 8px 8px;\n\n }\n\n @media(max-width:760px){\n    .box1{\n        width: 100%;\n    }\n   \n    \n }\n  @media(max-width:1000px){\n\n\n\n  }"
+        }
+    ]
+}

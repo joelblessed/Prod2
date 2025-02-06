@@ -1,0 +1,29 @@
+.desktop-navbar {
+    display: flex;
+    justify-content: space-around;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+}
+
+.desktop-navbar ul {
+    display: flex;
+    list-style: none;
+    padding-top:10px;
+    height: 30px;
+}
+
+.desktop-navbar li {
+  
+    margin: 0 15px;
+    cursor: pointer;
+    color: white;
+    
+}
+
+.desktop-navbar li:hover {
+    text-decoration: underline;
+}
+a{
+    color:black;
+}

@@ -1,0 +1,36 @@
+.desktop-navbar {
+    display: flex;
+    justify-content:space-between;
+    background:orangered;
+    color: white;
+    
+}
+
+.desktop-navbar ul {
+    display: flex;
+    list-style: none;
+    padding-top:10px;
+    height: 50px;
+    width: 100%;
+    background-color: green;
+}
+
+.desktop-navbar li {
+  
+    margin: 0px 15px;
+    cursor: pointer;
+    color: white;
+    background-color: blue;
+    
+}
+ > :nth-child(2){
+    margin-right: 100px;
+
+}
+
+.desktop-navbar li:hover {
+    text-decoration: underline;
+}
+a{
+    color:black;
+}
