@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 4,
+            "activePatchIndex": 5,
             "patches": [
                 {
                     "date": 1738001232361,
@@ -24,6 +24,10 @@
                 {
                     "date": 1738247799322,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -109,5 +109,9 @@\n             </div>\n           </div>\n         </div>\n       )}\n-    </div\n\\ No newline at end of file\n+    </div>\n+  );\n+};\n+\n+export default SelectedProduct;\n"
+                },
+                {
+                    "date": 1738868231442,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n const SelectedProduct = ({ api, selectedProduct, addToCart }) => {\n   return (\n     <div style={{ marginTop: \"20px\", display: \"flex\", flexWrap: \"wrap\" }}>\n-        {filteredProducts.length > 0 ? (\n+        {Products.length > 0 ? (\n           filteredProducts.map((product) => (\n             <div\n               key={product.id}\n               style={{\n"
                 }
             ],
             "date": 1738001232361,

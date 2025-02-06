@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 44,
+            "activePatchIndex": 45,
             "patches": [
                 {
                     "date": 1738186888230,
@@ -184,6 +184,10 @@
                 {
                     "date": 1738247561293,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n     formData.append(\"title\", title);\n     formData.append(\"description\", description);\n     formData.append(\"image\", image);\n \n-    const response = await fetch(`${api}/upload\", {\n+    const response = await fetch(`${api}/upload, {\n       method: \"POST\",\n       body: formData,\n     });\n \n"
+                },
+                {
+                    "date": 1738854691406,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import React, { useState, useEffect } from \"react\";\n \n-function  FormUploaf({api}) {\n+function  FormUploa({api}) {\n   const [title, setTitle] = useState(\"\");\n   const [description, setDescription] = useState(\"\");\n   const [image, setImage] = useState(null);\n   const [posts, setPosts] = useState([]);\n@@ -69,5 +69,5 @@\n     </div>\n   );\n }\n \n-export default  FormUploaf;\n\\ No newline at end of file\n+export default  FormUploa;\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1738186888230,

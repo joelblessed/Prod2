@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 11,
+            "activePatchIndex": 36,
             "patches": [
                 {
                     "date": 1738167556454,
@@ -52,6 +52,106 @@
                 {
                     "date": 1738255656730,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import DashboardWidgets from \"./dasboardSidbar\";\n \n function Dashboard() {\n   const handleLogout = () => {\n-    localStorage.removeItem(\"user\");\n+    localStorage.removeItem(\"username\");\n     \n };\n   return (\n     <div style={{ display: \"flex\" }}>\n"
+                },
+                {
+                    "date": 1738853160687,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import DashboardWidgets from \"./dasboardSidbar\";\n \n function Dashboard() {\n   const handleLogout = () => {\n-    localStorage.removeItem(\"username\");\n+   \n     \n };\n   return (\n     <div style={{ display: \"flex\" }}>\n"
+                },
+                {
+                    "date": 1738853171807,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,10 +2,13 @@\n import Sidebar from \"./dasboardSidbar\";\n import DashboardWidgets from \"./dasboardSidbar\";\n \n function Dashboard() {\n+  \n   const handleLogout = () => {\n-   \n+    localStorage.removeItem(\"token\");\n+    localStorage.removeItem(\"role\");\n+    setUser(null);\n     \n };\n   return (\n     <div style={{ display: \"flex\" }}>\n"
+                },
+                {
+                    "date": 1738853179370,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import Sidebar from \"./dasboardSidbar\";\n import DashboardWidgets from \"./dasboardSidbar\";\n \n function Dashboard() {\n-  \n+  const [user]\n   const handleLogout = () => {\n     localStorage.removeItem(\"token\");\n     localStorage.removeItem(\"role\");\n     setUser(null);\n"
+                },
+                {
+                    "date": 1738853187383,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import Sidebar from \"./dasboardSidbar\";\n import DashboardWidgets from \"./dasboardSidbar\";\n \n function Dashboard() {\n-  const [user]\n+  const [username se]\n   const handleLogout = () => {\n     localStorage.removeItem(\"token\");\n     localStorage.removeItem(\"role\");\n     setUser(null);\n"
+                },
+                {
+                    "date": 1738853192433,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import Sidebar from \"./dasboardSidbar\";\n import DashboardWidgets from \"./dasboardSidbar\";\n \n function Dashboard() {\n-  const [username se]\n+  const [username setuse]\n   const handleLogout = () => {\n     localStorage.removeItem(\"token\");\n     localStorage.removeItem(\"role\");\n     setUser(null);\n"
+                },
+                {
+                    "date": 1738853199091,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import Sidebar from \"./dasboardSidbar\";\n import DashboardWidgets from \"./dasboardSidbar\";\n \n function Dashboard() {\n-  const [username setuse]\n+  const [username setUserN]\n   const handleLogout = () => {\n     localStorage.removeItem(\"token\");\n     localStorage.removeItem(\"role\");\n     setUser(null);\n"
+                },
+                {
+                    "date": 1738853208950,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import Sidebar from \"./dasboardSidbar\";\n import DashboardWidgets from \"./dasboardSidbar\";\n \n function Dashboard() {\n-  const [username setUserN]\n+  const [username setUserName]\n   const handleLogout = () => {\n     localStorage.removeItem(\"token\");\n     localStorage.removeItem(\"role\");\n     setUser(null);\n"
+                },
+                {
+                    "date": 1738853227269,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import Sidebar from \"./dasboardSidbar\";\n import DashboardWidgets from \"./dasboardSidbar\";\n \n function Dashboard() {\n-  const [username setUserName]\n+  const [userName, setUserName]\n   const handleLogout = () => {\n     localStorage.removeItem(\"token\");\n     localStorage.removeItem(\"role\");\n     setUser(null);\n"
+                },
+                {
+                    "date": 1738853236140,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import Sidebar from \"./dasboardSidbar\";\n import DashboardWidgets from \"./dasboardSidbar\";\n \n function Dashboard() {\n-  const [userName, setUserName]\n+  const [userName, setUserName] = usse\n   const handleLogout = () => {\n     localStorage.removeItem(\"token\");\n     localStorage.removeItem(\"role\");\n     setUser(null);\n"
+                },
+                {
+                    "date": 1738853241660,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n-import React from \"react\";\n+import React, { useState } from \"react\";\n import Sidebar from \"./dasboardSidbar\";\n import DashboardWidgets from \"./dasboardSidbar\";\n \n function Dashboard() {\n-  const [userName, setUserName] = usse\n+  const [userName, setUserName] = useState()\n   const handleLogout = () => {\n     localStorage.removeItem(\"token\");\n     localStorage.removeItem(\"role\");\n     setUser(null);\n"
+                },
+                {
+                    "date": 1738853288258,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,13 +2,13 @@\n import Sidebar from \"./dasboardSidbar\";\n import DashboardWidgets from \"./dasboardSidbar\";\n \n function Dashboard() {\n-  const [userName, setUserName] = useState()\n+  const [userName, setUserName] = useState(null)\n   const handleLogout = () => {\n     localStorage.removeItem(\"token\");\n     localStorage.removeItem(\"role\");\n-    setUser(null);\n+    setUserName(null);\n     \n };\n   return (\n     <div style={{ display: \"flex\" }}>\n"
+                },
+                {
+                    "date": 1738853365081,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React, { useState } from \"react\";\n import Sidebar from \"./dasboardSidbar\";\n import DashboardWidgets from \"./dasboardSidbar\";\n \n-function Dashboard() {\n+function Dashboard({}) {\n   const [userName, setUserName] = useState(null)\n   const handleLogout = () => {\n     localStorage.removeItem(\"token\");\n     localStorage.removeItem(\"role\");\n"
+                },
+                {
+                    "date": 1738856019894,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,14 @@\n import React, { useState } from \"react\";\n import Sidebar from \"./dasboardSidbar\";\n import DashboardWidgets from \"./dasboardSidbar\";\n \n-function Dashboard({}) {\n+function Dashboard({api}) {\n   const [userName, setUserName] = useState(null)\n   const handleLogout = () => {\n     localStorage.removeItem(\"token\");\n     localStorage.removeItem(\"role\");\n-    setUserName(null);\n+    s\n     \n };\n   return (\n     <div style={{ display: \"flex\" }}>\n"
+                },
+                {
+                    "date": 1738856031200,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,9 @@\n   const [userName, setUserName] = useState(null)\n   const handleLogout = () => {\n     localStorage.removeItem(\"token\");\n     localStorage.removeItem(\"role\");\n+    localStorage.\n     s\n     \n };\n   return (\n"
+                },
+                {
+                    "date": 1738856038027,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n   const [userName, setUserName] = useState(null)\n   const handleLogout = () => {\n     localStorage.removeItem(\"token\");\n     localStorage.removeItem(\"role\");\n-    localStorage.\n+    localStorage.clear\n     s\n     \n };\n   return (\n"
+                },
+                {
+                    "date": 1738856044246,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n   const [userName, setUserName] = useState(null)\n   const handleLogout = () => {\n     localStorage.removeItem(\"token\");\n     localStorage.removeItem(\"role\");\n-    localStorage.clear\n+    localStorage.clear();\n     s\n     \n };\n   return (\n"
+                },
+                {
+                    "date": 1738856049560,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,10 +7,10 @@\n   const handleLogout = () => {\n     localStorage.removeItem(\"token\");\n     localStorage.removeItem(\"role\");\n     localStorage.clear();\n-    s\n     \n+    \n };\n   return (\n     <div style={{ display: \"flex\" }}>\n       <Sidebar />\n"
+                },
+                {
+                    "date": 1738856095250,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,9 @@\n   const [userName, setUserName] = useState(null)\n   const handleLogout = () => {\n     localStorage.removeItem(\"token\");\n     localStorage.removeItem(\"role\");\n+    \n     localStorage.clear();\n     \n     \n };\n"
+                },
+                {
+                    "date": 1738856108764,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n   const [userName, setUserName] = useState(null)\n   const handleLogout = () => {\n     localStorage.removeItem(\"token\");\n     localStorage.removeItem(\"role\");\n-    \n+    lo\n     localStorage.clear();\n     \n     \n };\n"
+                },
+                {
+                    "date": 1738856115362,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n   const [userName, setUserName] = useState(null)\n   const handleLogout = () => {\n     localStorage.removeItem(\"token\");\n     localStorage.removeItem(\"role\");\n-    lo\n+    lolo\n     localStorage.clear();\n     \n     \n };\n"
+                },
+                {
+                    "date": 1738856122800,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n   const [userName, setUserName] = useState(null)\n   const handleLogout = () => {\n     localStorage.removeItem(\"token\");\n     localStorage.removeItem(\"role\");\n-    lolo\n+    localStorage.remove\n     localStorage.clear();\n     \n     \n };\n"
+                },
+                {
+                    "date": 1738856129218,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n   const [userName, setUserName] = useState(null)\n   const handleLogout = () => {\n     localStorage.removeItem(\"token\");\n     localStorage.removeItem(\"role\");\n-    localStorage.remove\n+    localStorage.removeItem()\n     localStorage.clear();\n     \n     \n };\n"
+                },
+                {
+                    "date": 1738856134671,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n   const [userName, setUserName] = useState(null)\n   const handleLogout = () => {\n     localStorage.removeItem(\"token\");\n     localStorage.removeItem(\"role\");\n-    localStorage.removeItem()\n+    localStorage.removeItem(\"username\")\n     localStorage.clear();\n     \n     \n };\n"
+                },
+                {
+                    "date": 1738856733750,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,11 +8,11 @@\n     localStorage.removeItem(\"token\");\n     localStorage.removeItem(\"role\");\n     localStorage.removeItem(\"username\");\n     localStorage.clear();\n+    s\n     \n     \n-    \n };\n   return (\n     <div style={{ display: \"flex\" }}>\n       <Sidebar />\n"
+                },
+                {
+                    "date": 1738859995408,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n     <div style={{ display: \"flex\" }}>\n       <Sidebar />\n       <div style={{ flexGrow: 1, padding: \"20px\" }}>\n         <h2>Dashboard</h2>\n-        \n+        <a\n         <button onClick={handleLogout}>Logout</button>\n         <DashboardWidgets />\n       </div>\n     </div>\n"
                 }
             ],
             "date": 1738167556454,
