@@ -60,10 +60,9 @@ function App() {
   const [paymentStatus, setPaymentStatus] = useState("");
   const [phoneNumber, setPhoneNumber] = useState();
   const [paymentId, setPaymentId] = useState("");
-  const [api, setApi] = useState("https://prod2-api.onrender.com");
+  const [api, setApi] = useState("http://localhost:5000");
  
   // https://prod2-api.onrender.com
-  // http://localhost:5000
 
   // Function to check screen size
   const handleResize = () => {
