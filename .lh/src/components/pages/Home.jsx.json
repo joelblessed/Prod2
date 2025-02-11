@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 73,
+            "activePatchIndex": 85,
             "patches": [
                 {
                     "date": 1738243293856,
@@ -300,6 +300,54 @@
                 {
                     "date": 1739223370465,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -104,9 +104,9 @@\n                       __html: highlightText(product.name, searchTerm),\n                     }}\n                   ></span>{\" \"}\n                 </h5>\n-                <h5>Description: {product.desc}{</h5>\n+                <h5>Description: {product.desc}{product}</h5>\n                 <h2>available:{inwishlist ? \"yes\": \"no\"}</h2>\n                 <h5>\n                   Price: {product.price}{\" \"}\n                   <button  style={{\n"
+                },
+                {
+                    "date": 1739261991125,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,9 @@\n   inwishlist,\n   handleShowAlert,\n   showAlert,\n   searchTerm,\n+  product\n   highlightText,\n }) => {\n const [product, setProducts] = useState(null);\n \n@@ -104,9 +105,9 @@\n                       __html: highlightText(product.name, searchTerm),\n                     }}\n                   ></span>{\" \"}\n                 </h5>\n-                <h5>Description: {product.desc}{product}</h5>\n+                <h5>Description: {product.desc}{product.id}</h5>\n                 <h2>available:{inwishlist ? \"yes\": \"no\"}</h2>\n                 <h5>\n                   Price: {product.price}{\" \"}\n                   <button  style={{\n"
+                },
+                {
+                    "date": 1739262011856,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n   inwishlist,\n   handleShowAlert,\n   showAlert,\n   searchTerm,\n-  product\n+  product,\n   highlightText,\n }) => {\n const [product, setProducts] = useState(null);\n \n"
+                },
+                {
+                    "date": 1739262038734,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,8 @@\n   inwishlist,\n   handleShowAlert,\n   showAlert,\n   searchTerm,\n-  product,\n   highlightText,\n }) => {\n const [product, setProducts] = useState(null);\n \n"
+                },
+                {
+                    "date": 1739262087082,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,8 +55,9 @@\n         style={{ marginTop: \"20px\", display: \"flex\", flexWrap: \"wrap\" }}\n       >\n         {filteredProducts.length > 0 ? (\n           filteredProducts.map((product) => (\n+            \n             <div\n               key={product.id}\n               style={{\n                 border: \"1px solid red\",\n"
+                },
+                {
+                    "date": 1739262143669,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,9 +55,9 @@\n         style={{ marginTop: \"20px\", display: \"flex\", flexWrap: \"wrap\" }}\n       >\n         {filteredProducts.length > 0 ? (\n           filteredProducts.map((product) => (\n-            \n+            localStorage.setItem(\"selectedProduct\",product);\n             <div\n               key={product.id}\n               style={{\n                 border: \"1px solid red\",\n"
+                },
+                {
+                    "date": 1739262196174,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,9 +55,9 @@\n         style={{ marginTop: \"20px\", display: \"flex\", flexWrap: \"wrap\" }}\n       >\n         {filteredProducts.length > 0 ? (\n           filteredProducts.map((product) => (\n-            localStorage.setItem(\"selectedProduct\",product);\n+           \n             <div\n               key={product.id}\n               style={{\n                 border: \"1px solid red\",\n"
+                },
+                {
+                    "date": 1739263239424,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -106,9 +106,9 @@\n                     }}\n                   ></span>{\" \"}\n                 </h5>\n                 <h5>Description: {product.desc}{product.id}</h5>\n-                <h2>available:{inwishlist ? \"yes\": \"no\"}</h2>\n+                <h2>available:{inwishlist}</h2>\n                 <h5>\n                   Price: {product.price}{\" \"}\n                   <button  style={{\n                       background: \"transparent\",\n"
+                },
+                {
+                    "date": 1739263284268,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -78,15 +78,9 @@\n                     borderRadius: \"10px\",\n                   }}\n                   // onClick={() => handleProductClick(product)}\n \n-                  onClick={() =>\n-                    toggleSelection(\n-                      product.id,\n-                      product.isSelected,\n-                      navigate(\"/selectedProduct\")\n-                    )\n-                  }\n+            \n                 />\n               ) : (\n                 <p>No image available</p>\n               )}\n"
+                },
+                {
+                    "date": 1739263527093,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,9 +76,9 @@\n                     height: \"300px\",\n                     objectFit: \"cover\",\n                     borderRadius: \"10px\",\n                   }}\n-                  // onClick={() => handleProductClick(product)}\n+                  onClick={() => handleProductClick(product)}\n \n             \n                 />\n               ) : (\n@@ -100,9 +100,9 @@\n                     }}\n                   ></span>{\" \"}\n                 </h5>\n                 <h5>Description: {product.desc}{product.id}</h5>\n-                <h2>available:{inwishlist}</h2>\n+               \n                 <h5>\n                   Price: {product.price}{\" \"}\n                   <button  style={{\n                       background: \"transparent\",\n"
+                },
+                {
+                    "date": 1739263535224,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -142,8 +142,9 @@\n         ) : (\n           <p>Loading...</p>\n         )}\n       </div>\n+      \n       {/* {product.isSelected ? \"Unselect\" : \"Select\"} */}\n     </>\n             \n   );\n"
+                },
+                {
+                    "date": 1739264261774,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -78,9 +78,15 @@\n                     borderRadius: \"10px\",\n                   }}\n                   // onClick={() => handleProductClick(product)}\n \n-            \n+                  onClick={() =>\n+                    toggleSelection(\n+                      product.id,\n+                      product.isSelected,\n+                      navigate(\"/selectedProduct\")\n+                    )\n+                  }\n                 />\n               ) : (\n                 <p>No image available</p>\n               )}\n"
+                },
+                {
+                    "date": 1739268164047,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,9 +46,9 @@\n         );\n       })\n       .catch((error) => console.error(\"Error updating product:\", error));\n   };\n-if (exists === null ? \"Checking...\" : exists ? \"Product Exists\" : \"Product Not Found\"<\n+if (exists === null ? \"Checking...\" : exists ? \"Product Exists\" : \"Product Not Found\"\n };) return<p>loading</p>\n   return (\n     <>\n       <div\n"
                 }
             ],
             "date": 1738243293856,
