@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/components/pages/brand.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1739471815621,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1739471825983,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-brand-section {\n+.brand-section {\n     margin-bottom: 30px;\n   }\n   \n   .product-list {\n"
+                },
+                {
+                    "date": 1739478762489,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,34 +1,59 @@\n-.brand-section {\n-    margin-bottom: 30px;\n-  }\n-  \n-  .product-list {\n+brand-bar {\n     display: flex;\n-    flex-wrap: wrap;\n+    gap: 20px;\n+    overflow-x: auto;\n+    padding: 10px;\n+    background: #f1f1f1;\n   }\n   \n-  .product-box {\n-    width: 200px;\n+  .brand-box {\n+    width: 150px;\n     padding: 10px;\n-    margin: 10px;\n     border: 1px solid #ddd;\n     text-align: center;\n+    background: #fff;\n   }\n   \n-  .product-box img {\n+  .brand-box img {\n     width: 100%;\n     height: auto;\n   }\n   \n   button {\n-    margin-top: 20px;\n-    padding: 10px;\n+    margin-top: 10px;\n+    padding: 8px;\n     background-color: #007bff;\n     color: white;\n     border: none;\n     cursor: pointer;\n   }\n   \n   button:hover {\n     background-color: #0056b3;\n+  }\n+  \n+  .nav-buttons {\n+    display: flex;\n+    justify-content: center;\n+    gap: 10px;\n+    margin-top: 20px;\n+  }\n+  \n+  .product-list {\n+    display: flex;\n+    flex-wrap: wrap;\n+    gap: 20px;\n+  }\n+  \n+  .product-box {\n+    width: 200px;\n+    padding: 10px;\n+    border: 1px solid #ddd;\n+    text-align: center;\n+    background: #fff;\n+  }\n+  \n+  .product-box img {\n+    width: 100%;\n+    height: auto;\n   }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1739478777933,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-brand-bar {\n+.brand-bar {\n     display: flex;\n     gap: 20px;\n     overflow-x: auto;\n     padding: 10px;\n"
+                }
+            ],
+            "date": 1739471815621,
+            "name": "Commit-0",
+            "content": "brand-section {\n    margin-bottom: 30px;\n  }\n  \n  .product-list {\n    display: flex;\n    flex-wrap: wrap;\n  }\n  \n  .product-box {\n    width: 200px;\n    padding: 10px;\n    margin: 10px;\n    border: 1px solid #ddd;\n    text-align: center;\n  }\n  \n  .product-box img {\n    width: 100%;\n    height: auto;\n  }\n  \n  button {\n    margin-top: 20px;\n    padding: 10px;\n    background-color: #007bff;\n    color: white;\n    border: none;\n    cursor: pointer;\n  }\n  \n  button:hover {\n    background-color: #0056b3;\n  }"
+        }
+    ]
+}

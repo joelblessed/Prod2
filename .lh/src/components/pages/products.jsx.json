@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 430,
+            "activePatchIndex": 574,
             "patches": [
                 {
                     "date": 1738114085333,
@@ -1728,6 +1728,582 @@
                 {
                     "date": 1739221483302,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -112,15 +112,9 @@\n                       __html: highlightText(product.name, searchTerm),\n                     }}\n                   ></span>{\" \"}\n                 </h5>\n-                <h5>Description: {product.desc}  onClick={() =>\n-                    toggleSelection(\n-                      product.id,\n-                      product.isSelected,\n-                      navigate(\"/selectedProduct\")\n-                    )\n-                  }\n+                <h5>Description: {product.desc}  \n                 </h5>\n                 <h5>\n                   Price: {product.price}{\" \"}\n                   <button  style={{\n"
+                },
+                {
+                    "date": 1739392439221,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n import { useNavigate } from \"react-router-dom\";\n import { AuthContext } from \"../../AuthContext\";\n import { useContext } from \"react\";\n \n+\n const Products = ({\n   api,\n   loading,\n   images,\n"
+                },
+                {
+                    "date": 1739392444680,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,10 +2,10 @@\n import \"./products.css\";\n import { useNavigate } from \"react-router-dom\";\n import { AuthContext } from \"../../AuthContext\";\n import { useContext } from \"react\";\n+i\n \n-\n const Products = ({\n   api,\n   loading,\n   images,\n"
+                },
+                {
+                    "date": 1739392452453,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import \"./products.css\";\n import { useNavigate } from \"react-router-dom\";\n import { AuthContext } from \"../../AuthContext\";\n import { useContext } from \"react\";\n-i\n+import {}\n \n const Products = ({\n   api,\n   loading,\n"
+                },
+                {
+                    "date": 1739392458370,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import \"./products.css\";\n import { useNavigate } from \"react-router-dom\";\n import { AuthContext } from \"../../AuthContext\";\n import { useContext } from \"react\";\n-import {}\n+import {useS}\n \n const Products = ({\n   api,\n   loading,\n"
+                },
+                {
+                    "date": 1739392467669,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import \"./products.css\";\n import { useNavigate } from \"react-router-dom\";\n import { AuthContext } from \"../../AuthContext\";\n import { useContext } from \"react\";\n-import {useS}\n+import { useSelector, } from \"react-redux\";\n \n const Products = ({\n   api,\n   loading,\n"
+                },
+                {
+                    "date": 1739392477695,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,10 +2,11 @@\n import \"./products.css\";\n import { useNavigate } from \"react-router-dom\";\n import { AuthContext } from \"../../AuthContext\";\n import { useContext } from \"react\";\n-import { useSelector, } from \"react-redux\";\n+import { useSelector, useDispatch } from \"react-redux\";\n \n+\n const Products = ({\n   api,\n   loading,\n   images,\n"
+                },
+                {
+                    "date": 1739392483163,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,10 @@\n import { useNavigate } from \"react-router-dom\";\n import { AuthContext } from \"../../AuthContext\";\n import { useContext } from \"react\";\n import { useSelector, useDispatch } from \"react-redux\";\n+import \n \n-\n const Products = ({\n   api,\n   loading,\n   images,\n"
+                },
+                {
+                    "date": 1739392488957,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { useNavigate } from \"react-router-dom\";\n import { AuthContext } from \"../../AuthContext\";\n import { useContext } from \"react\";\n import { useSelector, useDispatch } from \"react-redux\";\n-import \n+import {ad}\n \n const Products = ({\n   api,\n   loading,\n"
+                },
+                {
+                    "date": 1739392502254,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { useNavigate } from \"react-router-dom\";\n import { AuthContext } from \"../../AuthContext\";\n import { useContext } from \"react\";\n import { useSelector, useDispatch } from \"react-redux\";\n-import {ad}\n+import { addToCart  } from \"../../cartSlice\";\n \n const Products = ({\n   api,\n   loading,\n"
+                },
+                {
+                    "date": 1739392510281,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { useNavigate } from \"react-router-dom\";\n import { AuthContext } from \"../../AuthContext\";\n import { useContext } from \"react\";\n import { useSelector, useDispatch } from \"react-redux\";\n-import { addToCart  } from \"../../cartSlice\";\n+import { addToCart remove } from \"../../cartSlice\";\n \n const Products = ({\n   api,\n   loading,\n"
+                },
+                {
+                    "date": 1739392517637,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { useNavigate } from \"react-router-dom\";\n import { AuthContext } from \"../../AuthContext\";\n import { useContext } from \"react\";\n import { useSelector, useDispatch } from \"react-redux\";\n-import { addToCart remove } from \"../../cartSlice\";\n+import { addToCart removeFromCart } from \"../../cartSlice\";\n \n const Products = ({\n   api,\n   loading,\n"
+                },
+                {
+                    "date": 1739392522979,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { useNavigate } from \"react-router-dom\";\n import { AuthContext } from \"../../AuthContext\";\n import { useContext } from \"react\";\n import { useSelector, useDispatch } from \"react-redux\";\n-import { addToCart removeFromCart } from \"../../cartSlice\";\n+import { addToCart, removeFromCart } from \"../../cartSlice\";\n \n const Products = ({\n   api,\n   loading,\n"
+                },
+                {
+                    "date": 1739392555266,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,8 +23,9 @@\n   const [currentIndex, setCurrentIndex] = useState(0);\n   const [products, setProducts] = useState([]);\n \n \n+  \n   const navigate = useNavigate();\n   const handleProductClick = (product) => {\n     setSelectedProduct(product);\n     localStorage.setItem(\"selectedProduct\",product);\n"
+                },
+                {
+                    "date": 1739392565219,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,10 +22,10 @@\n }) => {\n   const [currentIndex, setCurrentIndex] = useState(0);\n   const [products, setProducts] = useState([]);\n \n+const cart\n \n-  \n   const navigate = useNavigate();\n   const handleProductClick = (product) => {\n     setSelectedProduct(product);\n     localStorage.setItem(\"selectedProduct\",product);\n"
+                },
+                {
+                    "date": 1739392574686,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n }) => {\n   const [currentIndex, setCurrentIndex] = useState(0);\n   const [products, setProducts] = useState([]);\n \n-const cart\n+const cart =\n \n   const navigate = useNavigate();\n   const handleProductClick = (product) => {\n     setSelectedProduct(product);\n"
+                },
+                {
+                    "date": 1739392581887,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n }) => {\n   const [currentIndex, setCurrentIndex] = useState(0);\n   const [products, setProducts] = useState([]);\n \n-const cart =\n+const cart = uses\n \n   const navigate = useNavigate();\n   const handleProductClick = (product) => {\n     setSelectedProduct(product);\n"
+                },
+                {
+                    "date": 1739392591113,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n }) => {\n   const [currentIndex, setCurrentIndex] = useState(0);\n   const [products, setProducts] = useState([]);\n \n-const cart = uses\n+const cart = useSelector(state)\n \n   const navigate = useNavigate();\n   const handleProductClick = (product) => {\n     setSelectedProduct(product);\n"
+                },
+                {
+                    "date": 1739392599148,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n }) => {\n   const [currentIndex, setCurrentIndex] = useState(0);\n   const [products, setProducts] = useState([]);\n \n-const cart = useSelector(state)\n+const cart = useSelector(state => state)\n \n   const navigate = useNavigate();\n   const handleProductClick = (product) => {\n     setSelectedProduct(product);\n"
+                },
+                {
+                    "date": 1739392605081,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n }) => {\n   const [currentIndex, setCurrentIndex] = useState(0);\n   const [products, setProducts] = useState([]);\n \n-const cart = useSelector(state => state)\n+const cart = useSelector(state => state.cart)\n \n   const navigate = useNavigate();\n   const handleProductClick = (product) => {\n     setSelectedProduct(product);\n"
+                },
+                {
+                    "date": 1739392614236,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n }) => {\n   const [currentIndex, setCurrentIndex] = useState(0);\n   const [products, setProducts] = useState([]);\n \n-const cart = useSelector(state => state.cart)\n+const cart = useSelector(state => state.cart.item)\n \n   const navigate = useNavigate();\n   const handleProductClick = (product) => {\n     setSelectedProduct(product);\n"
+                },
+                {
+                    "date": 1739392654853,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,10 +22,11 @@\n }) => {\n   const [currentIndex, setCurrentIndex] = useState(0);\n   const [products, setProducts] = useState([]);\n \n-const cart = useSelector(state => state.cart.item)\n+const cart = useSelector(state => state.cart.item);\n \n+\n   const navigate = useNavigate();\n   const handleProductClick = (product) => {\n     setSelectedProduct(product);\n     localStorage.setItem(\"selectedProduct\",product);\n"
+                },
+                {
+                    "date": 1739392660621,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,10 +23,10 @@\n   const [currentIndex, setCurrentIndex] = useState(0);\n   const [products, setProducts] = useState([]);\n \n const cart = useSelector(state => state.cart.item);\n+const\n \n-\n   const navigate = useNavigate();\n   const handleProductClick = (product) => {\n     setSelectedProduct(product);\n     localStorage.setItem(\"selectedProduct\",product);\n"
+                },
+                {
+                    "date": 1739392666287,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n   const [currentIndex, setCurrentIndex] = useState(0);\n   const [products, setProducts] = useState([]);\n \n const cart = useSelector(state => state.cart.item);\n-const\n+const dispatch\n \n   const navigate = useNavigate();\n   const handleProductClick = (product) => {\n     setSelectedProduct(product);\n"
+                },
+                {
+                    "date": 1739392671442,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n   const [currentIndex, setCurrentIndex] = useState(0);\n   const [products, setProducts] = useState([]);\n \n const cart = useSelector(state => state.cart.item);\n-const dispatch\n+const dispatch = \n \n   const navigate = useNavigate();\n   const handleProductClick = (product) => {\n     setSelectedProduct(product);\n"
+                },
+                {
+                    "date": 1739392678635,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n   const [currentIndex, setCurrentIndex] = useState(0);\n   const [products, setProducts] = useState([]);\n \n const cart = useSelector(state => state.cart.item);\n-const dispatch = \n+const dispatch = useContext\n \n   const navigate = useNavigate();\n   const handleProductClick = (product) => {\n     setSelectedProduct(product);\n"
+                },
+                {
+                    "date": 1739392684828,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n   const [currentIndex, setCurrentIndex] = useState(0);\n   const [products, setProducts] = useState([]);\n \n const cart = useSelector(state => state.cart.item);\n-const dispatch = useContext\n+const dispatch = useDispatch\n \n   const navigate = useNavigate();\n   const handleProductClick = (product) => {\n     setSelectedProduct(product);\n"
+                },
+                {
+                    "date": 1739392716348,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,10 +22,10 @@\n }) => {\n   const [currentIndex, setCurrentIndex] = useState(0);\n   const [products, setProducts] = useState([]);\n \n-const cart = useSelector(state => state.cart.item);\n-const dispatch = useDispatch\n+const cart = useSelector(state => state.fil.item);\n+const dispatch = useDispatch()\n \n   const navigate = useNavigate();\n   const handleProductClick = (product) => {\n     setSelectedProduct(product);\n"
+                },
+                {
+                    "date": 1739392746172,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n }) => {\n   const [currentIndex, setCurrentIndex] = useState(0);\n   const [products, setProducts] = useState([]);\n \n-const cart = useSelector(state => state.fil.item);\n+const cart = useSelector(state => state.filteredProducts.);\n const dispatch = useDispatch()\n \n   const navigate = useNavigate();\n   const handleProductClick = (product) => {\n"
+                },
+                {
+                    "date": 1739392785500,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n }) => {\n   const [currentIndex, setCurrentIndex] = useState(0);\n   const [products, setProducts] = useState([]);\n \n-const cart = useSelector(state => state.filteredProducts.);\n+const cart = useSelector(state => state.filteredProducts.products);\n const dispatch = useDispatch()\n \n   const navigate = useNavigate();\n   const handleProductClick = (product) => {\n@@ -147,9 +147,9 @@\n                       fontSize: \"100%\",\n                       transition: \"all 0.3s ease\",\n                       width: \"100%\",\n                     }}\n-                    onClick={() => addToCart(product)}\n+                    // onClick={() => addToCart(product)}\n                   >\n                     addToCart\n                   </button>\n               \n"
+                },
+                {
+                    "date": 1739392797882,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -148,8 +148,9 @@\n                       transition: \"all 0.3s ease\",\n                       width: \"100%\",\n                     }}\n                     // onClick={() => addToCart(product)}\n+                    onclic\n                   >\n                     addToCart\n                   </button>\n               \n"
+                },
+                {
+                    "date": 1739392803413,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -148,9 +148,9 @@\n                       transition: \"all 0.3s ease\",\n                       width: \"100%\",\n                     }}\n                     // onClick={() => addToCart(product)}\n-                    onclic\n+                    onClick={()}\n                   >\n                     addToCart\n                   </button>\n               \n"
+                },
+                {
+                    "date": 1739392809242,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -148,9 +148,9 @@\n                       transition: \"all 0.3s ease\",\n                       width: \"100%\",\n                     }}\n                     // onClick={() => addToCart(product)}\n-                    onClick={()}\n+                    onClick={() => }\n                   >\n                     addToCart\n                   </button>\n               \n"
+                },
+                {
+                    "date": 1739392817706,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -148,9 +148,9 @@\n                       transition: \"all 0.3s ease\",\n                       width: \"100%\",\n                     }}\n                     // onClick={() => addToCart(product)}\n-                    onClick={() => }\n+                    onClick={() => dispatch()}\n                   >\n                     addToCart\n                   </button>\n               \n"
+                },
+                {
+                    "date": 1739392828744,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -148,9 +148,9 @@\n                       transition: \"all 0.3s ease\",\n                       width: \"100%\",\n                     }}\n                     // onClick={() => addToCart(product)}\n-                    onClick={() => dispatch()}\n+                    onClick={() => dispatch(removeFromCart())}\n                   >\n                     addToCart\n                   </button>\n               \n"
+                },
+                {
+                    "date": 1739392840644,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -148,9 +148,9 @@\n                       transition: \"all 0.3s ease\",\n                       width: \"100%\",\n                     }}\n                     // onClick={() => addToCart(product)}\n-                    onClick={() => dispatch(removeFromCart())}\n+                    onClick={() => dispatch(removeFromCart(product.))}\n                   >\n                     addToCart\n                   </button>\n               \n"
+                },
+                {
+                    "date": 1739393032366,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -148,9 +148,9 @@\n                       transition: \"all 0.3s ease\",\n                       width: \"100%\",\n                     }}\n                     // onClick={() => addToCart(product)}\n-                    onClick={() => dispatch(removeFromCart(product.))}\n+                    \n                   >\n                     addToCart\n                   </button>\n               \n"
+                },
+                {
+                    "date": 1739395087480,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n       >\n         {filteredProducts.length > 0 ? (\n           filteredProducts.map((product) => (\n             <div\n-              key={product.id}\n+              key={produ}\n               style={{\n                 border: \"1px solid red\",\n                 borderRadius: \"10px\",\n                 maxWidth: \"400px\",\n@@ -147,9 +147,9 @@\n                       fontSize: \"100%\",\n                       transition: \"all 0.3s ease\",\n                       width: \"100%\",\n                     }}\n-                    // onClick={() => addToCart(product)}\n+                    onClick={() => addToCart(product)}\n                     \n                   >\n                     addToCart\n                   </button>\n"
+                },
+                {
+                    "date": 1739395096111,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n       >\n         {filteredProducts.length > 0 ? (\n           filteredProducts.map((product) => (\n             <div\n-              key={produ}\n+              key={}\n               style={{\n                 border: \"1px solid red\",\n                 borderRadius: \"10px\",\n                 maxWidth: \"400px\",\n"
+                },
+                {
+                    "date": 1739395106305,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,11 +65,11 @@\n         className=\"\"\n         style={{ marginTop: \"20px\", display: \"flex\", flexWrap: \"wrap\" }}\n       >\n         {filteredProducts.length > 0 ? (\n-          filteredProducts.map((product) => (\n+          filteredProducts.map((product, index) => (\n             <div\n-              key={}\n+              key={index}\n               style={{\n                 border: \"1px solid red\",\n                 borderRadius: \"10px\",\n                 maxWidth: \"400px\",\n"
+                },
+                {
+                    "date": 1739395212849,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,10 +22,10 @@\n }) => {\n   const [currentIndex, setCurrentIndex] = useState(0);\n   const [products, setProducts] = useState([]);\n \n-const cart = useSelector(state => state.filteredProducts.products);\n-const dispatch = useDispatch()\n+// const cart = useSelector(state => state.filteredProducts.products);\n+// const dispatch = useDispatch()\n \n   const navigate = useNavigate();\n   const handleProductClick = (product) => {\n     setSelectedProduct(product);\n"
+                },
+                {
+                    "date": 1739409017020,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,9 +61,9 @@\n  \n   return (\n     <>\n       <div\n-        className=\"\"\n+        className=\"box1\"\n         style={{ marginTop: \"20px\", display: \"flex\", flexWrap: \"wrap\" }}\n       >\n         {filteredProducts.length > 0 ? (\n           filteredProducts.map((product, index) => (\n"
+                },
+                {
+                    "date": 1739409314287,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,9 +66,9 @@\n         style={{ marginTop: \"20px\", display: \"flex\", flexWrap: \"wrap\" }}\n       >\n         {filteredProducts.length > 0 ? (\n           filteredProducts.map((product, index) => (\n-            <div\n+            <div className=\"\"\n               key={index}\n               style={{\n                 border: \"1px solid red\",\n                 borderRadius: \"10px\",\n"
+                },
+                {
+                    "date": 1739409623804,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,16 +66,17 @@\n         style={{ marginTop: \"20px\", display: \"flex\", flexWrap: \"wrap\" }}\n       >\n         {filteredProducts.length > 0 ? (\n           filteredProducts.map((product, index) => (\n-            <div className=\"\"\n+            <div className=\"box2\"\n               key={index}\n               style={{\n                 border: \"1px solid red\",\n                 borderRadius: \"10px\",\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n                 margin: \"15px\",\n+                \n               }}\n             >\n               {product.images.length > 0 ? (\n                 <img\n"
+                },
+                {
+                    "date": 1739409629264,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -74,9 +74,9 @@\n                 borderRadius: \"10px\",\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n                 margin: \"15px\",\n-                \n+                margin\n               }}\n             >\n               {product.images.length > 0 ? (\n                 <img\n"
+                },
+                {
+                    "date": 1739409635104,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -74,9 +74,9 @@\n                 borderRadius: \"10px\",\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n                 margin: \"15px\",\n-                margin\n+                marginTop\n               }}\n             >\n               {product.images.length > 0 ? (\n                 <img\n"
+                },
+                {
+                    "date": 1739409641716,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -74,9 +74,9 @@\n                 borderRadius: \"10px\",\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n                 margin: \"15px\",\n-                marginTop\n+                marginTop:40px\n               }}\n             >\n               {product.images.length > 0 ? (\n                 <img\n"
+                },
+                {
+                    "date": 1739409648123,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -74,9 +74,9 @@\n                 borderRadius: \"10px\",\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n                 margin: \"15px\",\n-                marginTop:40px\n+                marginTop:\"\"\n               }}\n             >\n               {product.images.length > 0 ? (\n                 <img\n"
+                },
+                {
+                    "date": 1739409657822,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,171 @@\n+import React, { useEffect, useState } from \"react\";\n+import \"./products.css\";\n+import { useNavigate } from \"react-router-dom\";\n+import { AuthContext } from \"../../AuthContext\";\n+import { useContext } from \"react\";\n+import { useSelector, useDispatch } from \"react-redux\";\n+import { addToCart, removeFromCart } from \"../../cartSlice\";\n+\n+const Products = ({\n+  api,\n+  loading,\n+  images,\n+  filteredProducts,\n+  setSelectedProduct,\n+  addToCart,\n+  addTowishList,\n+  handleShowAlert,\n+  showAlert,\n+  searchTerm,\n+  highlightText,\n+  Fortop,\n+}) => {\n+  const [currentIndex, setCurrentIndex] = useState(0);\n+  const [products, setProducts] = useState([]);\n+\n+// const cart = useSelector(state => state.filteredProducts.products);\n+// const dispatch = useDispatch()\n+\n+  const navigate = useNavigate();\n+  const handleProductClick = (product) => {\n+    setSelectedProduct(product);\n+    localStorage.setItem(\"selectedProduct\",product);\n+    navigate(\"/selectedProduct\");\n+  };\n+  const nextImage = () => {\n+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);\n+  };\n+\n+  // Toggle the selection state of a product\n+  const toggleSelection = (id, currentSelection) => {\n+    // Update the product on the server using PATCH\n+    fetch(`${api}/updateProducts/${id}`, {\n+      method: \"PATCH\",\n+      headers: {\n+        \"Content-Type\": \"application/json\",\n+      },\n+      body: JSON.stringify({ isSelected: !currentSelection }),\n+    })\n+      .then((response) => response.json())\n+      .then((updatedProduct) => {\n+        // Update the local state to reflect the change\n+        setProducts((prevProducts) =>\n+          prevProducts.map((product) =>\n+            product.id === id ? updatedProduct : product\n+          )\n+        );\n+      })\n+      .catch((error) => console.error(\"Error updating product:\", error));\n+  };\n+\n+ \n+  return (\n+    <>\n+      <div\n+        className=\"box1\"\n+        style={{ marginTop: \"20px\", display: \"flex\", flexWrap: \"wrap\" }}\n+      >\n+        {filteredProducts.length > 0 ? (\n+          filteredProducts.map((product, index) => (\n+            <div className=\"box2\"\n+              key={index}\n+              style={{\n+                border: \"1px solid red\",\n+                borderRadius: \"10px\",\n+                maxWidth: \"400px\",\n+                maxHeight: \"600px\",\n+                margin: \"15px\",\n+                marginTop:\"40px\",\n+              }}\n+            >\n+              {product.images.length > 0 ? (\n+                <img\n+                  src={product.images[0]} // Display first image only\n+                  alt={product.name}\n+                  style={{\n+                    width: \"300px\",\n+                    height: \"300px\",\n+                    objectFit: \"cover\",\n+                    borderRadius: \"10px\",\n+                  }}\n+                  onClick={() => handleProductClick(product)}\n+\n+                  // onClick={() =>\n+                  //   toggleSelection(\n+                  //     product.id,\n+                  //     product.isSelected,\n+                  //     navigate(\"/selectedProduct\")\n+                  //   )\n+                  // }\n+                />\n+                \n+              ) : (\n+                <p>No image available</p>\n+              )}\n+              <span\n+                className=\"text\"\n+                style={{\n+                  background:\n+                    \" linear-gradient(-45deg,RED 33%, #feb47b 33%, #86a8e7 66%, #91eae4 66%)\",\n+                    borderRadius:\"10PX\"\n+                }}\n+              >\n+                <h5 className=\"name\">\n+                  <span\n+                    style={{ color: \"black\" }}\n+                    dangerouslySetInnerHTML={{\n+                      __html: highlightText(product.name, searchTerm),\n+                    }}\n+                  ></span>{\" \"}\n+                </h5>\n+                <h5>Description: {product.desc}  \n+                </h5>\n+                <h5>\n+                  Price: {product.price}{\" \"}\n+                  <button  style={{\n+                      background: \"transparent\",\n+                      border: \"1px solid orange\",\n+                      color: \"orange\",\n+                      padding: \"0px 20px\",\n+                      borderRadius: \"10px 10px 10px 10px \",\n+                      cursor: \"pointer\",\n+                      fontSize: \"40px\",\n+                      fontWeight:\"bold\",\n+                      transition: \"all 0.3s ease\",\n+                      marginLeft:\"140px\"\n+                      \n+                    }} onClick={() => addTowishList(product)}>+</button>\n+                </h5>\n+                <div style={{ background: \"\" }}>\n+                  <button\n+                    style={{\n+                      background: \"white\",\n+                      border: \"1px solid RED\",\n+                      color: \"red\",\n+                      padding: \"10px 20px\",\n+                      borderRadius: \"0px 0px 10px 10px \",\n+                      cursor: \"pointer\",\n+                      fontSize: \"100%\",\n+                      transition: \"all 0.3s ease\",\n+                      width: \"100%\",\n+                    }}\n+                    onClick={() => addToCart(product)}\n+                    \n+                  >\n+                    addToCart\n+                  </button>\n+              \n+                </div>\n+              </span>\n+            </div>\n+          ))\n+        ) : (\n+          <p>Loading...</p>\n+        )}\n+      </div>\n+      {/* {product.isSelected ? \"Unselect\" : \"Select\"} */}\n+    </>\n+  );\n+};\n+\n+export default Products;\n"
+                },
+                {
+                    "date": 1739409681563,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -74,9 +74,9 @@\n                 borderRadius: \"10px\",\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n                 margin: \"15px\",\n-                marginTop:\"40px\",\n+                marginTop:\"60px\",\n               }}\n             >\n               {product.images.length > 0 ? (\n                 <img\n@@ -168,175 +168,4 @@\n   );\n };\n \n export default Products;\n-import React, { useEffect, useState } from \"react\";\n-import \"./products.css\";\n-import { useNavigate } from \"react-router-dom\";\n-import { AuthContext } from \"../../AuthContext\";\n-import { useContext } from \"react\";\n-import { useSelector, useDispatch } from \"react-redux\";\n-import { addToCart, removeFromCart } from \"../../cartSlice\";\n-\n-const Products = ({\n-  api,\n-  loading,\n-  images,\n-  filteredProducts,\n-  setSelectedProduct,\n-  addToCart,\n-  addTowishList,\n-  handleShowAlert,\n-  showAlert,\n-  searchTerm,\n-  highlightText,\n-  Fortop,\n-}) => {\n-  const [currentIndex, setCurrentIndex] = useState(0);\n-  const [products, setProducts] = useState([]);\n-\n-// const cart = useSelector(state => state.filteredProducts.products);\n-// const dispatch = useDispatch()\n-\n-  const navigate = useNavigate();\n-  const handleProductClick = (product) => {\n-    setSelectedProduct(product);\n-    localStorage.setItem(\"selectedProduct\",product);\n-    navigate(\"/selectedProduct\");\n-  };\n-  const nextImage = () => {\n-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);\n-  };\n-\n-  // Toggle the selection state of a product\n-  const toggleSelection = (id, currentSelection) => {\n-    // Update the product on the server using PATCH\n-    fetch(`${api}/updateProducts/${id}`, {\n-      method: \"PATCH\",\n-      headers: {\n-        \"Content-Type\": \"application/json\",\n-      },\n-      body: JSON.stringify({ isSelected: !currentSelection }),\n-    })\n-      .then((response) => response.json())\n-      .then((updatedProduct) => {\n-        // Update the local state to reflect the change\n-        setProducts((prevProducts) =>\n-          prevProducts.map((product) =>\n-            product.id === id ? updatedProduct : product\n-          )\n-        );\n-      })\n-      .catch((error) => console.error(\"Error updating product:\", error));\n-  };\n-\n- \n-  return (\n-    <>\n-      <div\n-        className=\"box1\"\n-        style={{ marginTop: \"20px\", display: \"flex\", flexWrap: \"wrap\" }}\n-      >\n-        {filteredProducts.length > 0 ? (\n-          filteredProducts.map((product, index) => (\n-            <div className=\"box2\"\n-              key={index}\n-              style={{\n-                border: \"1px solid red\",\n-                borderRadius: \"10px\",\n-                maxWidth: \"400px\",\n-                maxHeight: \"600px\",\n-                margin: \"15px\",\n-                marginTop:\"\"\n-              }}\n-            >\n-              {product.images.length > 0 ? (\n-                <img\n-                  src={product.images[0]} // Display first image only\n-                  alt={product.name}\n-                  style={{\n-                    width: \"300px\",\n-                    height: \"300px\",\n-                    objectFit: \"cover\",\n-                    borderRadius: \"10px\",\n-                  }}\n-                  onClick={() => handleProductClick(product)}\n-\n-                  // onClick={() =>\n-                  //   toggleSelection(\n-                  //     product.id,\n-                  //     product.isSelected,\n-                  //     navigate(\"/selectedProduct\")\n-                  //   )\n-                  // }\n-                />\n-                \n-              ) : (\n-                <p>No image available</p>\n-              )}\n-              <span\n-                className=\"text\"\n-                style={{\n-                  background:\n-                    \" linear-gradient(-45deg,RED 33%, #feb47b 33%, #86a8e7 66%, #91eae4 66%)\",\n-                    borderRadius:\"10PX\"\n-                }}\n-              >\n-                <h5 className=\"name\">\n-                  <span\n-                    style={{ color: \"black\" }}\n-                    dangerouslySetInnerHTML={{\n-                      __html: highlightText(product.name, searchTerm),\n-                    }}\n-                  ></span>{\" \"}\n-                </h5>\n-                <h5>Description: {product.desc}  \n-                </h5>\n-                <h5>\n-                  Price: {product.price}{\" \"}\n-                  <button  style={{\n-                      background: \"transparent\",\n-                      border: \"1px solid orange\",\n-                      color: \"orange\",\n-                      padding: \"0px 20px\",\n-                      borderRadius: \"10px 10px 10px 10px \",\n-                      cursor: \"pointer\",\n-                      fontSize: \"40px\",\n-                      fontWeight:\"bold\",\n-                      transition: \"all 0.3s ease\",\n-                      marginLeft:\"140px\"\n-                      \n-                    }} onClick={() => addTowishList(product)}>+</button>\n-                </h5>\n-                <div style={{ background: \"\" }}>\n-                  <button\n-                    style={{\n-                      background: \"white\",\n-                      border: \"1px solid RED\",\n-                      color: \"red\",\n-                      padding: \"10px 20px\",\n-                      borderRadius: \"0px 0px 10px 10px \",\n-                      cursor: \"pointer\",\n-                      fontSize: \"100%\",\n-                      transition: \"all 0.3s ease\",\n-                      width: \"100%\",\n-                    }}\n-                    onClick={() => addToCart(product)}\n-                    \n-                  >\n-                    addToCart\n-                  </button>\n-              \n-                </div>\n-              </span>\n-            </div>\n-          ))\n-        ) : (\n-          <p>Loading...</p>\n-        )}\n-      </div>\n-      {/* {product.isSelected ? \"Unselect\" : \"Select\"} */}\n-    </>\n-  );\n-};\n-\n-export default Products;\n"
+                },
+                {
+                    "date": 1739409690701,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -74,9 +74,9 @@\n                 borderRadius: \"10px\",\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n                 margin: \"15px\",\n-                marginTop:\"60px\",\n+                marginTop:\"80px\",\n               }}\n             >\n               {product.images.length > 0 ? (\n                 <img\n"
+                },
+                {
+                    "date": 1739410427594,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,8 +75,9 @@\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n                 margin: \"15px\",\n                 marginTop:\"80px\",\n+                \n               }}\n             >\n               {product.images.length > 0 ? (\n                 <img\n"
+                },
+                {
+                    "date": 1739410436025,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,9 @@\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n                 margin: \"15px\",\n                 marginTop:\"80px\",\n-                \n+                margine\n               }}\n             >\n               {product.images.length > 0 ? (\n                 <img\n"
+                },
+                {
+                    "date": 1739410443383,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,9 @@\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n                 margin: \"15px\",\n                 marginTop:\"80px\",\n-                margine\n+                marginRight;\"\"\n               }}\n             >\n               {product.images.length > 0 ? (\n                 <img\n"
+                },
+                {
+                    "date": 1739410449656,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,9 @@\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n                 margin: \"15px\",\n                 marginTop:\"80px\",\n-                marginRight;\"\"\n+                marginRight:\"auto\"\n               }}\n             >\n               {product.images.length > 0 ? (\n                 <img\n"
+                },
+                {
+                    "date": 1739410460067,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,9 @@\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n                 margin: \"15px\",\n                 marginTop:\"80px\",\n-                marginRight:\"auto\"\n+                marginRight:\"auto\";\n               }}\n             >\n               {product.images.length > 0 ? (\n                 <img\n"
+                },
+                {
+                    "date": 1739410527991,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -73,11 +73,11 @@\n                 border: \"1px solid red\",\n                 borderRadius: \"10px\",\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n-                margin: \"15px\",\n+                margin: \"1px\",\n                 marginTop:\"80px\",\n-                marginRight:\"auto\";\n+                marginRight:\"auto\",\n               }}\n             >\n               {product.images.length > 0 ? (\n                 <img\n"
+                },
+                {
+                    "date": 1739410564264,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -73,11 +73,11 @@\n                 border: \"1px solid red\",\n                 borderRadius: \"10px\",\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n-                margin: \"1px\",\n+                margin: \"10px\",\n                 marginTop:\"80px\",\n-                marginRight:\"auto\",\n+                marginRight:\" auto\",\n               }}\n             >\n               {product.images.length > 0 ? (\n                 <img\n"
+                },
+                {
+                    "date": 1739410569670,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,9 @@\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n-                marginRight:\" auto\",\n+                marginRight:\" 20px auto\",\n               }}\n             >\n               {product.images.length > 0 ? (\n                 <img\n"
+                },
+                {
+                    "date": 1739410583018,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,9 @@\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n-                marginRight:\" 20px auto\",\n+                marginRight:\" auto\",\n               }}\n             >\n               {product.images.length > 0 ? (\n                 <img\n"
+                },
+                {
+                    "date": 1739410603559,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,9 @@\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n-                marginRight:\" auto\",\n+                j\n               }}\n             >\n               {product.images.length > 0 ? (\n                 <img\n"
+                },
+                {
+                    "date": 1739410610868,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,9 @@\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n-                j\n+                justifyContent:\"center\"\n               }}\n             >\n               {product.images.length > 0 ? (\n                 <img\n"
+                },
+                {
+                    "date": 1739410627755,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,10 @@\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n-                justifyContent:\"center\"\n+                justifyContent:\"center\",\n+                c\n               }}\n             >\n               {product.images.length > 0 ? (\n                 <img\n"
+                },
+                {
+                    "date": 1739410634850,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,9 +76,9 @@\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n                 justifyContent:\"center\",\n-                c\n+                cal\n               }}\n             >\n               {product.images.length > 0 ? (\n                 <img\n"
+                },
+                {
+                    "date": 1739410640057,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,9 +76,9 @@\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n                 justifyContent:\"center\",\n-                cal\n+                alignContent\n               }}\n             >\n               {product.images.length > 0 ? (\n                 <img\n"
+                },
+                {
+                    "date": 1739410645312,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,9 +76,9 @@\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n                 justifyContent:\"center\",\n-                alignContent\n+                alignContent:'center'\n               }}\n             >\n               {product.images.length > 0 ? (\n                 <img\n"
+                },
+                {
+                    "date": 1739410667024,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,10 +75,9 @@\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n-                justifyContent:\"center\",\n-                alignContent:'center'\n+                \n               }}\n             >\n               {product.images.length > 0 ? (\n                 <img\n"
+                },
+                {
+                    "date": 1739410677506,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,9 @@\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n-                \n+                marginL\n               }}\n             >\n               {product.images.length > 0 ? (\n                 <img\n"
+                },
+                {
+                    "date": 1739410686114,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,9 @@\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n-                marginL\n+                marginLeft:\"\"\n               }}\n             >\n               {product.images.length > 0 ? (\n                 <img\n"
+                },
+                {
+                    "date": 1739410692374,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,9 @@\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n-                marginLeft:\"\"\n+                marginLeft:\"10px\".\n               }}\n             >\n               {product.images.length > 0 ? (\n                 <img\n"
+                },
+                {
+                    "date": 1739410698103,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,10 @@\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n-                marginLeft:\"10px\".\n+                marginLeft:\"10px\",\n+                margin\n               }}\n             >\n               {product.images.length > 0 ? (\n                 <img\n"
+                },
+                {
+                    "date": 1739410706762,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,9 +76,9 @@\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n                 marginLeft:\"10px\",\n-                margin\n+                marginRight:\"\"\n               }}\n             >\n               {product.images.length > 0 ? (\n                 <img\n"
+                },
+                {
+                    "date": 1739410729232,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,9 +76,9 @@\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n                 marginLeft:\"10px\",\n-                marginRight:\"\"\n+                marginRight:\"0px\"\n               }}\n             >\n               {product.images.length > 0 ? (\n                 <img\n"
+                },
+                {
+                    "date": 1739410738846,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,9 @@\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n-                marginLeft:\"10px\",\n+                marginLeft:\"40px\",\n                 marginRight:\"0px\"\n               }}\n             >\n               {product.images.length > 0 ? (\n"
+                },
+                {
+                    "date": 1739410755532,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,9 +76,9 @@\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n                 marginLeft:\"40px\",\n-                marginRight:\"0px\"\n+                marginRight:\"40px\"\n               }}\n             >\n               {product.images.length > 0 ? (\n                 <img\n"
+                },
+                {
+                    "date": 1739410762032,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,9 +76,9 @@\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n                 marginLeft:\"40px\",\n-                marginRight:\"40px\"\n+                marginRight:\"-40px\"\n               }}\n             >\n               {product.images.length > 0 ? (\n                 <img\n"
+                },
+                {
+                    "date": 1739410775465,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,9 @@\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n-                marginLeft:\"40px\",\n+                marginLeft:\"70px\",\n                 marginRight:\"-40px\"\n               }}\n             >\n               {product.images.length > 0 ? (\n"
+                },
+                {
+                    "date": 1739410788445,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,9 @@\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n-                marginLeft:\"70px\",\n+                marginLeft:\"90px\",\n                 marginRight:\"-40px\"\n               }}\n             >\n               {product.images.length > 0 ? (\n"
+                },
+                {
+                    "date": 1739410793911,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,9 @@\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n-                marginLeft:\"90px\",\n+0px\",\n                 marginRight:\"-40px\"\n               }}\n             >\n               {product.images.length > 0 ? (\n"
+                },
+                {
+                    "date": 1739410799926,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,9 @@\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n-0px\",\n+                marginLeft:\"80px\",\n                 marginRight:\"-40px\"\n               }}\n             >\n               {product.images.length > 0 ? (\n"
+                },
+                {
+                    "date": 1739410806882,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,9 @@\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n-                marginLeft:\"80px\",\n+                marginLeft:\"85px\",\n                 marginRight:\"-40px\"\n               }}\n             >\n               {product.images.length > 0 ? (\n"
+                },
+                {
+                    "date": 1739410827121,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,9 +76,9 @@\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n                 marginLeft:\"85px\",\n-                marginRight:\"-40px\"\n+                marginRight:\"-4px\"\n               }}\n             >\n               {product.images.length > 0 ? (\n                 <img\n"
+                },
+                {
+                    "date": 1739410841660,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,9 +76,9 @@\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n                 marginLeft:\"85px\",\n-                marginRight:\"-4px\"\n+                marginRight:\"--px\"\n               }}\n             >\n               {product.images.length > 0 ? (\n                 <img\n"
+                },
+                {
+                    "date": 1739410847170,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,9 +76,9 @@\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n                 marginLeft:\"85px\",\n-                marginRight:\"--px\"\n+                marginRight:\"-85px\"\n               }}\n             >\n               {product.images.length > 0 ? (\n                 <img\n"
+                },
+                {
+                    "date": 1739410882511,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,9 +76,9 @@\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n                 marginLeft:\"85px\",\n-                marginRight:\"-85px\"\n+                marginRight:\"85px\"\n               }}\n             >\n               {product.images.length > 0 ? (\n                 <img\n"
+                },
+                {
+                    "date": 1739410892997,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,9 +76,9 @@\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n                 marginLeft:\"85px\",\n-                marginRight:\"85px\"\n+                marginRight:\"5px\"\n               }}\n             >\n               {product.images.length > 0 ? (\n                 <img\n"
+                },
+                {
+                    "date": 1739410899173,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,9 +76,9 @@\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n                 marginLeft:\"85px\",\n-                marginRight:\"5px\"\n+                marginRight:\"-px\"\n               }}\n             >\n               {product.images.length > 0 ? (\n                 <img\n"
+                },
+                {
+                    "date": 1739410909762,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,9 +76,9 @@\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n                 marginLeft:\"85px\",\n-                marginRight:\"-px\"\n+                marginRight:\"-70px\"\n               }}\n             >\n               {product.images.length > 0 ? (\n                 <img\n"
+                },
+                {
+                    "date": 1739410920971,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,9 +76,9 @@\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n                 marginLeft:\"85px\",\n-                marginRight:\"-70px\"\n+                marginRight:\"-85px\"\n               }}\n             >\n               {product.images.length > 0 ? (\n                 <img\n"
+                },
+                {
+                    "date": 1739410936018,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -73,9 +73,9 @@\n                 border: \"1px solid red\",\n                 borderRadius: \"10px\",\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n-                margin: \"10px\",\n+                margin: \"20px\",\n                 marginTop:\"80px\",\n                 marginLeft:\"85px\",\n                 marginRight:\"-85px\"\n               }}\n"
+                },
+                {
+                    "date": 1739411047975,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,10 +75,10 @@\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n                 margin: \"20px\",\n                 marginTop:\"80px\",\n-                marginLeft:\"85px\",\n-                marginRight:\"-85px\"\n+                // marginLeft:\"85px\",\n+                // marginRight:\"-85px\"\n               }}\n             >\n               {product.images.length > 0 ? (\n                 <img\n"
+                },
+                {
+                    "date": 1739411071697,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -73,9 +73,9 @@\n                 border: \"1px solid red\",\n                 borderRadius: \"10px\",\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n-                margin: \"20px\",\n+                margin: \"10px\",\n                 marginTop:\"80px\",\n                 // marginLeft:\"85px\",\n                 // marginRight:\"-85px\"\n               }}\n"
+                },
+                {
+                    "date": 1739411916395,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,8 +66,9 @@\n         style={{ marginTop: \"20px\", display: \"flex\", flexWrap: \"wrap\" }}\n       >\n         {filteredProducts.length > 0 ? (\n           filteredProducts.map((product, index) => (\n+            \n             <div className=\"box2\"\n               key={index}\n               style={{\n                 border: \"1px solid red\",\n"
+                },
+                {
+                    "date": 1739411921607,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,9 +66,9 @@\n         style={{ marginTop: \"20px\", display: \"flex\", flexWrap: \"wrap\" }}\n       >\n         {filteredProducts.length > 0 ? (\n           filteredProducts.map((product, index) => (\n-            \n+            <di></di>\n             <div className=\"box2\"\n               key={index}\n               style={{\n                 border: \"1px solid red\",\n"
+                },
+                {
+                    "date": 1739411928348,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,9 +66,9 @@\n         style={{ marginTop: \"20px\", display: \"flex\", flexWrap: \"wrap\" }}\n       >\n         {filteredProducts.length > 0 ? (\n           filteredProducts.map((product, index) => (\n-            <di></di>\n+            <di>\n             <div className=\"box2\"\n               key={index}\n               style={{\n                 border: \"1px solid red\",\n"
+                },
+                {
+                    "date": 1739411954091,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -160,8 +160,9 @@\n               \n                 </div>\n               </span>\n             </div>\n+            </di>\n           ))\n         ) : (\n           <p>Loading...</p>\n         )}\n"
+                },
+                {
+                    "date": 1739411969786,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,9 +66,9 @@\n         style={{ marginTop: \"20px\", display: \"flex\", flexWrap: \"wrap\" }}\n       >\n         {filteredProducts.length > 0 ? (\n           filteredProducts.map((product, index) => (\n-            <di>\n+            <div>\n             <div className=\"box2\"\n               key={index}\n               style={{\n                 border: \"1px solid red\",\n@@ -160,9 +160,9 @@\n               \n                 </div>\n               </span>\n             </div>\n-            </di>\n+            </div>\n           ))\n         ) : (\n           <p>Loading...</p>\n         )}\n"
+                },
+                {
+                    "date": 1739412076485,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,10 @@\n                 borderRadius: \"10px\",\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n-                marginTop:\"80px\",\n+                marginTop:\"80px\"\n+                display,\n                 // marginLeft:\"85px\",\n                 // marginRight:\"-85px\"\n               }}\n             >\n"
+                },
+                {
+                    "date": 1739412085046,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,9 +76,9 @@\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\"\n-                display,\n+                ,\n                 // marginLeft:\"85px\",\n                 // marginRight:\"-85px\"\n               }}\n             >\n"
+                },
+                {
+                    "date": 1739412090258,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,10 +75,10 @@\n                 borderRadius: \"10px\",\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n-                marginTop:\"80px\"\n-                ,\n+                marginTop:\"80px\",\n+                justifyContent,\n                 // marginLeft:\"85px\",\n                 // marginRight:\"-85px\"\n               }}\n             >\n"
+                },
+                {
+                    "date": 1739412096275,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,9 +76,9 @@\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n-                justifyContent,\n+                justifyContent:,\n                 // marginLeft:\"85px\",\n                 // marginRight:\"-85px\"\n               }}\n             >\n"
+                },
+                {
+                    "date": 1739412103639,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,9 +76,9 @@\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n-                justifyContent:,\n+                justifyContent:fle,\n                 // marginLeft:\"85px\",\n                 // marginRight:\"-85px\"\n               }}\n             >\n"
+                },
+                {
+                    "date": 1739412109510,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,9 +76,9 @@\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n-                justifyContent:fle,\n+                justifyContent:,\n                 // marginLeft:\"85px\",\n                 // marginRight:\"-85px\"\n               }}\n             >\n"
+                },
+                {
+                    "date": 1739412115830,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,9 +76,9 @@\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n-                justifyContent:,\n+                justifyContent:\"flex\",\n                 // marginLeft:\"85px\",\n                 // marginRight:\"-85px\"\n               }}\n             >\n"
+                },
+                {
+                    "date": 1739412265853,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,9 +66,9 @@\n         style={{ marginTop: \"20px\", display: \"flex\", flexWrap: \"wrap\" }}\n       >\n         {filteredProducts.length > 0 ? (\n           filteredProducts.map((product, index) => (\n-            <div>\n+            \n             <div className=\"box2\"\n               key={index}\n               style={{\n                 border: \"1px solid red\",\n@@ -76,9 +76,9 @@\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n-                justifyContent:\"flex\",\n+                justifyContent:\"flex-start\",\n                 // marginLeft:\"85px\",\n                 // marginRight:\"-85px\"\n               }}\n             >\n"
+                },
+                {
+                    "date": 1739412276032,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,8 +64,9 @@\n       <div\n         className=\"box1\"\n         style={{ marginTop: \"20px\", display: \"flex\", flexWrap: \"wrap\" }}\n       >\n+        \n         {filteredProducts.length > 0 ? (\n           filteredProducts.map((product, index) => (\n             \n             <div className=\"box2\"\n"
+                },
+                {
+                    "date": 1739412314414,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,9 +64,9 @@\n       <div\n         className=\"box1\"\n         style={{ marginTop: \"20px\", display: \"flex\", flexWrap: \"wrap\" }}\n       >\n-        \n+        <div>\n         {filteredProducts.length > 0 ? (\n           filteredProducts.map((product, index) => (\n             \n             <div className=\"box2\"\n@@ -162,9 +162,9 @@\n               \n                 </div>\n               </span>\n             </div>\n-            </div>\n+            \n           ))\n         ) : (\n           <p>Loading...</p>\n         )}\n"
+                },
+                {
+                    "date": 1739412386489,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,9 +64,8 @@\n       <div\n         className=\"box1\"\n         style={{ marginTop: \"20px\", display: \"flex\", flexWrap: \"wrap\" }}\n       >\n-        <div>\n         {filteredProducts.length > 0 ? (\n           filteredProducts.map((product, index) => (\n             \n             <div className=\"box2\"\n@@ -162,9 +161,9 @@\n               \n                 </div>\n               </span>\n             </div>\n-            \n+            </div>\n           ))\n         ) : (\n           <p>Loading...</p>\n         )}\n"
+                },
+                {
+                    "date": 1739412410492,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,9 +66,9 @@\n         style={{ marginTop: \"20px\", display: \"flex\", flexWrap: \"wrap\" }}\n       >\n         {filteredProducts.length > 0 ? (\n           filteredProducts.map((product, index) => (\n-            \n+            <div>\n             <div className=\"box2\"\n               key={index}\n               style={{\n                 border: \"1px solid red\",\n@@ -76,9 +76,9 @@\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n-                justifyContent:\"flex-start\",\n+               \n                 // marginLeft:\"85px\",\n                 // marginRight:\"-85px\"\n               }}\n             >\n"
+                },
+                {
+                    "date": 1739412418961,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,9 +76,9 @@\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n-               \n+                m\n                 // marginLeft:\"85px\",\n                 // marginRight:\"-85px\"\n               }}\n             >\n"
+                },
+                {
+                    "date": 1739412425922,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,9 +76,9 @@\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n-                m\n+                margin\n                 // marginLeft:\"85px\",\n                 // marginRight:\"-85px\"\n               }}\n             >\n"
+                },
+                {
+                    "date": 1739412432685,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,9 +76,9 @@\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n-                margin\n+                marginLeft:\"\"\n                 // marginLeft:\"85px\",\n                 // marginRight:\"-85px\"\n               }}\n             >\n"
+                },
+                {
+                    "date": 1739412459795,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,9 +76,9 @@\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n-                marginLeft:\"\"\n+                marginLeft:\"100px\"\n                 // marginLeft:\"85px\",\n                 // marginRight:\"-85px\"\n               }}\n             >\n"
+                },
+                {
+                    "date": 1739412467853,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,9 +76,9 @@\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n-                marginLeft:\"100px\"\n+                marginLeft:\"-100px\"\n                 // marginLeft:\"85px\",\n                 // marginRight:\"-85px\"\n               }}\n             >\n"
+                },
+                {
+                    "date": 1739412507834,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,9 +76,9 @@\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n-                marginLeft:\"-100px\"\n+                justifyContent:\"flex-start\",\n                 // marginLeft:\"85px\",\n                 // marginRight:\"-85px\"\n               }}\n             >\n"
+                },
+                {
+                    "date": 1739412519543,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,9 +76,8 @@\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n-                justifyContent:\"flex-start\",\n                 // marginLeft:\"85px\",\n                 // marginRight:\"-85px\"\n               }}\n             >\n"
+                },
+                {
+                    "date": 1739412570250,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,9 +61,9 @@\n  \n   return (\n     <>\n       <div\n-        className=\"box1\"\n+        \n         style={{ marginTop: \"20px\", display: \"flex\", flexWrap: \"wrap\" }}\n       >\n         {filteredProducts.length > 0 ? (\n           filteredProducts.map((product, index) => (\n"
+                },
+                {
+                    "date": 1739412591819,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,8 +60,9 @@\n \n  \n   return (\n     <>\n+    <div></div>\n       <div\n         \n         style={{ marginTop: \"20px\", display: \"flex\", flexWrap: \"wrap\" }}\n       >\n"
+                },
+                {
+                    "date": 1739412600457,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,9 +60,9 @@\n \n  \n   return (\n     <>\n-    <div></div>\n+    <div>\n       <div\n         \n         style={{ marginTop: \"20px\", display: \"flex\", flexWrap: \"wrap\" }}\n       >\n"
+                },
+                {
+                    "date": 1739412610650,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -167,8 +167,9 @@\n         ) : (\n           <p>Loading...</p>\n         )}\n       </div>\n+      </div>\n       {/* {product.isSelected ? \"Unselect\" : \"Select\"} */}\n     </>\n   );\n };\n"
+                },
+                {
+                    "date": 1739412620953,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,9 +60,9 @@\n \n  \n   return (\n     <>\n-    <div>\n+    <div >\n       <div\n         \n         style={{ marginTop: \"20px\", display: \"flex\", flexWrap: \"wrap\" }}\n       >\n"
+                },
+                {
+                    "date": 1739412634587,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,9 +60,9 @@\n \n  \n   return (\n     <>\n-    <div >\n+    <div className=\"\">\n       <div\n         \n         style={{ marginTop: \"20px\", display: \"flex\", flexWrap: \"wrap\" }}\n       >\n"
+                },
+                {
+                    "date": 1739412867719,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,9 +60,9 @@\n \n  \n   return (\n     <>\n-    <div className=\"\">\n+    <div\">\n       <div\n         \n         style={{ marginTop: \"20px\", display: \"flex\", flexWrap: \"wrap\" }}\n       >\n"
+                },
+                {
+                    "date": 1739412874086,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,10 +60,10 @@\n \n  \n   return (\n     <>\n-    <div\">\n-      <div\n+    <div>\n+      <div  className=\"box1\n         \n         style={{ marginTop: \"20px\", display: \"flex\", flexWrap: \"wrap\" }}\n       >\n         {filteredProducts.length > 0 ? (\n"
+                },
+                {
+                    "date": 1739412941429,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,9 +61,9 @@\n  \n   return (\n     <>\n     <div>\n-      <div  className=\"box1\n+      <div  c\"\n         \n         style={{ marginTop: \"20px\", display: \"flex\", flexWrap: \"wrap\" }}\n       >\n         {filteredProducts.length > 0 ? (\n"
+                },
+                {
+                    "date": 1739412948516,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,10 +60,10 @@\n \n  \n   return (\n     <>\n-    <div>\n-      <div  c\"\n+    <div >\n+      <div  \n         \n         style={{ marginTop: \"20px\", display: \"flex\", flexWrap: \"wrap\" }}\n       >\n         {filteredProducts.length > 0 ? (\n"
+                },
+                {
+                    "date": 1739429596283,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,9 +60,9 @@\n \n  \n   return (\n     <>\n-    <div >\n+    <div>\n       <div  \n         \n         style={{ marginTop: \"20px\", display: \"flex\", flexWrap: \"wrap\" }}\n       >\n"
+                },
+                {
+                    "date": 1739429603278,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n         style={{ marginTop: \"20px\", display: \"flex\", flexWrap: \"wrap\" }}\n       >\n         {filteredProducts.length > 0 ? (\n           filteredProducts.map((product, index) => (\n-            <div>\n+            <div  lassName=\"box1\">\n             <div className=\"box2\"\n               key={index}\n               style={{\n                 border: \"1px solid red\",\n"
+                },
+                {
+                    "date": 1739429614275,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n         style={{ marginTop: \"20px\", display: \"flex\", flexWrap: \"wrap\" }}\n       >\n         {filteredProducts.length > 0 ? (\n           filteredProducts.map((product, index) => (\n-            <div  lassName=\"box1\">\n+            <div >\n             <div className=\"box2\"\n               key={index}\n               style={{\n                 border: \"1px solid red\",\n"
+                },
+                {
+                    "date": 1739429625004,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,9 +61,9 @@\n  \n   return (\n     <>\n     <div>\n-      <div  \n+      <div  lassName=\"box1\" \n         \n         style={{ marginTop: \"20px\", display: \"flex\", flexWrap: \"wrap\" }}\n       >\n         {filteredProducts.length > 0 ? (\n"
+                },
+                {
+                    "date": 1739429648975,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,9 +61,9 @@\n  \n   return (\n     <>\n     <div>\n-      <div  lassName=\"box1\" \n+      <div  classlassName=\"box1\" \n         \n         style={{ marginTop: \"20px\", display: \"flex\", flexWrap: \"wrap\" }}\n       >\n         {filteredProducts.length > 0 ? (\n"
+                },
+                {
+                    "date": 1739429791809,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,9 +61,9 @@\n  \n   return (\n     <>\n     <div>\n-      <div  classlassName=\"box1\" \n+      <div  className=\"box1\" \n         \n         style={{ marginTop: \"20px\", display: \"flex\", flexWrap: \"wrap\" }}\n       >\n         {filteredProducts.length > 0 ? (\n@@ -77,8 +77,9 @@\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n+                \n                 // marginLeft:\"85px\",\n                 // marginRight:\"-85px\"\n               }}\n             >\n"
+                },
+                {
+                    "date": 1739429798619,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -77,9 +77,9 @@\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n-                \n+                padding:\"0px\"\n                 // marginLeft:\"85px\",\n                 // marginRight:\"-85px\"\n               }}\n             >\n"
+                },
+                {
+                    "date": 1739429810173,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -77,9 +77,9 @@\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n-                padding:\"0px\"\n+                \n                 // marginLeft:\"85px\",\n                 // marginRight:\"-85px\"\n               }}\n             >\n"
+                },
+                {
+                    "date": 1739429825533,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,9 @@\n                 border: \"1px solid red\",\n                 borderRadius: \"10px\",\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n-                margin: \"10px\",\n+                margin: \"auto\",\n                 marginTop:\"80px\",\n                 \n                 // marginLeft:\"85px\",\n                 // marginRight:\"-85px\"\n"
+                },
+                {
+                    "date": 1739429846261,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,9 @@\n                 border: \"1px solid red\",\n                 borderRadius: \"10px\",\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n-                margin: \"auto\",\n+                margin: \"a\",\n                 marginTop:\"80px\",\n                 \n                 // marginLeft:\"85px\",\n                 // marginRight:\"-85px\"\n"
+                },
+                {
+                    "date": 1739429854683,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,9 @@\n                 border: \"1px solid red\",\n                 borderRadius: \"10px\",\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n-                margin: \"a\",\n+                margin: \"10px\",\n                 marginTop:\"80px\",\n                 \n                 // marginLeft:\"85px\",\n                 // marginRight:\"-85px\"\n"
+                },
+                {
+                    "date": 1739430030529,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -78,8 +78,9 @@\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n                 \n+                \n                 // marginLeft:\"85px\",\n                 // marginRight:\"-85px\"\n               }}\n             >\n"
+                },
+                {
+                    "date": 1739430037445,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -77,10 +77,10 @@\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n+                jus\n                 \n-                \n                 // marginLeft:\"85px\",\n                 // marginRight:\"-85px\"\n               }}\n             >\n"
+                },
+                {
+                    "date": 1739430044078,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -77,9 +77,9 @@\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n-                jus\n+                justifyContent:\"flext\"\n                 \n                 // marginLeft:\"85px\",\n                 // marginRight:\"-85px\"\n               }}\n"
+                },
+                {
+                    "date": 1739430050482,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -77,9 +77,9 @@\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n-                justifyContent:\"flext\"\n+                justifyContent:\"flex-start\"\n                 \n                 // marginLeft:\"85px\",\n                 // marginRight:\"-85px\"\n               }}\n"
+                },
+                {
+                    "date": 1739430077947,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -78,8 +78,9 @@\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n                 justifyContent:\"flex-start\"\n+                background \n                 \n                 // marginLeft:\"85px\",\n                 // marginRight:\"-85px\"\n               }}\n"
+                },
+                {
+                    "date": 1739430097301,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -78,9 +78,9 @@\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n                 justifyContent:\"flex-start\"\n-                background \n+                background:\"red\",\n                 \n                 // marginLeft:\"85px\",\n                 // marginRight:\"-85px\"\n               }}\n"
+                },
+                {
+                    "date": 1739430104160,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -77,10 +77,10 @@\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n                 margin: \"10px\",\n                 marginTop:\"80px\",\n-                justifyContent:\"flex-start\"\n-                backgro:\"red\",\n+                justifyContent:\"flex-start\",\n+                background:\"red\",\n                 \n                 // marginLeft:\"85px\",\n                 // marginRight:\"-85px\"\n               }}\n"
+                },
+                {
+                    "date": 1739431184848,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,9 @@\n                 border: \"1px solid red\",\n                 borderRadius: \"10px\",\n                 maxWidth: \"400px\",\n                 maxHeight: \"600px\",\n-               ...(index === product.length -1 ? justifySelf:\"start\" :)\n+               ...(index === product.length -1 ? justifySelf:\"start\" : )\n                 \n                 // marginLeft:\"85px\",\n                 // marginRight:\"-85px\"\n               }}\n"
                 }
             ],
             "date": 1738114085333,

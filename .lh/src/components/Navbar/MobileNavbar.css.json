@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 67,
+            "activePatchIndex": 78,
             "patches": [
                 {
                     "date": 1736962450793,
@@ -276,6 +276,50 @@
                 {
                     "date": 1736974709777,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n     padding: 10px 20px;\n     border-bottom: 1px solid #05813d;\n     color: white;\n     cursor: pointer;\n-    border-radius: 1px;\n+    border-radius: 5px;\n     \n }\n \n .mobile-menu li:hover {\n"
+                },
+                {
+                    "date": 1739408628332,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,10 +2,9 @@\n     background-color:orangered;\n     color: white;\n     padding: 0px;\n     position: relative;\n-    position: sticky;\n-    top: 0px;\n+    \n }\n \n .menu-toggle {\n     font-size: 24px;\n"
+                },
+                {
+                    "date": 1739408640717,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,15 @@\n     background-color:orangered;\n     color: white;\n     padding: 0px;\n     position: relative;\n-    \n+    height: 60px;\n+    position: fixed;\n+    top: 0;\n+    left: 0;\n+    width: 100%;\n+    height: 60px;\n+    z-index: 1000;\n }\n \n .menu-toggle {\n     font-size: 24px;\n"
+                },
+                {
+                    "date": 1739408646853,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,8 @@\n .mobile-navbar {\n     background-color:orangered;\n     color: white;\n     padding: 0px;\n-    position: relative;\n     height: 60px;\n     position: fixed;\n     top: 0;\n     left: 0;\n"
+                },
+                {
+                    "date": 1739408656820,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,8 @@\n .mobile-navbar {\n     background-color:orangered;\n     color: white;\n     padding: 0px;\n-    height: 60px;\n     position: fixed;\n     top: 0;\n     left: 0;\n     width: 100%;\n"
+                },
+                {
+                    "date": 1739408680543,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n .mobile-navbar {\n     background-color:orangered;\n     color: white;\n-    padding: 0px;\n+    \n     position: fixed;\n     top: 0;\n     left: 0;\n     width: 100%;\n"
+                },
+                {
+                    "date": 1739408689905,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,10 @@\n .mobile-navbar {\n     background-color:orangered;\n     color: white;\n+    padding: 0px;\n+    position: relative;\n     \n-    position: fixed;\n-    top: 0;\n-    left: 0;\n-    width: 100%;\n-    height: 60px;\n-    z-index: 1000;\n }\n \n .menu-toggle {\n     font-size: 24px;\n"
+                },
+                {
+                    "date": 1739408698416,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,16 @@\n     background-color:orangered;\n     color: white;\n     padding: 0px;\n     position: relative;\n-    \n+    height: 60px;\n+    color: white;\n+    position: fixed;\n+    top: 0;\n+    left: 0;\n+    width: 100%;\n+    height: 60px;\n+    z-index: 1000;\n }\n \n .menu-toggle {\n     font-size: 24px;\n"
+                },
+                {
+                    "date": 1739408703590,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n     position: fixed;\n     top: 0;\n     left: 0;\n     width: 100%;\n-    height: 60px;\n+   \n     z-index: 1000;\n }\n \n .menu-toggle {\n"
+                },
+                {
+                    "date": 1739408718550,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n .mobile-navbar {\n     background-color:orangered;\n     color: white;\n     padding: 0px;\n-    position: relative;\n+   \n     height: 60px;\n     color: white;\n     position: fixed;\n     top: 0;\n"
+                },
+                {
+                    "date": 1739408723698,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,9 @@\n .mobile-navbar {\n     background-color:orangered;\n     color: white;\n     padding: 0px;\n-   \n-    height: 60px;\n-    color: white;\n+   ;\n     position: fixed;\n     top: 0;\n     left: 0;\n     width: 100%;\n"
+                },
+                {
+                    "date": 1739408737614,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,12 @@\n .mobile-navbar {\n     background-color:orangered;\n     color: white;\n     padding: 0px;\n-   ;\n     position: fixed;\n     top: 0;\n     left: 0;\n     width: 100%;\n-   \n     z-index: 1000;\n }\n \n .menu-toggle {\n"
                 }
             ],
             "date": 1736962450793,

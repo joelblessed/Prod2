@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 51,
+            "activePatchIndex": 58,
             "patches": [
                 {
                     "date": 1738167597530,
@@ -212,6 +212,34 @@
                 {
                     "date": 1738244483305,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { useState } from \"react\";\n import { Link, useNavigate } from \"react-router-dom\";\n import { toast } from \"react-toastify\";\n \n-const SignUP = () => {\n+const SignUP = ({}) => {\n \n     const [userName, userNamechange] = useState(\"\");\n     const [fullName, fullNamechange] = useState(\"\");\n     const [password, passwordchange] = useState(\"\");\n"
+                },
+                {
+                    "date": 1739299569990,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { useState } from \"react\";\n import { Link, useNavigate } from \"react-router-dom\";\n import { toast } from \"react-toastify\";\n \n-const SignUP = ({}) => {\n+const SignUP = ({api}) => {\n \n     const [userName, userNamechange] = useState(\"\");\n     const [fullName, fullNamechange] = useState(\"\");\n     const [password, passwordchange] = useState(\"\");\n@@ -101,9 +101,9 @@\n                             <div className=\"row\">\n                                 <div className=\"col-lg-6\">\n                                     <div className=\"form-group\">\n                                         <label>User Name <span className=\"errmsg\">*</span></label>\n-                                        <input value={userName} onChange={e => userNamechange(e.target.value)} className=\"form-control\"></input>\n+                                        <input value={userName}  onChange={e => userNamechange(e.target.value)} className=\"form-control\"></input>\n                                     </div>\n                                 </div>\n                                 <div className=\"col-lg-6\">\n                                     <div className=\"form-group\">\n"
+                },
+                {
+                    "date": 1739299575480,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -101,9 +101,9 @@\n                             <div className=\"row\">\n                                 <div className=\"col-lg-6\">\n                                     <div className=\"form-group\">\n                                         <label>User Name <span className=\"errmsg\">*</span></label>\n-                                        <input value={userName}  onChange={e => userNamechange(e.target.value)} className=\"form-control\"></input>\n+                                        <input value={userName} type=\"\" onChange={e => userNamechange(e.target.value)} className=\"form-control\"></input>\n                                     </div>\n                                 </div>\n                                 <div className=\"col-lg-6\">\n                                     <div className=\"form-group\">\n"
+                },
+                {
+                    "date": 1739299594391,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -101,9 +101,9 @@\n                             <div className=\"row\">\n                                 <div className=\"col-lg-6\">\n                                     <div className=\"form-group\">\n                                         <label>User Name <span className=\"errmsg\">*</span></label>\n-                                        <input value={userName} type=\"\" onChange={e => userNamechange(e.target.value)} className=\"form-control\"></input>\n+                                        <input value={userName} type=\"ext\" onChange={e => userNamechange(e.target.value)} className=\"form-control\"></input>\n                                     </div>\n                                 </div>\n                                 <div className=\"col-lg-6\">\n                                     <div className=\"form-group\">\n"
+                },
+                {
+                    "date": 1739299622422,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -101,9 +101,9 @@\n                             <div className=\"row\">\n                                 <div className=\"col-lg-6\">\n                                     <div className=\"form-group\">\n                                         <label>User Name <span className=\"errmsg\">*</span></label>\n-                                        <input value={userName} type=\"ext\" onChange={e => userNamechange(e.target.value)} className=\"form-control\"></input>\n+                                        <input value={userName} onChange={e => userNamechange(e.target.value)} className=\"form-control\"></input>\n                                     </div>\n                                 </div>\n                                 <div className=\"col-lg-6\">\n                                     <div className=\"form-group\">\n"
+                },
+                {
+                    "date": 1739299660505,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -125,9 +125,9 @@\n                                 </div>\n                                 <div className=\"col-lg-6\">\n                                     <div className=\"form-group\">\n                                         <label>Phone <span className=\"errmsg\"></span></label>\n-                                        <input value={phone} onChange={e => phonechange(e.target.value)} className=\"form-control\"></input>\n+                                        <input value={phone}  onChange={e => phonechange(e.target.value)} className=\"form-control\"></input>\n                                     </div>\n                                 </div>\n                                 <div className=\"col-lg-6\">\n                                     <div className=\"form-group\">\n"
+                },
+                {
+                    "date": 1739299669879,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -125,9 +125,9 @@\n                                 </div>\n                                 <div className=\"col-lg-6\">\n                                     <div className=\"form-group\">\n                                         <label>Phone <span className=\"errmsg\"></span></label>\n-                                        <input value={phone}  onChange={e => phonechange(e.target.value)} className=\"form-control\"></input>\n+                                        <input value={phone} type=\"number\" onChange={e => phonechange(e.target.value)} className=\"form-control\"></input>\n                                     </div>\n                                 </div>\n                                 <div className=\"col-lg-6\">\n                                     <div className=\"form-group\">\n"
+                },
+                {
+                    "date": 1739299697989,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -125,9 +125,9 @@\n                                 </div>\n                                 <div className=\"col-lg-6\">\n                                     <div className=\"form-group\">\n                                         <label>Phone <span className=\"errmsg\"></span></label>\n-                                        <input value={phone} type=\"number\" onChange={e => phonechange(e.target.value)} className=\"form-control\"></input>\n+                                        <input value={phone}  onChange={e => phonechange(e.target.value)} className=\"form-control\"></input>\n                                     </div>\n                                 </div>\n                                 <div className=\"col-lg-6\">\n                                     <div className=\"form-group\">\n"
                 }
             ],
             "date": 1738167597530,

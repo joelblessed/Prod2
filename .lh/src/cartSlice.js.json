@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/cartSlice.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1739391686990,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1739391696184,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-mport { createSlice } from \"@reduxjs/toolkit\";\n+import { createSlice } from \"@reduxjs/toolkit\";\n \n const initialState = {\n   items: JSON.parse(localStorage.getItem(\"guestCart\")) || [],\n };\n"
+                }
+            ],
+            "date": 1739391686990,
+            "name": "Commit-0",
+            "content": "mport { createSlice } from \"@reduxjs/toolkit\";\n\nconst initialState = {\n  items: JSON.parse(localStorage.getItem(\"guestCart\")) || [],\n};\n\nconst cartSlice = createSlice({\n  name: \"cart\",\n  initialState,\n  reducers: {\n    addToCart: (state, action) => {\n      state.items.push(action.payload);\n      localStorage.setItem(\"guestCart\", JSON.stringify(state.items));\n    },\n    removeFromCart: (state, action) => {\n      state.items = state.items.filter(item => item.id !== action.payload);\n      localStorage.setItem(\"guestCart\", JSON.stringify(state.items));\n    },\n    setCart: (state, action) => {\n      state.items = action.payload;\n      localStorage.setItem(\"guestCart\", JSON.stringify(state.items));\n    }\n  },\n});\n\nexport const { addToCart, removeFromCart, setCart } = cartSlice.actions;\nexport default cartSlice.reducer;"
+        }
+    ]
+}

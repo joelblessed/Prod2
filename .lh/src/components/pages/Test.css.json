@@ -1,0 +1,38 @@
+{
+    "sourceFile": "src/components/pages/Test.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1739452892479,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1739453170450,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,16 +1,16 @@\n .box-container {\n-    display: flex;\n-    flex-direction: row;\n-    align-items: center;\n-  }\n-  \n-  .box {\n-    width: 50px;\n-    height: 50px;\n-    background-color: lightblue;\n-    margin: 5px;\n-  }\n-  \n-  .last-box {\n-    margin-left: auto; /* Move the last box to the right */\n-  }\n\\ No newline at end of file\n+  display: flex;\n+  flex-direction: row;\n+  align-items: center;\n+}\n+\n+.box {\n+  width: 50px;\n+  height: 50px;\n+  background-color: lightblue;\n+  margin: 5px;\n+}\n+\n+.last-box {\n+  margin-left: auto; /* Move the last box to the right */\n+}\n"
+                },
+                {
+                    "date": 1739453583638,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-.box-container {\n+.boxt-container {\n   display: flex;\n   flex-direction: row;\n   align-items: center;\n }\n"
+                },
+                {
+                    "date": 1739453636336,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-.boxt-container {\n+.boxty-container {\n   display: flex;\n   flex-direction: row;\n   align-items: center;\n }\n"
+                },
+                {
+                    "date": 1739453668687,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-.boxty-container {\n+.boxtycontainer {\n   display: flex;\n   flex-direction: row;\n   align-items: center;\n }\n"
+                },
+                {
+                    "date": 1739454026975,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,6 @@\n-.boxtycontainer {\n-  display: flex;\n-  flex-direction: row;\n-  align-items: center;\n-}\n \n+\n .box {\n   width: 50px;\n   height: 50px;\n   background-color: lightblue;\n"
+                }
+            ],
+            "date": 1739452892479,
+            "name": "Commit-0",
+            "content": ".box-container {\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n  }\n  \n  .box {\n    width: 50px;\n    height: 50px;\n    background-color: lightblue;\n    margin: 5px;\n  }\n  \n  .last-box {\n    margin-left: auto; /* Move the last box to the right */\n  }"
+        }
+    ]
+}

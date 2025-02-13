@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 23,
+            "activePatchIndex": 30,
             "patches": [
                 {
                     "date": 1737555333001,
@@ -100,6 +100,34 @@
                 {
                     "date": 1737571252255,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,10 +2,10 @@\n import ReactDOM from 'react-dom/client';\n import './index.css';\n import App from './App';\n import reportWebVitals from './reportWebVitals';\n-import { AuthProvider } from \"./authContext\";\n \n+\n const root = ReactDOM.createRoot(document.getElementById('root'));\n root.render(\n   <React.StrictMode>\n   <App />\n"
+                },
+                {
+                    "date": 1739392206918,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n import React from 'react';\n import ReactDOM from 'react-dom/client';\n import './index.css';\n import App from './App';\n+\n import reportWebVitals from './reportWebVitals';\n \n \n const root = ReactDOM.createRoot(document.getElementById('root'));\n"
+                },
+                {
+                    "date": 1739392236993,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,17 @@\n import React from 'react';\n import ReactDOM from 'react-dom/client';\n import './index.css';\n import App from './App';\n-\n+import ReactDom from \"react-dom\";\n+import { Provider } from \"react-redux\";\n+import store from \"./store\";\n import reportWebVitals from './reportWebVitals';\n \n \n const root = ReactDOM.createRoot(document.getElementById('root'));\n root.render(\n-  <React.StrictMode>\n+  >\n   <App />\n </React.StrictMode>\n );\n \n"
+                },
+                {
+                    "date": 1739392243265,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \n \n const root = ReactDOM.createRoot(document.getElementById('root'));\n root.render(\n-  >\n+  <Pro>\n   <App />\n </React.StrictMode>\n );\n \n"
+                },
+                {
+                    "date": 1739392250762,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \n \n const root = ReactDOM.createRoot(document.getElementById('root'));\n root.render(\n-  <Pro>\n+  <Provider store>\n   <App />\n </React.StrictMode>\n );\n \n"
+                },
+                {
+                    "date": 1739392257933,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \n \n const root = ReactDOM.createRoot(document.getElementById('root'));\n root.render(\n-  <Provider store>\n+  <Provider store={()}>\n   <App />\n </React.StrictMode>\n );\n \n"
+                },
+                {
+                    "date": 1739392264633,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \n \n const root = ReactDOM.createRoot(document.getElementById('root'));\n root.render(\n-  <Provider store={()}>\n+  <Provider store={store}>\n   <App />\n </React.StrictMode>\n );\n \n"
+                },
+                {
+                    "date": 1739392271166,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n const root = ReactDOM.createRoot(document.getElementById('root'));\n root.render(\n   <Provider store={store}>\n   <App />\n-</React.StrictMode>\n+</>\n );\n \n // If you want to start measuring performance in your app, pass a function\n // to log results (for example: reportWebVitals(console.log))\n"
                 }
             ],
             "date": 1737555333001,
