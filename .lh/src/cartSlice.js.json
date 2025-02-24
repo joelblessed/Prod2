@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 1,
+            "activePatchIndex": 2,
             "patches": [
                 {
                     "date": 1739391686990,
@@ -12,6 +12,10 @@
                 {
                     "date": 1739391696184,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-mport { createSlice } from \"@reduxjs/toolkit\";\n+import { createSlice } from \"@reduxjs/toolkit\";\n \n const initialState = {\n   items: JSON.parse(localStorage.getItem(\"guestCart\")) || [],\n };\n"
+                },
+                {
+                    "date": 1740134631020,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,27 +1,39 @@\n import { createSlice } from \"@reduxjs/toolkit\";\n \n-const initialState = {\n-  items: JSON.parse(localStorage.getItem(\"guestCart\")) || [],\n+const loadCartFromLocalStorage = () => {\n+  try {\n+    const cart = localStorage.getItem(\"cart\");\n+    return cart ? JSON.parse(cart) : [];\n+  } catch (error) {\n+    console.error(\"Error loading cart from localStorage:\", error);\n+    return [];\n+  }\n };\n \n const cartSlice = createSlice({\n   name: \"cart\",\n-  initialState,\n+  initialState: {\n+    items: loadCartFromLocalStorage(),\n+  },\n   reducers: {\n     addToCart: (state, action) => {\n       state.items.push(action.payload);\n-      localStorage.setItem(\"guestCart\", JSON.stringify(state.items));\n+      localStorage.setItem(\"cart\", JSON.stringify(state.items));\n     },\n     removeFromCart: (state, action) => {\n       state.items = state.items.filter(item => item.id !== action.payload);\n-      localStorage.setItem(\"guestCart\", JSON.stringify(state.items));\n+      localStorage.setItem(\"cart\", JSON.stringify(state.items));\n     },\n-    setCart: (state, action) => {\n+    clearCart: (state) => {\n+      state.items = [];\n+      localStorage.removeItem(\"cart\");\n+    },\n+    syncCartWithServer: (state, action) => {\n       state.items = action.payload;\n-      localStorage.setItem(\"guestCart\", JSON.stringify(state.items));\n-    }\n+      localStorage.setItem(\"cart\", JSON.stringify(action.payload));\n+    },\n   },\n });\n \n-export const { addToCart, removeFromCart, setCart } = cartSlice.actions;\n+export const { addToCart, removeFromCart, clearCart, syncCartWithServer } = cartSlice.actions;\n export default cartSlice.reducer;\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1739391686990,

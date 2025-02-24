@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/CartReducer.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1739958489190,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1739958489190,
+            "name": "Commit-0",
+            "content": "const initialState = {\n    items: JSON.parse(localStorage.getItem(\"cart\")) || []\n};\n\nexport const cartReducer = (state = initialState, action) => {\n    switch (action.type) {\n        case \"ADD_TO_CART\":\n            return { ...state, items: [...state.items, action.payload] };\n        case \"SET_CART\":\n            return { ...state, items: action.payload };\n        default:\n            return state;\n    }\n};"
+        }
+    ]
+}

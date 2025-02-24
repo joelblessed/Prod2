@@ -1,0 +1,66 @@
+{
+    "sourceFile": "src/cartAction.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 12,
+            "patches": [
+                {
+                    "date": 1739958215371,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1739958277890,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     return async (dispatch) => {\n         let localCart = JSON.parse(localStorage.getItem(\"cart\")) || [];\n \n         // Fetch user's cart from db.json\n-        const response = await fetch(http://localhost:3000/carts/${userId});\n+        const response = await fetch/carts/${userId});\n         const userCart = response.ok ? await response.json() : { cart: [] };\n \n         // Merge local cart and user cart (avoid duplicates)\n         const mergedCart = [...new Map([...localCart, ...userCart.cart].map(item => [item.id, item])).values()];\n"
+                },
+                {
+                    "date": 1739958283331,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     return async (dispatch) => {\n         let localCart = JSON.parse(localStorage.getItem(\"cart\")) || [];\n \n         // Fetch user's cart from db.json\n-        const response = await fetch/carts/${userId});\n+        const response = await fetch(`/carts/${userId}`);\n         const userCart = response.ok ? await response.json() : { cart: [] };\n \n         // Merge local cart and user cart (avoid duplicates)\n         const mergedCart = [...new Map([...localCart, ...userCart.cart].map(item => [item.id, item])).values()];\n"
+                },
+                {
+                    "date": 1739958289618,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     return async (dispatch) => {\n         let localCart = JSON.parse(localStorage.getItem(\"cart\")) || [];\n \n         // Fetch user's cart from db.json\n-        const response = await fetch(`/carts/${userId}`);\n+        const response = await fetch(`${}/carts/${userId}`);\n         const userCart = response.ok ? await response.json() : { cart: [] };\n \n         // Merge local cart and user cart (avoid duplicates)\n         const mergedCart = [...new Map([...localCart, ...userCart.cart].map(item => [item.id, item])).values()];\n"
+                },
+                {
+                    "date": 1739958299376,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     return async (dispatch) => {\n         let localCart = JSON.parse(localStorage.getItem(\"cart\")) || [];\n \n         // Fetch user's cart from db.json\n-        const response = await fetch(`${}/carts/${userId}`);\n+        const response = await fetch(`${api}/cart/${userId}`);\n         const userCart = response.ok ? await response.json() : { cart: [] };\n \n         // Merge local cart and user cart (avoid duplicates)\n         const mergedCart = [...new Map([...localCart, ...userCart.cart].map(item => [item.id, item])).values()];\n"
+                },
+                {
+                    "date": 1739958338728,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n             payload: mergedCart,\n         });\n \n         // Save merged cart to db.json\n-        await fetch(http://localhost:3000/carts/${userId}, {\n+        await fetch(`/carts/${userId}, {\n             method: \"PUT\",\n             headers: { \"Content-Type\": \"application/json\" },\n             body: JSON.stringify({ cart: mergedCart }),\n         });\n"
+                },
+                {
+                    "date": 1739958347120,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n             payload: mergedCart,\n         });\n \n         // Save merged cart to db.json\n-        await fetch(`/carts/${userId}, {\n+        await fetch(`/cart/${userId}`, {\n             method: \"PUT\",\n             headers: { \"Content-Type\": \"application/json\" },\n             body: JSON.stringify({ cart: mergedCart }),\n         });\n"
+                },
+                {
+                    "date": 1739958353044,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n             payload: mergedCart,\n         });\n \n         // Save merged cart to db.json\n-        await fetch(`/cart/${userId}`, {\n+        await fetch(`${}/cart/${userId}`, {\n             method: \"PUT\",\n             headers: { \"Content-Type\": \"application/json\" },\n             body: JSON.stringify({ cart: mergedCart }),\n         });\n"
+                },
+                {
+                    "date": 1739962449929,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     return async (dispatch) => {\n         let localCart = JSON.parse(localStorage.getItem(\"cart\")) || [];\n \n         // Fetch user's cart from db.json\n-        const response = await fetch(`${api}/cart/${userId}`);\n+        const response = await fetch(http://localhost:3000/carts/${userId});\n         const userCart = response.ok ? await response.json() : { cart: [] };\n \n         // Merge local cart and user cart (avoid duplicates)\n         const mergedCart = [...new Map([...localCart, ...userCart.cart].map(item => [item.id, item])).values()];\n@@ -26,9 +26,9 @@\n             payload: mergedCart,\n         });\n \n         // Save merged cart to db.json\n-        await fetch(`${}/cart/${userId}`, {\n+        await fetch(http://localhost:3000/carts/${userId}, {\n             method: \"PUT\",\n             headers: { \"Content-Type\": \"application/json\" },\n             body: JSON.stringify({ cart: mergedCart }),\n         });\n"
+                },
+                {
+                    "date": 1739962458308,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     return async (dispatch) => {\n         let localCart = JSON.parse(localStorage.getItem(\"cart\")) || [];\n \n         // Fetch user's cart from db.json\n-        const response = await fetch(http://localhost:3000/carts/${userId});\n+        const response = await fetch(`http://localhost:3000/carts/${userId});\n         const userCart = response.ok ? await response.json() : { cart: [] };\n \n         // Merge local cart and user cart (avoid duplicates)\n         const mergedCart = [...new Map([...localCart, ...userCart.cart].map(item => [item.id, item])).values()];\n"
+                },
+                {
+                    "date": 1739962467096,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     return async (dispatch) => {\n         let localCart = JSON.parse(localStorage.getItem(\"cart\")) || [];\n \n         // Fetch user's cart from db.json\n-        const response = await fetch(`http://localhost:3000/carts/${userId});\n+        const response = await fetch(`http://localhost:3000/carts/${userId}`);\n         const userCart = response.ok ? await response.json() : { cart: [] };\n \n         // Merge local cart and user cart (avoid duplicates)\n         const mergedCart = [...new Map([...localCart, ...userCart.cart].map(item => [item.id, item])).values()];\n@@ -26,9 +26,9 @@\n             payload: mergedCart,\n         });\n \n         // Save merged cart to db.json\n-        await fetch(http://localhost:3000/carts/${userId}, {\n+        await fetch(`http://localhost:3000/carts/${userId}, {\n             method: \"PUT\",\n             headers: { \"Content-Type\": \"application/json\" },\n             body: JSON.stringify({ cart: mergedCart }),\n         });\n"
+                },
+                {
+                    "date": 1739963479862,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     return async (dispatch) => {\n         let localCart = JSON.parse(localStorage.getItem(\"cart\")) || [];\n \n         // Fetch user's cart from db.json\n-        const response = await fetch(`http://localhost:3000/carts/${userId}`);\n+        const response = await fetch(`http://localhost:5000/carts/${userId}`);\n         const userCart = response.ok ? await response.json() : { cart: [] };\n \n         // Merge local cart and user cart (avoid duplicates)\n         const mergedCart = [...new Map([...localCart, ...userCart.cart].map(item => [item.id, item])).values()];\n@@ -26,9 +26,9 @@\n             payload: mergedCart,\n         });\n \n         // Save merged cart to db.json\n-        await fetch(`http://localhost:3000/carts/${userId}, {\n+        await fetch(`http://localhost:3000/carts/${userId}`, {\n             method: \"PUT\",\n             headers: { \"Content-Type\": \"application/json\" },\n             body: JSON.stringify({ cart: mergedCart }),\n         });\n"
+                },
+                {
+                    "date": 1739963487560,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     return async (dispatch) => {\n         let localCart = JSON.parse(localStorage.getItem(\"cart\")) || [];\n \n         // Fetch user's cart from db.json\n-        const response = await fetch(`http://localhost:5000/carts/${userId}`);\n+        const response = await fetch(`http://localhost:5000/cart/${userId}`);\n         const userCart = response.ok ? await response.json() : { cart: [] };\n \n         // Merge local cart and user cart (avoid duplicates)\n         const mergedCart = [...new Map([...localCart, ...userCart.cart].map(item => [item.id, item])).values()];\n@@ -26,9 +26,9 @@\n             payload: mergedCart,\n         });\n \n         // Save merged cart to db.json\n-        await fetch(`http://localhost:3000/carts/${userId}`, {\n+        await fetch(`http://localhost:3000/cart/${userId}`, {\n             method: \"PUT\",\n             headers: { \"Content-Type\": \"application/json\" },\n             body: JSON.stringify({ cart: mergedCart }),\n         });\n"
+                }
+            ],
+            "date": 1739958215371,
+            "name": "Commit-0",
+            "content": "export const addToCart = (product) => {\n    return (dispatch, getState) => {\n        dispatch({\n            type: \"ADD_TO_CART\",\n            payload: product,\n        });\n\n        // Save cart to localStorage before login\n        localStorage.setItem(\"cart\", JSON.stringify(getState().cart.items));\n    };\n};\n\nexport const loadCartAfterLogin = (userId) => {\n    return async (dispatch) => {\n        let localCart = JSON.parse(localStorage.getItem(\"cart\")) || [];\n\n        // Fetch user's cart from db.json\n        const response = await fetch(http://localhost:3000/carts/${userId});\n        const userCart = response.ok ? await response.json() : { cart: [] };\n\n        // Merge local cart and user cart (avoid duplicates)\n        const mergedCart = [...new Map([...localCart, ...userCart.cart].map(item => [item.id, item])).values()];\n\n        dispatch({\n            type: \"SET_CART\",\n            payload: mergedCart,\n        });\n\n        // Save merged cart to db.json\n        await fetch(http://localhost:3000/carts/${userId}, {\n            method: \"PUT\",\n            headers: { \"Content-Type\": \"application/json\" },\n            body: JSON.stringify({ cart: mergedCart }),\n        });\n\n        // Clear localStorage after merging\n        localStorage.removeItem(\"cart\");\n    };\n};"
+        }
+    ]
+}
