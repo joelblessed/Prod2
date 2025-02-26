@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 36,
+            "activePatchIndex": 37,
             "patches": [
                 {
                     "date": 1739464809871,
@@ -152,6 +152,10 @@
                 {
                     "date": 1739478543520,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n-mport React, { useState, useEffect } from \"react\";\n+import React, { useState, useEffect } from \"react\";\n import { useParams } from \"react-router-dom\";\n \n-const = () => {\n+const BrandProducts = () => {\n   const { brandId } = useParams();\n   const [products, setProducts] = useState([]);\n   const [brand, setBrand] = useState(null);\n \n@@ -36,5 +36,5 @@\n     </div>\n   );\n };\n \n-export default\n\\ No newline at end of file\n+export default BrandProducts\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1740509916989,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n import React, { useState, useEffect } from \"react\";\n import { useParams } from \"react-router-dom\";\n+import { useSelector, useDispatch } from \"react-redux\";\n+import { addToCartBeforeLogin, addToCartAPI } from \"../../cartAction\";\n \n const BrandProducts = () => {\n   const { brandId } = useParams();\n   const [products, setProducts] = useState([]);\n"
                 }
             ],
             "date": 1739464809871,

@@ -30,6 +30,8 @@
     "react-scroll": "^1.9.2",
     "react-slick": "^0.30.3",
     "react-toastify": "^11.0.3",
+    "redux": "^5.0.1",
+    "redux-thunk": "^3.1.0",
     "skick": "^0.0.3",
     "slick-carousel": "^1.8.1",
     "use-local-storage": "^3.0.0",

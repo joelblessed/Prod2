@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 43,
+            "activePatchIndex": 44,
             "patches": [
                 {
                     "date": 1738880240264,
@@ -180,6 +180,10 @@
                 {
                     "date": 1738935968818,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n \n   // Toggle the selection state of a product\n   const toggleSelection = (id, currentSelection) => {\n     // Update the product on the server using PATCH\n-    fetch(`${api}/upproducts/${id}`, {\n+    fetch(`${api}/updateproducts/${id}`, {\n       method: \"PATCH\",\n       headers: {\n         \"Content-Type\": \"application/json\",\n       },\n"
+                },
+                {
+                    "date": 1740509948472,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,7 @@\n import React, { useEffect, useState } from \"react\";\n+import { useSelector, useDispatch } from \"react-redux\";\n+import { addToCartBeforeLogin, addToCartAPI } from \"../../cartAction\";\n \n const ProductSelection = ({ api, filteredProducts}) => {\n   const [products, setProducts] = useState(filteredProducts);\n \n@@ -13,9 +15,9 @@\n \n   // Toggle the selection state of a product\n   const toggleSelection = (id, currentSelection) => {\n     // Update the product on the server using PATCH\n-    fetch(`${api}/updateproducts/${id}`, {\n+    fetch(`${api}/updateProducts/${id}`, {\n       method: \"PATCH\",\n       headers: {\n         \"Content-Type\": \"application/json\",\n       },\n"
                 }
             ],
             "date": 1738880240264,

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 16,
+            "activePatchIndex": 19,
             "patches": [
                 {
                     "date": 1738855053039,
@@ -72,6 +72,18 @@
                 {
                     "date": 1738855478028,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,5 +68,5 @@\n         </div>\n     );\n };\n \n-export default UploadForm\n\\ No newline at end of file\n+export default Form\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1740511163613,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React, { useState } from \"react\";\n \n const FormUpload = ({api}) => {\n-    const [title, setTitle] = useState(\"\");\n+    const [, setTitle] = useState(\"\");\n     const [description, setDescription] = useState(\"\");\n     const [selectedFiles, setSelectedFiles] = useState([]);\n     const [responseMessage, setResponseMessage] = useState(\"\");\n \n@@ -68,5 +68,5 @@\n         </div>\n     );\n };\n \n-export default Form\n\\ No newline at end of file\n+export default FormUpload\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1740511170282,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React, { useState } from \"react\";\n \n const FormUpload = ({api}) => {\n-    const [name, se] = useState(\"\");\n+    const [name, ser] = useState(\"\");\n     const [description, setDescription] = useState(\"\");\n     const [selectedFiles, setSelectedFiles] = useState([]);\n     const [responseMessage, setResponseMessage] = useState(\"\");\n \n"
+                },
+                {
+                    "date": 1740511387955,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n const FormUpload = ({api}) => {\n     const [name, setName] = useState(\"\");\n     const [brand, setBrand] = useState(\"\")\n     const [category, setcategory] = useState(\"\")\n-    const []\n+    const [p]\n \n     const [description, setDescription] = useState(\"\");\n     const [selectedFiles, setSelectedFiles] = useState([]);\n     const [responseMessage, setResponseMessage] = useState(\"\");\n"
                 }
             ],
             "date": 1738855053039,
