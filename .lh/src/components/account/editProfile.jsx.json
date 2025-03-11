@@ -1,0 +1,158 @@
+{
+    "sourceFile": "src/components/account/editProfile.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 35,
+            "patches": [
+                {
+                    "date": 1740610038308,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1740610055532,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n mport React, { useState, useEffect } from 'react';\n \n-const UserProfile = () => {\n+const Profile = () => {\n   const [user, setUser] = useState({\n     firstName: '',\n     lastName: '',\n     email: '',\n@@ -86,5 +86,5 @@\n     </form>\n   );\n };\n \n-export default UserProfile;\n\\ No newline at end of file\n+export default Profile;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1740610061377,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n mport React, { useState, useEffect } from 'react';\n \n-const Profile = () => {\n+const Editrofile = () => {\n   const [user, setUser] = useState({\n     firstName: '',\n     lastName: '',\n     email: '',\n@@ -86,5 +86,5 @@\n     </form>\n   );\n };\n \n-export default Profile;\n\\ No newline at end of file\n+export default Editrofile;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1740610075895,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n mport React, { useState, useEffect } from 'react';\n \n-const Editrofile = () => {\n+const EditeProfile = () => {\n   const [user, setUser] = useState({\n     firstName: '',\n     lastName: '',\n     email: '',\n@@ -86,5 +86,5 @@\n     </form>\n   );\n };\n \n-export default Editrofile;\n\\ No newline at end of file\n+export default EditeProfile;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1740610082264,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n mport React, { useState, useEffect } from 'react';\n \n-const EditeProfile = () => {\n+const EditProfile = () => {\n   const [user, setUser] = useState({\n     firstName: '',\n     lastName: '',\n     email: '',\n@@ -86,5 +86,5 @@\n     </form>\n   );\n };\n \n-export default EditeProfile;\n\\ No newline at end of file\n+export default EditProfile;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1740610094289,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n-mport React, { useState, useEffect } from 'react';\n+1mport React, { useState, useEffect } from 'react';\n \n-const EditProfile = () => {\n+const <Edit></Edit>Profile = () => {\n   const [user, setUser] = useState({\n     firstName: '',\n     lastName: '',\n     email: '',\n@@ -86,5 +86,5 @@\n     </form>\n   );\n };\n \n-export default EditProfile;\n\\ No newline at end of file\n+export default <Edit></Edit>Profile;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1740610121656,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n-1mport React, { useState, useEffect } from 'react';\n+mport React, { useState, useEffect } from 'react';\n \n-const <Edit></Edit>Profile = () => {\n+const EditProfile = () => {\n   const [user, setUser] = useState({\n     firstName: '',\n     lastName: '',\n     email: '',\n@@ -86,5 +86,5 @@\n     </form>\n   );\n };\n \n-export default <Edit></Edit>Profile;\n\\ No newline at end of file\n+export default EditProfile;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1740610134423,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-mport React, { useState, useEffect } from 'react';\n+import React, { useState, useEffect } from 'react';\n \n const EditProfile = () => {\n   const [user, setUser] = useState({\n     firstName: '',\n"
+                },
+                {
+                    "date": 1740610234579,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,21 +9,9 @@\n   });\n \n   useEffect(() => {\n     // Fetch user data from API and set it to state\n-    const fetchUserData = async () => {\n-      try {\n-        const response = await fetch('/api/user'); // Adjust the API endpoint as needed\n-        const userData = await response.json();\n-        setUser(userData);\n-      } catch (error) {\n-        console.error('Error fetching user data:', error);\n-      }\n-    };\n \n-    fetchUserData();\n-  }, []);\n-\n   const handleChange = (e) => {\n     const { name, value } = e.target;\n     setUser((prevUser) => ({\n       ...prevUser,\n"
+                },
+                {
+                    "date": 1740610243008,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,10 +7,9 @@\n     email: '',\n     // Add other fields as necessary\n   });\n \n-  useEffect(() => {\n-    // Fetch user data from API and set it to state\n+  \n \n   const handleChange = (e) => {\n     const { name, value } = e.target;\n     setUser((prevUser) => ({\n"
+                },
+                {
+                    "date": 1740610349772,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,15 +2,52 @@\n \n const EditProfile = () => {\n   const [user, setUser] = useState({\n     firstName: '',\n-    lastName: '',\n+    : '',\n     email: '',\n     // Add other fields as necessary\n   });\n \n+  const [error, setError] = useState(null);\n+\n+  // Fetch user data on component mount\n+  useEffect(() => {\n+    const token = localStorage.getItem(\"token\");\n+\n+    if (!token) {\n+      setError(\"No token found\");\n+      return;\n+    }\n+\n+    fetch(`${api}/profile`, {\n+      method: \"GET\",\n+      headers: {\n+        \"Content-Type\": \"application/json\",\n+        Authorization: `Bearer ${token}`, // Add token in the headers\n+      },\n+    })\n+      .then((response) => {\n+        if (!response.ok) {\n+          throw new Error(\"Failed to fetch user data\");\n+        }\n+        return response.json();\n+      })\n+      .then((data) => {\n+        setUser(data);\n+        localStorage.setItem(\"userData\", JSON.stringify(data));\n+        console.log(localStorage.getItem(\"userData\"));\n   \n+      })\n \n+      .catch((error) => setError(error.message));\n+  }, []);\n+\n+\n+  if (error) return <p>Error: {error}</p>;\n+  if (!user) return <p>Loading...</p>;\n+\n+\n   const handleChange = (e) => {\n     const { name, value } = e.target;\n     setUser((prevUser) => ({\n       ...prevUser,\n"
+                },
+                {
+                    "date": 1740610355387,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n const EditProfile = () => {\n   const [user, setUser] = useState({\n     firstName: '',\n-    : '',\n+    p: '',\n     email: '',\n     // Add other fields as necessary\n   });\n \n"
+                },
+                {
+                    "date": 1740610361938,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n const EditProfile = () => {\n   const [user, setUser] = useState({\n     firstName: '',\n-    p: '',\n+    phoneNumber: '',\n     email: '',\n     // Add other fields as necessary\n   });\n \n"
+                },
+                {
+                    "date": 1740610368223,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React, { useState, useEffect } from 'react';\n \n const EditProfile = () => {\n   const [user, setUser] = useState({\n-    firstName: '',\n+    : '',\n     phoneNumber: '',\n     email: '',\n     // Add other fields as necessary\n   });\n"
+                },
+                {
+                    "date": 1740610373627,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React, { useState, useEffect } from 'react';\n \n const EditProfile = () => {\n   const [user, setUser] = useState({\n-    : '',\n+    userName: '',\n     phoneNumber: '',\n     email: '',\n     // Add other fields as necessary\n   });\n"
+                },
+                {
+                    "date": 1740610400094,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -91,9 +91,9 @@\n         Last Name:\n         <input\n           type=\"text\"\n           name=\"lastName\"\n-          value={user.lastName}\n+          value={user.la}\n           onChange={handleChange}\n         />\n       </label>\n       <label>\n"
+                },
+                {
+                    "date": 1740610405325,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -91,9 +91,9 @@\n         Last Name:\n         <input\n           type=\"text\"\n           name=\"lastName\"\n-          value={user.la}\n+          value={user.P}\n           onChange={handleChange}\n         />\n       </label>\n       <label>\n"
+                },
+                {
+                    "date": 1740610418609,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -82,18 +82,18 @@\n         First Name:\n         <input\n           type=\"text\"\n           name=\"firstName\"\n-          value={user.firstName}\n+          value={user.}\n           onChange={handleChange}\n         />\n       </label>\n       <label>\n         Last Name:\n         <input\n           type=\"text\"\n           name=\"lastName\"\n-          value={user.P}\n+          value={user.phoneNumber}\n           onChange={handleChange}\n         />\n       </label>\n       <label>\n"
+                },
+                {
+                    "date": 1740610581612,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import React, { useState, useEffect } from 'react';\n \n-const EditProfile = () => {\n+const EditProfile = ({api}) => {\n   const [user, setUser] = useState({\n     userName: '',\n     phoneNumber: '',\n     email: '',\n@@ -82,9 +82,9 @@\n         First Name:\n         <input\n           type=\"text\"\n           name=\"firstName\"\n-          value={user.}\n+          value={user.userName}\n           onChange={handleChange}\n         />\n       </label>\n       <label>\n"
+                },
+                {
+                    "date": 1740610708412,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,9 +76,9 @@\n     }\n   };\n \n   return (\n-    <form onSubmit={handleSubmit}>\n+    <form  onSubmit={handleSubmit}>\n       <label>\n         First Name:\n         <input\n           type=\"text\"\n"
+                },
+                {
+                    "date": 1740610714245,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,9 +76,9 @@\n     }\n   };\n \n   return (\n-    <form  onSubmit={handleSubmit}>\n+    <form  style{{onSubmit={handleSubmit}>\n       <label>\n         First Name:\n         <input\n           type=\"text\"\n"
+                },
+                {
+                    "date": 1740610720792,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,9 +76,9 @@\n     }\n   };\n \n   return (\n-    <form  style{{onSubmit={handleSubmit}>\n+    <form  style={}onSubmit={handleSubmit}>\n       <label>\n         First Name:\n         <input\n           type=\"text\"\n"
+                },
+                {
+                    "date": 1740610727498,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,9 +76,9 @@\n     }\n   };\n \n   return (\n-    <form  style={}onSubmit={handleSubmit}>\n+    <form  style={{margine}}onSubmit={handleSubmit}>\n       <label>\n         First Name:\n         <input\n           type=\"text\"\n"
+                },
+                {
+                    "date": 1740610733935,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,9 +76,9 @@\n     }\n   };\n \n   return (\n-    <form  style={{margine}}onSubmit={handleSubmit}>\n+    <form  style={{margineTop:\"\"}}onSubmit={handleSubmit}>\n       <label>\n         First Name:\n         <input\n           type=\"text\"\n"
+                },
+                {
+                    "date": 1740610926874,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n const EditProfile = ({api}) => {\n   const [user, setUser] = useState({\n     userName: '',\n-    phoneNumber: '',\n+    phone: '',\n     email: '',\n     // Add other fields as necessary\n   });\n \n@@ -76,9 +76,9 @@\n     }\n   };\n \n   return (\n-    <form  style={{margineTop:\"\"}}onSubmit={handleSubmit}>\n+    <form  style={{margineTop:\"90px\"}}onSubmit={handleSubmit}>\n       <label>\n         First Name:\n         <input\n           type=\"text\"\n"
+                },
+                {
+                    "date": 1740610971745,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -91,9 +91,9 @@\n         Last Name:\n         <input\n           type=\"text\"\n           name=\"lastName\"\n-          value={user.phoneNumber}\n+          value={user.phone}\n           onChange={handleChange}\n         />\n       </label>\n       <label>\n"
+                },
+                {
+                    "date": 1740611141079,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -77,8 +77,9 @@\n   };\n \n   return (\n     <form  style={{margineTop:\"90px\"}}onSubmit={handleSubmit}>\n+        test\n       <label>\n         First Name:\n         <input\n           type=\"text\"\n"
+                },
+                {
+                    "date": 1740611179943,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,12 +42,10 @@\n       .catch((error) => setError(error.message));\n   }, []);\n \n \n-  if (error) return <p>Error: {error}</p>;\n-  if (!user) return <p>Loading...</p>;\n+ \n \n-\n   const handleChange = (e) => {\n     const { name, value } = e.target;\n     setUser((prevUser) => ({\n       ...prevUser,\n"
+                },
+                {
+                    "date": 1740611189527,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,8 @@\n     email: '',\n     // Add other fields as necessary\n   });\n \n-  const [error, setError] = useState(null);\n \n   // Fetch user data on component mount\n   useEffect(() => {\n     const token = localStorage.getItem(\"token\");\n"
+                },
+                {
+                    "date": 1740611198342,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,9 @@\n     email: '',\n     // Add other fields as necessary\n   });\n \n+  const [error, setError] = useState(null);\n \n   // Fetch user data on component mount\n   useEffect(() => {\n     const token = localStorage.getItem(\"token\");\n@@ -41,10 +42,12 @@\n       .catch((error) => setError(error.message));\n   }, []);\n \n \n- \n+  if (error) return <p>Error: {error}</p>;\n+  if (!user) return <p>Loading...</p>;\n \n+\n   const handleChange = (e) => {\n     const { name, value } = e.target;\n     setUser((prevUser) => ({\n       ...prevUser,\n"
+                },
+                {
+                    "date": 1740611234453,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,9 +76,9 @@\n     }\n   };\n \n   return (\n-    <form  style={{margineTop:\"90px\"}}onSubmit={handleSubmit}>\n+    <form  style={{margineTop:\"900px\"}}onSubmit={handleSubmit}>\n         test\n       <label>\n         First Name:\n         <input\n"
+                },
+                {
+                    "date": 1740611688480,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n const EditProfile = ({api}) => {\n   const [user, setUser] = useState({\n     userName: '',\n-    phone: '',\n+    phoneNumber: '',\n     email: '',\n     // Add other fields as necessary\n   });\n \n@@ -76,10 +76,9 @@\n     }\n   };\n \n   return (\n-    <form  style={{margineTop:\"900px\"}}onSubmit={handleSubmit}>\n-        test\n+    <form  style={{margineTop:\"90px\"}}onSubmit={handleSubmit}>\n       <label>\n         First Name:\n         <input\n           type=\"text\"\n@@ -92,9 +91,9 @@\n         Last Name:\n         <input\n           type=\"text\"\n           name=\"lastName\"\n-          value={user.phone}\n+          value={user.phoneNumber}\n           onChange={handleChange}\n         />\n       </label>\n       <label>\n"
+                },
+                {
+                    "date": 1740611703405,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,9 +76,9 @@\n     }\n   };\n \n   return (\n-    <form  style={{margineTop:\"90px\"}}onSubmit={handleSubmit}>\n+    <form  style={{margineTop:\"\"}}onSubmit={handleSubmit}>\n       <label>\n         First Name:\n         <input\n           type=\"text\"\n"
+                },
+                {
+                    "date": 1740611710681,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import React, { useState, useEffect } from 'react';\n \n-const EditProfile = ({api}) => {\n+const EditProfile = () => {\n   const [user, setUser] = useState({\n     userName: '',\n     phoneNumber: '',\n     email: '',\n@@ -76,15 +76,15 @@\n     }\n   };\n \n   return (\n-    <form  style={{margineTop:\"\"}}onSubmit={handleSubmit}>\n+    <form onSubmit={handleSubmit}>\n       <label>\n         First Name:\n         <input\n           type=\"text\"\n           name=\"firstName\"\n-          value={user.userName}\n+          value={user.US}\n           onChange={handleChange}\n         />\n       </label>\n       <label>\n"
+                },
+                {
+                    "date": 1740611722617,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,15 @@\n import React, { useState, useEffect } from 'react';\n \n const EditProfile = () => {\n   const [user, setUser] = useState({\n-    userName: '',\n-    phoneNumber: '',\n+    firstName: '',\n+    lastName: '',\n     email: '',\n     // Add other fields as necessary\n   });\n \n-  const [error, setError] = useState(null);\n+    const [error, setError] = useState(null);\n \n   // Fetch user data on component mount\n   useEffect(() => {\n     const token = localStorage.getItem(\"token\");\n@@ -82,18 +82,18 @@\n         First Name:\n         <input\n           type=\"text\"\n           name=\"firstName\"\n-          value={user.US}\n+          value={user.firstName}\n           onChange={handleChange}\n         />\n       </label>\n       <label>\n         Last Name:\n         <input\n           type=\"text\"\n           name=\"lastName\"\n-          value={user.phoneNumber}\n+          value={user.lastName}\n           onChange={handleChange}\n         />\n       </label>\n       <label>\n"
+                },
+                {
+                    "date": 1740611728046,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,47 +7,23 @@\n     email: '',\n     // Add other fields as necessary\n   });\n \n-    const [error, setError] = useState(null);\n-\n-  // Fetch user data on component mount\n   useEffect(() => {\n-    const token = localStorage.getItem(\"token\");\n+    // Fetch user data from API and set it to state\n+    const fetchUserData = async () => {\n+      try {\n+        const response = await fetch('/api/user'); // Adjust the API endpoint as needed\n+        const userData = await response.json();\n+        setUser(userData);\n+      } catch (error) {\n+        console.error('Error fetching user data:', error);\n+      }\n+    };\n \n-    if (!token) {\n-      setError(\"No token found\");\n-      return;\n-    }\n-\n-    fetch(`${api}/profile`, {\n-      method: \"GET\",\n-      headers: {\n-        \"Content-Type\": \"application/json\",\n-        Authorization: `Bearer ${token}`, // Add token in the headers\n-      },\n-    })\n-      .then((response) => {\n-        if (!response.ok) {\n-          throw new Error(\"Failed to fetch user data\");\n-        }\n-        return response.json();\n-      })\n-      .then((data) => {\n-        setUser(data);\n-        localStorage.setItem(\"userData\", JSON.stringify(data));\n-        console.log(localStorage.getItem(\"userData\"));\n-  \n-      })\n-\n-      .catch((error) => setError(error.message));\n+    fetchUserData();\n   }, []);\n \n-\n-  if (error) return <p>Error: {error}</p>;\n-  if (!user) return <p>Loading...</p>;\n-\n-\n   const handleChange = (e) => {\n     const { name, value } = e.target;\n     setUser((prevUser) => ({\n       ...prevUser,\n"
+                }
+            ],
+            "date": 1740610038308,
+            "name": "Commit-0",
+            "content": "mport React, { useState, useEffect } from 'react';\n\nconst UserProfile = () => {\n  const [user, setUser] = useState({\n    firstName: '',\n    lastName: '',\n    email: '',\n    // Add other fields as necessary\n  });\n\n  useEffect(() => {\n    // Fetch user data from API and set it to state\n    const fetchUserData = async () => {\n      try {\n        const response = await fetch('/api/user'); // Adjust the API endpoint as needed\n        const userData = await response.json();\n        setUser(userData);\n      } catch (error) {\n        console.error('Error fetching user data:', error);\n      }\n    };\n\n    fetchUserData();\n  }, []);\n\n  const handleChange = (e) => {\n    const { name, value } = e.target;\n    setUser((prevUser) => ({\n      ...prevUser,\n      [name]: value,\n    }));\n  };\n\n  const handleSubmit = async (e) => {\n    e.preventDefault();\n    try {\n      const response = await fetch('/api/user', {\n        method: 'PUT', // Use PUT or PATCH based on your API design\n        headers: {\n          'Content-Type': 'application/json',\n        },\n        body: JSON.stringify(user),\n      });\n\n      if (response.ok) {\n        // Handle successful update (e.g., show a success message)\n      } else {\n        // Handle errors (e.g., show an error message)\n      }\n    } catch (error) {\n      console.error('Error updating user data:', error);\n    }\n  };\n\n  return (\n    <form onSubmit={handleSubmit}>\n      <label>\n        First Name:\n        <input\n          type=\"text\"\n          name=\"firstName\"\n          value={user.firstName}\n          onChange={handleChange}\n        />\n      </label>\n      <label>\n        Last Name:\n        <input\n          type=\"text\"\n          name=\"lastName\"\n          value={user.lastName}\n          onChange={handleChange}\n        />\n      </label>\n      <label>\n        Email:\n        <input\n          type=\"email\"\n          name=\"email\"\n          value={user.email}\n          onChange={handleChange}\n        />\n      </label>\n      {/* Add more fields as necessary */}\n      <button type=\"submit\">Save Changes</button>\n    </form>\n  );\n};\n\nexport default UserProfile;"
+        }
+    ]
+}

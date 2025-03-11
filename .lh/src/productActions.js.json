@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/productActions.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1740603499931,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1740603536143,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n // Fetch user's products\n export const fetchUserProducts = (userId) => async (dispatch) => {\n     try {\n-        const response = await fetch(${API_URL}/user/${userId});\n+        const response = await fetch(`${API_URL}/user/${userId});\n         const data = await response.json();\n         dispatch({ type: SET_USER_PRODUCTS, payload: data });\n     } catch (error) {\n         console.error(\"Error fetching user products:\", error);\n"
+                },
+                {
+                    "date": 1740603547161,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n // Fetch user's products\n export const fetchUserProducts = (userId) => async (dispatch) => {\n     try {\n-        const response = await fetch(`${API_URL}/user/${userId});\n+        const response = await fetch(`${API_URL}/user/${userId}`);\n         const data = await response.json();\n         dispatch({ type: SET_USER_PRODUCTS, payload: data });\n     } catch (error) {\n         console.error(\"Error fetching user products:\", error);\n@@ -15,9 +15,9 @@\n \n // Update product details\n export const updateProduct = (product) => async (dispatch) => {\n     try {\n-        const response = await fetch(${API_URL}/${product.id}, {\n+        const response = await fetch(`${API_URL}/${product.id}, {\n             method: \"PUT\",\n             headers: { \"Content-Type\": \"application/json\" },\n             body: JSON.stringify(product),\n         });\n"
+                }
+            ],
+            "date": 1740603499931,
+            "name": "Commit-0",
+            "content": "import { SET_USER_PRODUCTS, UPDATE_PRODUCT } from \"./types\";\n\nconst API_URL = \"http://localhost:5000/products\";\n\n// Fetch user's products\nexport const fetchUserProducts = (userId) => async (dispatch) => {\n    try {\n        const response = await fetch(${API_URL}/user/${userId});\n        const data = await response.json();\n        dispatch({ type: SET_USER_PRODUCTS, payload: data });\n    } catch (error) {\n        console.error(\"Error fetching user products:\", error);\n    }\n};\n\n// Update product details\nexport const updateProduct = (product) => async (dispatch) => {\n    try {\n        const response = await fetch(${API_URL}/${product.id}, {\n            method: \"PUT\",\n            headers: { \"Content-Type\": \"application/json\" },\n            body: JSON.stringify(product),\n        });\n\n        if (!response.ok) throw new Error(\"Failed to update product\");\n\n        const updatedProduct = await response.json();\n        dispatch({ type: UPDATE_PRODUCT, payload: updatedProduct });\n    } catch (error) {\n        console.error(\"Error updating product:\", error);\n    }\n}"
+        }
+    ]
+}

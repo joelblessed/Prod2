@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 2,
+            "activePatchIndex": 3,
             "patches": [
                 {
                     "date": 1738184419474,
@@ -16,6 +16,10 @@
                 {
                     "date": 1738231374745,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n const ProtectedRoute = ({ children, allowedRoles }) => {\n   const { user } = useContext(AuthContext);\n \n-  if (!user) return <Navigate to=\"/Sign\" />;\n+  if (!user) return <Navigate to=\"/SignIN\" />;\n   if (!allowedRoles.includes(user.role)) return <Navigate to=\"/unauthorized\" />;\n \n   return children;\n };\n"
+                },
+                {
+                    "date": 1741086997921,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n const ProtectedRoute = ({ children, allowedRoles }) => {\n   const { user } = useContext(AuthContext);\n \n-  if (!user) return <Navigate to=\"/SignIN\" />;\n+  if (!user) return <Navigate to=\"/iignIN\" />;\n   if (!allowedRoles.includes(user.role)) return <Navigate to=\"/unauthorized\" />;\n \n   return children;\n };\n"
                 }
             ],
             "date": 1738184419474,
