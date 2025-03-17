@@ -87,7 +87,7 @@ function App() {
   const [user, setUser] = useState();
   const [error, setError] = useState(null);
   const dispatch = useDispatch();
-  const api = process.env.REACT_APP_API_URL;
+const
 
   const cartItems = useSelector((state) => state.cart.items);
   const cartCount = cartItems.length;
@@ -100,7 +100,8 @@ function App() {
     }
   }, [userId, dispatch]);
 
- 
+  // https://prod2-api.onrender.com
+  // http://localhost:5000
 
   // Function to check screen size
   const handleResize = () => {

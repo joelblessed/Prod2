@@ -100,7 +100,8 @@ function App() {
     }
   }, [userId, dispatch]);
 
- 
+  // https://prod2-api.onrender.com
+  // http://localhost:5000
 
   // Function to check screen size
   const handleResize = () => {
