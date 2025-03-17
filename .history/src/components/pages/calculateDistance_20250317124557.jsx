@@ -7,7 +7,7 @@ const CalculateDistance = () => {
   const [deliveryLocation, setDeliveryLocation] = useState(null);
   const [distance, setDistance] = useState(null);
   const [loading, setLoading] = useState(false);
-  const mapApiKey = process.env.GOOGLE_MAP_API_KEY;
+  const mapApiKey = process.env.REACT_APP_MAP_API_KEY;
   // Fetch user location using geolocation API
   useEffect(() => {
     if (navigator.geolocation) {
@@ -17,7 +17,7 @@ const CalculateDistance = () => {
       });
     }
   }, []);
-  console.log(mapApiKey)
+  console.log(ma)
 
   // Function to get coordinates from address using Google Maps Geocoding API
   const getCoordinates = async (address) => {

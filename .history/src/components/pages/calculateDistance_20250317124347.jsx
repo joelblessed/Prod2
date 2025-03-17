@@ -7,7 +7,7 @@ const CalculateDistance = () => {
   const [deliveryLocation, setDeliveryLocation] = useState(null);
   const [distance, setDistance] = useState(null);
   const [loading, setLoading] = useState(false);
-  const mapApiKey = process.env.GOOGLE_MAP_API_KEY;
+  const Goo
   // Fetch user location using geolocation API
   useEffect(() => {
     if (navigator.geolocation) {
@@ -17,12 +17,10 @@ const CalculateDistance = () => {
       });
     }
   }, []);
-  console.log(mapApiKey)
 
   // Function to get coordinates from address using Google Maps Geocoding API
   const getCoordinates = async (address) => {
-    const geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(address)}&key=${mapApiKey}`;
-    setLoading(true);
+    const geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(address)}&key=AIzaSyA9giO1qEVFOWFmSP92cQ0qqmupQkT8MqI`;
 
     try {
       const response = await axios.get(geocodeUrl);

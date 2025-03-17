@@ -1,6 +1,6 @@
 import { SET_USER_PRODUCTS, UPDATE_PRODUCT } from "./types";
 
-const API_URL = process.env.REACT_APP_API_URL;
+const API_URL =process.env.REACT_APP_API_URL;
 
 // Fetch user's products
 export const fetchUserProducts = (userId) => async (dispatch) => {

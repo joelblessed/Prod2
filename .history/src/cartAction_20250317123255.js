@@ -1,6 +1,6 @@
 import { setCart, addToCart, removeFromCart, clearCart, incrementQuantity, decrementQuantity } from "./cartSlice";
 
-const API_URL = process.env.REACT_APP_API_URL;
+const API_URL = "http://localhost:5000";
 const userId = localStorage.getItem("userId")
 
 // *Add to Cart Before Login (Saves in LocalStorage)*
@@ -125,7 +125,7 @@ export const decrementProductQuantity = (productId) => async (dispatch) => {
     dispatch(decrementQuantity(productId)); // Update state
 
     try {
-        await fetch(`${API_URL}/cart/${userId}/${productId}/decrement`, {
+        await fetch(`${API_URL}//${userId}/${productId}/decrement`, {
             method: "PUT",
             headers: { 
                 "Content-Type": "application/json",

@@ -1,6 +1,6 @@
 import { setCart, addToCart, removeFromCart, clearCart, incrementQuantity, decrementQuantity } from "./cartSlice";
-
-const API_URL = process.env.REACT_APP_API_URL;
+const API_URL = "http://localhost:;
+const API_URL = ";
 const userId = localStorage.getItem("userId")
 
 // *Add to Cart Before Login (Saves in LocalStorage)*

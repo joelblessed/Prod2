@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 10,
+            "activePatchIndex": 22,
             "patches": [
                 {
                     "date": 1741128588211,
@@ -48,6 +48,54 @@
                 {
                     "date": 1741592295934,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n   }, []);\n \n   // Function to get coordinates from address using Google Maps Geocoding API\n   const getCoordinates = async (address) => {\n-    const geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(address)}&key=`;\n+    const geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(address)}&key=AIzaSyA9giO1qEVFOWFmSP92cQ0qqmupQkT8MqI`;\n \n     try {\n       const response = await axios.get(geocodeUrl);\n       const location = response.data.results[0]?.geometry.location;\n"
+                },
+                {
+                    "date": 1742215420667,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n   const [address, setAddress] = useState('');\n   const [deliveryLocation, setDeliveryLocation] = useState(null);\n   const [distance, setDistance] = useState(null);\n   const [loading, setLoading] = useState(false);\n-\n+  const \n   // Fetch user location using geolocation API\n   useEffect(() => {\n     if (navigator.geolocation) {\n       navigator.geolocation.getCurrentPosition((position) => {\n"
+                },
+                {
+                    "date": 1742215427550,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n   const [address, setAddress] = useState('');\n   const [deliveryLocation, setDeliveryLocation] = useState(null);\n   const [distance, setDistance] = useState(null);\n   const [loading, setLoading] = useState(false);\n-  const \n+  const Goo\n   // Fetch user location using geolocation API\n   useEffect(() => {\n     if (navigator.geolocation) {\n       navigator.geolocation.getCurrentPosition((position) => {\n"
+                },
+                {
+                    "date": 1742215433473,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n   const [address, setAddress] = useState('');\n   const [deliveryLocation, setDeliveryLocation] = useState(null);\n   const [distance, setDistance] = useState(null);\n   const [loading, setLoading] = useState(false);\n-  const Goo\n+  const \n   // Fetch user location using geolocation API\n   useEffect(() => {\n     if (navigator.geolocation) {\n       navigator.geolocation.getCurrentPosition((position) => {\n"
+                },
+                {
+                    "date": 1742215442054,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n   const [address, setAddress] = useState('');\n   const [deliveryLocation, setDeliveryLocation] = useState(null);\n   const [distance, setDistance] = useState(null);\n   const [loading, setLoading] = useState(false);\n-  const \n+  const mapApiKey = process.env.REACT_APP_MAP_API_KEY;\n   // Fetch user location using geolocation API\n   useEffect(() => {\n     if (navigator.geolocation) {\n       navigator.geolocation.getCurrentPosition((position) => {\n"
+                },
+                {
+                    "date": 1742215512632,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n   }, []);\n \n   // Function to get coordinates from address using Google Maps Geocoding API\n   const getCoordinates = async (address) => {\n-    const geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(address)}&key=AIzaSyA9giO1qEVFOWFmSP92cQ0qqmupQkT8MqI`;\n+    const geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(address)}&key=`;\n \n     try {\n       const response = await axios.get(geocodeUrl);\n       const location = response.data.results[0]?.geometry.location;\n"
+                },
+                {
+                    "date": 1742215540260,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,10 @@\n   }, []);\n \n   // Function to get coordinates from address using Google Maps Geocoding API\n   const getCoordinates = async (address) => {\n-    const geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(address)}&key=`;\n+    const geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(address)}&key=${mapApiKey}`;\n+    setLoading(true);\n \n     try {\n       const response = await axios.get(geocodeUrl);\n       const location = response.data.results[0]?.geometry.location;\n"
+                },
+                {
+                    "date": 1742215546876,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,9 @@\n         setUserLocation({ latitude, longitude });\n       });\n     }\n   }, []);\n+  \n \n   // Function to get coordinates from address using Google Maps Geocoding API\n   const getCoordinates = async (address) => {\n     const geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(address)}&key=${mapApiKey}`;\n"
+                },
+                {
+                    "date": 1742215552761,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n         setUserLocation({ latitude, longitude });\n       });\n     }\n   }, []);\n-  \n+  console.log\n \n   // Function to get coordinates from address using Google Maps Geocoding API\n   const getCoordinates = async (address) => {\n     const geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(address)}&key=${mapApiKey}`;\n"
+                },
+                {
+                    "date": 1742215559279,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n         setUserLocation({ latitude, longitude });\n       });\n     }\n   }, []);\n-  console.log\n+  console.log(mapApiKey)\n \n   // Function to get coordinates from address using Google Maps Geocoding API\n   const getCoordinates = async (address) => {\n     const geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(address)}&key=${mapApiKey}`;\n"
+                },
+                {
+                    "date": 1742215648599,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n   const [address, setAddress] = useState('');\n   const [deliveryLocation, setDeliveryLocation] = useState(null);\n   const [distance, setDistance] = useState(null);\n   const [loading, setLoading] = useState(false);\n-  const mapApiKey = process.env.REACT_APP_MAP_API_KEY;\n+  const mapApiKey = process.env._APP_MAP_API_KEY;\n   // Fetch user location using geolocation API\n   useEffect(() => {\n     if (navigator.geolocation) {\n       navigator.geolocation.getCurrentPosition((position) => {\n"
+                },
+                {
+                    "date": 1742215655309,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n   const [address, setAddress] = useState('');\n   const [deliveryLocation, setDeliveryLocation] = useState(null);\n   const [distance, setDistance] = useState(null);\n   const [loading, setLoading] = useState(false);\n-  const mapApiKey = process.env._APP_MAP_API_KEY;\n+  const mapApiKey = process.env.GOO_APP_MAP_API_KEY;\n   // Fetch user location using geolocation API\n   useEffect(() => {\n     if (navigator.geolocation) {\n       navigator.geolocation.getCurrentPosition((position) => {\n"
+                },
+                {
+                    "date": 1742215667959,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n   const [address, setAddress] = useState('');\n   const [deliveryLocation, setDeliveryLocation] = useState(null);\n   const [distance, setDistance] = useState(null);\n   const [loading, setLoading] = useState(false);\n-  const mapApiKey = process.env.GOO_APP_MAP_API_KEY;\n+  const mapApiKey = process.env.GOOGLE_MAP_API_KEY;\n   // Fetch user location using geolocation API\n   useEffect(() => {\n     if (navigator.geolocation) {\n       navigator.geolocation.getCurrentPosition((position) => {\n"
                 }
             ],
             "date": 1741128588211,

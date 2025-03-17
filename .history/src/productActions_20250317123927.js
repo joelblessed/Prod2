@@ -1,11 +1,11 @@
 import { SET_USER_PRODUCTS, UPDATE_PRODUCT } from "./types";
 
-const API_URL = process.env.REACT_APP_API_URL;
+const API_URL = "http://localhost:5000/products";
 
 // Fetch user's products
 export const fetchUserProducts = (userId) => async (dispatch) => {
     try {
-        const response = await fetch(`${API_URL}/products/user/${userId}`);
+        const response = await fetch(`${API_URL}//user/${userId}`);
         const data = await response.json();
         dispatch({ type: SET_USER_PRODUCTS, payload: data });
     } catch (error) {
@@ -16,7 +16,7 @@ export const fetchUserProducts = (userId) => async (dispatch) => {
 // Update product details
 export const updateProduct = (product) => async (dispatch) => {
     try {
-        const response = await fetch(`${API_URL}/products/${product.id}`, {
+        const response = await fetch(`${API_URL}/${product.id}`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(product),
