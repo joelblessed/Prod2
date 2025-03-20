@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 86,
+            "activePatchIndex": 115,
             "patches": [
                 {
                     "date": 1739458531149,
@@ -352,6 +352,122 @@
                 {
                     "date": 1741634262507,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n       <div className=\"animated-box\" style={styles.container}>\n         {products.length > 0 ? (\n           products.map((product, index) => (\n             \n-              <div style={{ border:\"1px solid tomato\", borderRadius:\"12px\", boxShadow:\"0px 0px 10px 1tomato\"}}>\n+              <div style={{ border:\"1px solid tomato\", borderRadius:\"12px\", boxShadow:\"0px 0px 10px 1px tomato\"}}>\n                 <div\n                   key={index}\n                   style={{\n                     ...styles.box,\n@@ -94,9 +94,9 @@\n                   <div\n                     className=\"text\"\n                     style={{\n                       background:\n-                        \" linear-gradient(45deg,white 66%, tomato, )\",\n+                        \" linear-gradient(45deg,white 66%, tomato)\",\n                       borderRadius: \"10PX\",\n                       width: \"215px\",\n                       height: \"100px\",\n                       paddingLeft:\"10px\"\n"
+                },
+                {
+                    "date": 1742453888690,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { useSelector, useDispatch } from \"react-redux\";\n import { addToCartBeforeLogin, addToCartAPI } from \"../../cartAction\";\n import \"./products.css\";\n \n-const CategoryPage = ({highlightText,api, addToCart, addToWishList, handleProductClick, searchTerm}) => {\n+const CategoryPage = ({apihighlightText,api, addToCart, addToWishList, handleProductClick, searchTerm}) => {\n   const { categoryName } = useParams();\n   const [products, setProducts] = useState([]);\n   const dispatch = useDispatch();\n \n"
+                },
+                {
+                    "date": 1742453897445,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,15 +3,15 @@\n import { useSelector, useDispatch } from \"react-redux\";\n import { addToCartBeforeLogin, addToCartAPI } from \"../../cartAction\";\n import \"./products.css\";\n \n-const CategoryPage = ({apihighlightText,api, addToCart, addToWishList, handleProductClick, searchTerm}) => {\n+const CategoryPage = ({api,highlightText,api, addToCart, addToWishList, handleProductClick, searchTerm}) => {\n   const { categoryName } = useParams();\n   const [products, setProducts] = useState([]);\n   const dispatch = useDispatch();\n \n   useEffect(() => {\n-    fetch(\"http://localhost:5000/products\")\n+    fetch(/products\")\n       .then((res) => res.json())\n       .then((data) => {\n         const products = data.filter((product) => product.category === categoryName);\n         setProducts(products);\n"
+                },
+                {
+                    "date": 1742453902838,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n   const [products, setProducts] = useState([]);\n   const dispatch = useDispatch();\n \n   useEffect(() => {\n-    fetch(/products\")\n+    fetch(`/products\")\n       .then((res) => res.json())\n       .then((data) => {\n         const products = data.filter((product) => product.category === categoryName);\n         setProducts(products);\n"
+                },
+                {
+                    "date": 1742453910792,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n   const [products, setProducts] = useState([]);\n   const dispatch = useDispatch();\n \n   useEffect(() => {\n-    fetch(`/products\")\n+    fetch(`${api}/products\")\n       .then((res) => res.json())\n       .then((data) => {\n         const products = data.filter((product) => product.category === categoryName);\n         setProducts(products);\n"
+                },
+                {
+                    "date": 1742453993550,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,15 +3,15 @@\n import { useSelector, useDispatch } from \"react-redux\";\n import { addToCartBeforeLogin, addToCartAPI } from \"../../cartAction\";\n import \"./products.css\";\n \n-const CategoryPage = ({api,highlightText,api, addToCart, addToWishList, handleProductClick, searchTerm}) => {\n+const CategoryPage = ({api,highlightText,addToCart, addToWishList, handleProductClick, searchTerm}) => {\n   const { categoryName } = useParams();\n   const [products, setProducts] = useState([]);\n   const dispatch = useDispatch();\n \n   useEffect(() => {\n-    fetch(`${api}/products\")\n+    fetch(`${api}/products`)\n       .then((res) => res.json())\n       .then((data) => {\n         const products = data.filter((product) => product.category === categoryName);\n         setProducts(products);\n"
+                },
+                {
+                    "date": 1742454014931,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -84,9 +84,9 @@\n                       //   )\n                       // }\n                     />\n                   ) : (\n-                    <p>No image available</p>\n+                    <p></p>\n                   )}\n                 </div>\n    \n               {/* text */}\n"
+                },
+                {
+                    "date": 1742454021729,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -84,9 +84,9 @@\n                       //   )\n                       // }\n                     />\n                   ) : (\n-                    <p></p>\n+                    <p>{t(</p>\n                   )}\n                 </div>\n    \n               {/* text */}\n"
+                },
+                {
+                    "date": 1742454027571,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -84,9 +84,9 @@\n                       //   )\n                       // }\n                     />\n                   ) : (\n-                    <p>{t(</p>\n+                    <p>{t(\"\")}</p>\n                   )}\n                 </div>\n    \n               {/* text */}\n"
+                },
+                {
+                    "date": 1742454039818,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -84,9 +84,9 @@\n                       //   )\n                       // }\n                     />\n                   ) : (\n-                    <p>{t(\"\")}</p>\n+                    <p>{t(\"Np Image \")}</p>\n                   )}\n                 </div>\n    \n               {/* text */}\n"
+                },
+                {
+                    "date": 1742454045072,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -84,9 +84,9 @@\n                       //   )\n                       // }\n                     />\n                   ) : (\n-                    <p>{t(\"Np Image \")}</p>\n+                    <p>{t(\"No Image \")}</p>\n                   )}\n                 </div>\n    \n               {/* text */}\n"
+                },
+                {
+                    "date": 1742454053568,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -84,9 +84,9 @@\n                       //   )\n                       // }\n                     />\n                   ) : (\n-                    <p>{t(\"No Image \")}</p>\n+                    <p>{t(\"No Image Available\")}</p>\n                   )}\n                 </div>\n    \n               {/* text */}\n"
+                },
+                {
+                    "date": 1742454063199,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -109,9 +109,9 @@\n                           __html: highlightText(product.name, searchTerm),\n                         }}\n                       ></span>{\" \"}\n                     </h5>\n-                    <h6>Description: {product.desc}</h6>\n+                    <h6>: {product.desc}</h6>\n                     <h6>Price: {product.price} </h6>\n                   </div>\n \n                   {/* like and wishlist */}\n"
+                },
+                {
+                    "date": 1742454069281,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -109,9 +109,9 @@\n                           __html: highlightText(product.name, searchTerm),\n                         }}\n                       ></span>{\" \"}\n                     </h5>\n-                    <h6>: {product.desc}</h6>\n+                    <h6>{t(\"Des\")}: {product.desc}</h6>\n                     <h6>Price: {product.price} </h6>\n                   </div>\n \n                   {/* like and wishlist */}\n"
+                },
+                {
+                    "date": 1742454075155,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -109,9 +109,9 @@\n                           __html: highlightText(product.name, searchTerm),\n                         }}\n                       ></span>{\" \"}\n                     </h5>\n-                    <h6>{t(\"Des\")}: {product.desc}</h6>\n+                    <h6>{t(\"Description\")}: {product.desc}</h6>\n                     <h6>Price: {product.price} </h6>\n                   </div>\n \n                   {/* like and wishlist */}\n"
+                },
+                {
+                    "date": 1742454080806,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -110,9 +110,9 @@\n                         }}\n                       ></span>{\" \"}\n                     </h5>\n                     <h6>{t(\"Description\")}: {product.desc}</h6>\n-                    <h6>Price: {product.price} </h6>\n+                    <h6>: {product.price} </h6>\n                   </div>\n \n                   {/* like and wishlist */}\n                   <div style={{background:\"white\", height:\"100px\"}}>\n"
+                },
+                {
+                    "date": 1742454087861,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -110,9 +110,9 @@\n                         }}\n                       ></span>{\" \"}\n                     </h5>\n                     <h6>{t(\"Description\")}: {product.desc}</h6>\n-                    <h6>: {product.price} </h6>\n+                    <h6>{t(\"price\")}: {product.price} </h6>\n                   </div>\n \n                   {/* like and wishlist */}\n                   <div style={{background:\"white\", height:\"100px\"}}>\n"
+                },
+                {
+                    "date": 1742454105865,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -110,9 +110,9 @@\n                         }}\n                       ></span>{\" \"}\n                     </h5>\n                     <h6>{t(\"Description\")}: {product.desc}</h6>\n-                    <h6>{t(\"price\")}: {product.price} </h6>\n+                    <h6>{t(\"Price\")}: {product.price} </h6>\n                   </div>\n \n                   {/* like and wishlist */}\n                   <div style={{background:\"white\", height:\"100px\"}}>\n@@ -168,9 +168,9 @@\n                     // onClick={() => addToCart(product)}\n                 \n                      onClick={() => dispatch(addToCartBeforeLogin(product))}\n                   >\n-                    addToCart\n+                   {t(\"\")}\n                   </button>\n                 </div>\n               </div>\n             \n"
+                },
+                {
+                    "date": 1742454111920,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -168,9 +168,9 @@\n                     // onClick={() => addToCart(product)}\n                 \n                      onClick={() => dispatch(addToCartBeforeLogin(product))}\n                   >\n-                   {t(\"\")}\n+                   {t(\"Add to \")}\n                   </button>\n                 </div>\n               </div>\n             \n"
+                },
+                {
+                    "date": 1742454121902,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -168,9 +168,9 @@\n                     // onClick={() => addToCart(product)}\n                 \n                      onClick={() => dispatch(addToCartBeforeLogin(product))}\n                   >\n-                   {t(\"Add to \")}\n+                   {t(\"Add To Cart\")}\n                   </button>\n                 </div>\n               </div>\n             \n"
+                },
+                {
+                    "date": 1742454129412,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -175,9 +175,9 @@\n               </div>\n             \n           ))\n         ) : (\n-          <p>Loading...</p>\n+          <p></p>\n         )}\n       </div>\n \n       {/* {product.isSelected ? \"Unselect\" : \"Select\"} */}\n"
+                },
+                {
+                    "date": 1742454137575,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -175,9 +175,9 @@\n               </div>\n             \n           ))\n         ) : (\n-          <p></p>\n+          <p>{}</p>\n         )}\n       </div>\n \n       {/* {product.isSelected ? \"Unselect\" : \"Select\"} */}\n"
+                },
+                {
+                    "date": 1742454143936,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -175,9 +175,9 @@\n               </div>\n             \n           ))\n         ) : (\n-          <p>{}</p>\n+          <p>{t(\"L\")}</p>\n         )}\n       </div>\n \n       {/* {product.isSelected ? \"Unselect\" : \"Select\"} */}\n"
+                },
+                {
+                    "date": 1742454150315,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -175,9 +175,9 @@\n               </div>\n             \n           ))\n         ) : (\n-          <p>{t(\"L\")}</p>\n+          <p>{t(\"Loading...\")}</p>\n         )}\n       </div>\n \n       {/* {product.isSelected ? \"Unselect\" : \"Select\"} */}\n"
+                },
+                {
+                    "date": 1742454199468,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n import React, { useState, useEffect } from \"react\";\n import { useParams, Link } from \"react-router-dom\";\n import { useSelector, useDispatch } from \"react-redux\";\n import { addToCartBeforeLogin, addToCartAPI } from \"../../cartAction\";\n+\n import \"./products.css\";\n \n const CategoryPage = ({api,highlightText,addToCart, addToWishList, handleProductClick, searchTerm}) => {\n   const { categoryName } = useParams();\n"
+                },
+                {
+                    "date": 1742454209130,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n import React, { useState, useEffect } from \"react\";\n import { useParams, Link } from \"react-router-dom\";\n import { useSelector, useDispatch } from \"react-redux\";\n import { addToCartBeforeLogin, addToCartAPI } from \"../../cartAction\";\n+import { useTranslation } from \"react-i18next\";\n+// import \"./products.css\";\n \n-import \"./products.css\";\n-\n const CategoryPage = ({api,highlightText,addToCart, addToWishList, handleProductClick, searchTerm}) => {\n   const { categoryName } = useParams();\n   const [products, setProducts] = useState([]);\n   const dispatch = useDispatch();\n"
+                },
+                {
+                    "date": 1742454232526,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,10 @@\n const CategoryPage = ({api,highlightText,addToCart, addToWishList, handleProductClick, searchTerm}) => {\n   const { categoryName } = useParams();\n   const [products, setProducts] = useState([]);\n   const dispatch = useDispatch();\n+    const { t } = useTranslation();\n+  \n \n   useEffect(() => {\n     fetch(`${api}/products`)\n       .then((res) => res.json())\n"
+                },
+                {
+                    "date": 1742454409059,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n const CategoryPage = ({api,highlightText,addToCart, addToWishList, handleProductClick, searchTerm}) => {\n   const { categoryName } = useParams();\n   const [products, setProducts] = useState([]);\n   const dispatch = useDispatch();\n-    const { t } = useTranslation();\n+  const { t } = useTranslation();\n   \n \n   useEffect(() => {\n     fetch(`${api}/products`)\n@@ -96,10 +96,9 @@\n                 <div style={{ display: \"flex\" }}>\n                   <div\n                     className=\"text\"\n                     style={{\n-                      background:\n-                        \" linear-gradient(45deg,white 66%, tomato)\",\n+                     \n                       borderRadius: \"10PX\",\n                       width: \"215px\",\n                       height: \"100px\",\n                       paddingLeft:\"10px\"\n"
+                },
+                {
+                    "date": 1742454454964,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -118,5 +118,77 @@\n \n                   {/* like and wishlist */}\n                   <div style={{background:\"white\", height:\"100px\"}}>\n                     <div>\n-                      <button style={{backgr\n\\ No newline at end of file\n+                      <button style={{background:\"none\", border:\"0px\"}}>\n+                        <svg\n+                          xmlns=\"http://www.w3.org/2000/svg\"\n+                          height=\"24px\"\n+                          viewBox=\"0 -960 960 960\"\n+                          width=\"24px\"\n+                          fill=\"red\"\n+                        >\n+                          <path d=\"m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Zm0-108q96-86 158-147.5t98-107q36-45.5 50-81t14-70.5q0-60-40-100t-100-40q-47 0-87 26.5T518-680h-76q-15-41-55-67.5T300-774q-60 0-100 40t-40 100q0 35 14 70.5t50 81q36 45.5 98 107T480-228Zm0-273Z\" />\n+                        </svg>\n+                      </button>\n+                    </div>\n+                    <div>\n+                      <button\n+                        style={{\n+                          background: \"transparent\",\n+                          border: \"0px solid orange\",\n+                          color: \"orange\",\n+                          padding: \"0px 0px\",\n+                          background: \"none\",\n+                          borderRadius: \"10px 10px 10px 10px \",\n+                          cursor: \"pointer\",\n+                          fontSize: \"40px\",\n+                          transition: \"all 0.3s ease\",\n+                          marginRight: \"auto\",\n+                          width:\"35px\"\n+                        }}\n+                        onClick={() => addToWishList(product)}\n+                      >\n+                        +\n+                      </button>\n+                    </div>\n+                  </div>\n+                </div>\n+\n+                <div style={{ background: \"\" }}>\n+                  <button\n+                    style={{\n+                      background: \"white\",\n+                      border: \"0px solid tomato\",\n+                      color: \"red\",\n+                      padding: \"10px 20px\",\n+                      borderRadius: \"0px 0px 10px 10px \",\n+                      cursor: \"pointer\",\n+                      fontSize: \"100%\",\n+                      transition: \"all 0.3s ease\",\n+                      width: \"100%\",\n+                    }}\n+                    // onClick={() => addToCart(product)}\n+                \n+                     onClick={() => dispatch(addToCartBeforeLogin(product))}\n+                  >\n+                   {t(\"Add To Cart\")}\n+                  </button>\n+                </div>\n+              </div>\n+            \n+          ))\n+        ) : (\n+          <p>{t(\"Loading...\")}</p>\n+        )}\n+      </div>\n+\n+      {/* {product.isSelected ? \"Unselect\" : \"Select\"} */}\n+    \n+\n+      <Link to=\"/\" style={styles.backButton}>Back</Link>\n+    </div>\n+  );\n+};\n+\n+\n+export default CategoryPage;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1742454731774,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -153,9 +153,9 @@\n                     </div>\n                   </div>\n                 </div>\n \n-                <div style={{ background: \"\" , justifyContent:\"center\", alignContent:\"center\", alignItems:\"ce\"}}>\n+                <div style={{ background: \"\" , justifyContent:\"center\", alignContent:\"center\", alignItems:\"cen\"}}>\n                   <button\n                     style={{\n                       background: \"white\",\n                       border: \"1px solid tomato\",\n"
                 }
             ],
             "date": 1739458531149,
