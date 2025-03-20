@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 30,
+            "activePatchIndex": 31,
             "patches": [
                 {
                     "date": 1737555333001,
@@ -128,6 +128,10 @@
                 {
                     "date": 1739392271166,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n const root = ReactDOM.createRoot(document.getElementById('root'));\n root.render(\n   <Provider store={store}>\n   <App />\n-</React.StrictMode>\n+</>\n );\n \n // If you want to start measuring performance in your app, pass a function\n // to log results (for example: reportWebVitals(console.log))\n"
+                },
+                {
+                    "date": 1742402221949,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,15 +5,16 @@\n import ReactDom from \"react-dom\";\n import { Provider } from \"react-redux\";\n import store from \"./store\";\n import reportWebVitals from './reportWebVitals';\n+import \"./components/translations/i18n\";\n \n \n const root = ReactDOM.createRoot(document.getElementById('root'));\n root.render(\n   <Provider store={store}>\n   <App />\n-</>\n+</Provider>\n );\n \n // If you want to start measuring performance in your app, pass a function\n // to log results (for example: reportWebVitals(console.log))\n"
                 }
             ],
             "date": 1737555333001,
