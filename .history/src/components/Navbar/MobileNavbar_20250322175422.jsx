@@ -229,7 +229,7 @@ function MobileNavbar({
     navigate("/category");
    }
    const goToProducts =()=>{
-    navigate("/products");
+    navigate("/produts");
    }
   return (
     <>
@@ -300,7 +300,7 @@ function MobileNavbar({
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
-          <SearchButton onClick={ () =>{goToProducts();search()}}>
+          <SearchButton onClick={ () =search}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="24px"
@@ -316,37 +316,32 @@ function MobileNavbar({
 
       <MobileMenu isOpen={isMenuOpen}>
         <li>
-          <NavLink style={style.NavLink} onClick={() => {setIsMenuOpen(false)}} to="/">
+          <NavLink style={style.NavLink} to="/">
             Home
           </NavLink>
         </li>
         <li>
-          <NavLink style={style.NavLink} onClick={() => {setIsMenuOpen(false)}}  to="/products">
+          <NavLink style={style.NavLink} to="/products">
             Products
           </NavLink>
         </li>
         <li>
-          <NavLink style={style.NavLink} onClick={() => {setIsMenuOpen(false)}}  to="/newProduct">
+          <NavLink style={style.NavLink} to="/newProduct">
             Sell
           </NavLink>
         </li>
-        <ul  style={{ listStyleType: "none", padding: 0 }}><h4> categories:</h4> 
+        <ul>
         {categories.map((cat, index) => (
           <li
             key={index}
-            onClick={() => {setCategory(cat); goToCategory(); setIsMenuOpen(false)}}
+            onClick={() => {setCategory(cat); goToCategory()}}
             style={{
               cursor: "pointer",
               fontWeight: category === cat ? "bold" : "normal",
               color: category === cat ? "blue" : "black",
-              
-                marginBottom: "5px",
-                padding: "5px",
-                border: "1px solid #ccc",
-                borderRadius: "4px",
             }}
           >
-             <h4 style={{ color: "red", margin: 0 }}>{cat}</h4>
+            {cat}
           </li>
         ))}
       </ul>

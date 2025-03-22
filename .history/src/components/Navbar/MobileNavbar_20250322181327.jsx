@@ -330,7 +330,7 @@ function MobileNavbar({
             Sell
           </NavLink>
         </li>
-        <ul  style={{ listStyleType: "none", padding: 0 }}><h4> categories:</h4> 
+        <ul  style={{ listStyleType: "none", padding: 0 }}><h4></h4> categories
         {categories.map((cat, index) => (
           <li
             key={index}

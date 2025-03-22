@@ -316,21 +316,21 @@ function MobileNavbar({
 
       <MobileMenu isOpen={isMenuOpen}>
         <li>
-          <NavLink style={style.NavLink} onClick={() => {setIsMenuOpen(false)}} to="/">
+          <NavLink style={style.NavLink} onClick={setIsMenuOpen(false)} to="/">
             Home
           </NavLink>
         </li>
         <li>
-          <NavLink style={style.NavLink} onClick={() => {setIsMenuOpen(false)}}  to="/products">
+          <NavLink style={style.NavLink}  to="/products">
             Products
           </NavLink>
         </li>
         <li>
-          <NavLink style={style.NavLink} onClick={() => {setIsMenuOpen(false)}}  to="/newProduct">
+          <NavLink style={style.NavLink} to="/newProduct">
             Sell
           </NavLink>
         </li>
-        <ul  style={{ listStyleType: "none", padding: 0 }}><h4> categories:</h4> 
+        <ul  style={{ listStyleType: "none", padding: 0 }}>
         {categories.map((cat, index) => (
           <li
             key={index}
