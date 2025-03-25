@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 24,
+            "activePatchIndex": 26,
             "patches": [
                 {
                     "date": 1739874602818,
@@ -104,6 +104,14 @@
                 {
                     "date": 1742691942441,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +0,0 @@\n-*{\n-    background: rgba(0, 0, 0, 0.378);\n-}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1742802574037,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,19 @@\n+mport { useTranslation } from \"react-i18next\";\n+// import \"./products.css\";\n+\n+const CategoryPage = ({api,highlightText,addToCart, addToWishList, handleProductClick, searchTerm}) => {\n+  const { categoryName } = useParams();\n+  const [products, setProducts] = useState([]);\n+  const dispatch = useDispatch();\n+  const { t } = useTranslation();\n+  \n+\n+  useEffect(() => {\n+    fetch(`${api}/products`)\n+      .then((res) => res.json())\n+      .then((data) => {\n+        const products = data.filter((product) => product.category === categoryName);\n+        setProducts(products);\n+      })\n+      .catch((error) => console.error(\"Error fetching products:\", error));\n+  }, [categoryName]);\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1742803340461,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-mport { useTranslation } from \"react-i18next\";\n+/* mport { useTranslation } from \"react-i18next\";\n // import \"./products.css\";\n \n const CategoryPage = ({api,highlightText,addToCart, addToWishList, handleProductClick, searchTerm}) => {\n   const { categoryName } = useParams();\n@@ -15,5 +15,5 @@\n         const products = data.filter((product) => product.category === categoryName);\n         setProducts(products);\n       })\n       .catch((error) => console.error(\"Error fetching products:\", error));\n-  }, [categoryName]);\n\\ No newline at end of file\n+  }, [categoryName]); */\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1739874602818,
