@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 22,
+            "activePatchIndex": 33,
             "patches": [
                 {
                     "date": 1742741565115,
@@ -96,6 +96,50 @@
                 {
                     "date": 1742742210995,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -318,9 +318,9 @@\n                             cursor: \"pointer\",\n                           }}\n                           onClick={() => {\n                             handleProductClic();\n-                            SelectedProduct;\n+                            SelectedProduct(product);\n \n                             show();\n                           }}\n                         />\n"
+                },
+                {
+                    "date": 1743037474176,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,106 +5,8 @@\n import { useTranslation } from \"react-i18next\";\n import Slider from \"react-slick\";\n import styled, { keyframes } from \"styled-components\";\n \n-const categoryOptions = {\n-  1: \"0px 0px 10px 1px red\",\n-  2: \"0px 0px 10px 1px yellow\",\n-  3: \"0px 0px 10px 1px orange\",\n-  4: \"0px 0px 10px 1px blue\",\n-  5: \"0px 0px 10px 1px black\",\n-  6: \"0px 0px 10px 1px violet\",\n-};\n-const categoryShadow = {\n-  farm: 1,\n-  computer: 2,\n-  Clothing: 3,\n-  accesseries: 4,\n-  other: 5,\n-};\n-const CloseButton = styled.button`\n-&:hover{\n-transform: scale(1.1);\n-`;\n-\n-const BoxContainer = styled.div`\n-  border: px solid red;\n-  border-radius: 12px;\n-  box-shadow: ${(props) => categoryOptions[props.categoryOption]};\n-\n-  &:hover {\n-    transform: scale(1.1);\n-  }\n-`;\n-const AddtocartButton = styled.button`\n-background:none;\n-border: 1px solid RED;\n-color: red;\n-padding: 10px 20px;\n-border-radius: 15px;\n-cursor: pointer;\n-font-size: 100%,\n-transition: all 0.3s ease;\n-width: 90%;\n-margin-top:${(props) => (props.main ? \"40px\" : \"10px\")};\n-\n-\n-&:hover{\n-transform: scale(1.1);\n-border:1px solid green;\n-color:green;\n-\n-}\n-`;\n-const MAddtocartButton = styled.button`\n-background:none;\n-border: 1px solid RED;\n-color: red;\n-padding: 10px 20px;\n-border-radius: 15px;\n-cursor: pointer;\n-font-size: 100%,\n-transition: all 0.3s ease;\n-width:auto;\n-margin-top:${(props) => (props.main ? \"5px\" : \"-60px\")};\n-\n-\n-&:hover{\n-transform: scale(1.1);\n-border:1px solid green;\n-color:green;\n-\n-}\n-`;\n-const Name = styled.a`\n-  font-size: ${({ fontSize }) => fontSize || \"20px\"};\n-`;\n-const DescriptionContainer = styled.label`\n-  font-size: 10px;\n-`;\n-\n-const DescriptionTitle = styled.h6`\n-  font-size: 13px;\n-`;\n-const DescriptionContent = styled.a`\n-  font-size: 13px;\n-`;\n-const Price = styled.h4`\n-  font-size: 16px;\n-`;\n-const Discount = styled.h3`\n-  font-size: 13px;\n-`;\n-const StatusContainer = styled.label`\n-  font-size: 13px;\n-`;\n-const StatusTitle = styled.h6`\n-  font-size: 13px;\n-`;\n-const StatusContent = styled.a`\n-  font-size: 13px;\n-`;\n-\n function MobileCategory({\n   api,\n   addToCart,\n   searchTerm,\n"
+                },
+                {
+                    "date": 1743037493072,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,27 @@\n import { addToCartBeforeLogin, addToCartAPI } from \"../../cartAction\";\n import { useTranslation } from \"react-i18next\";\n import Slider from \"react-slick\";\n import styled, { keyframes } from \"styled-components\";\n-\n+import {\n+  BoxContainer,\n+  AddtocartButton,\n+  MAddtocartButton,\n+  MAddToWishList,\n+  Price,\n+  Discount,\n+  DescriptionContainer,\n+  DescriptionTitle,\n+  DescriptionContent,\n+  StatusContainer,\n+  StatusContent,\n+  StatusTitle,\n+  CloseButton,\n+  Name,\n+  positions,\n+  fontSizes,\n+  categoryShadow,\n+} from \"./styledComponents\";\n function MobileCategory({\n   api,\n   addToCart,\n   searchTerm,\n"
+                },
+                {
+                    "date": 1743037498429,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,8 +23,10 @@\n   positions,\n   fontSizes,\n   categoryShadow,\n } from \"./styledComponents\";\n+\n+\n function MobileCategory({\n   api,\n   addToCart,\n   searchTerm,\n"
+                },
+                {
+                    "date": 1743037533792,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n import { addToCartBeforeLogin, addToCartAPI } from \"../../cartAction\";\n import { useTranslation } from \"react-i18next\";\n import Slider from \"react-slick\";\n import styled, { keyframes } from \"styled-components\";\n+\n import {\n   BoxContainer,\n   AddtocartButton,\n   MAddtocartButton,\n"
+                },
+                {
+                    "date": 1743037608442,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n import { addToCartBeforeLogin, addToCartAPI } from \"../../cartAction\";\n import { useTranslation } from \"react-i18next\";\n import Slider from \"react-slick\";\n import styled, { keyframes } from \"styled-components\";\n+import \"../translations/i18n\";\n \n import {\n   BoxContainer,\n   AddtocartButton,\n@@ -50,8 +51,10 @@\n   const previewRef = useRef(null);\n   const buttonRef = useRef(null);\n \n   const { t } = useTranslation();\n+     const position = positions[i18n.language] || position.en;\n+        const fontSize = fontSizes[i18n.language] || fontSize.en;\n   const dispatch = useDispatch(); // Function to check screen size\n \n   // Function to check screen size\n   const handleResize = () => {\n"
+                },
+                {
+                    "date": 1743037616189,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,8 @@\n   fontSizes,\n   categoryShadow,\n } from \"./styledComponents\";\n \n-\n function MobileCategory({\n   api,\n   addToCart,\n   searchTerm,\n@@ -49,12 +48,11 @@\n   const [showDetails, setShowDetails] = useState(true);\n   const username = localStorage.getItem(\"username\");\n   const previewRef = useRef(null);\n   const buttonRef = useRef(null);\n-\n   const { t } = useTranslation();\n-     const position = positions[i18n.language] || position.en;\n-        const fontSize = fontSizes[i18n.language] || fontSize.en;\n+  const position = positions[i18n.language] || position.en;\n+  const fontSize = fontSizes[i18n.language] || fontSize.en;\n   const dispatch = useDispatch(); // Function to check screen size\n \n   // Function to check screen size\n   const handleResize = () => {\n"
+                },
+                {
+                    "date": 1743037717698,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,9 +48,9 @@\n   const [showDetails, setShowDetails] = useState(true);\n   const username = localStorage.getItem(\"username\");\n   const previewRef = useRef(null);\n   const buttonRef = useRef(null);\n-  const { t } = useTranslation();\n+  const { t,  } = useTranslation();\n   const position = positions[i18n.language] || position.en;\n   const fontSize = fontSizes[i18n.language] || fontSize.en;\n   const dispatch = useDispatch(); // Function to check screen size\n \n"
+                },
+                {
+                    "date": 1743037740362,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,9 +48,9 @@\n   const [showDetails, setShowDetails] = useState(true);\n   const username = localStorage.getItem(\"username\");\n   const previewRef = useRef(null);\n   const buttonRef = useRef(null);\n-  const { t,  } = useTranslation();\n+  const { t, i18n } = useTranslation();\n   const position = positions[i18n.language] || position.en;\n   const fontSize = fontSizes[i18n.language] || fontSize.en;\n   const dispatch = useDispatch(); // Function to check screen size\n \n@@ -251,17 +251,9 @@\n                       ) : (\n                         <p>{t(\"No Image Available\")}</p>\n                       )}\n                       <button\n-                        style={{\n-                          position: \"relative\",\n-                          left: \"105px\",\n-                          top: \"-15px\",\n-                          background: \"none\",\n-                          border: \"none\",\n-                          fontSize: \"35px\",\n-                          color: \"orange\",\n-                        }}\n+                   \n                       >\n                         +\n                       </button>\n                     </div>\n"
+                },
+                {
+                    "date": 1743037746937,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -250,13 +250,13 @@\n                         />\n                       ) : (\n                         <p>{t(\"No Image Available\")}</p>\n                       )}\n-                      <button\n+                      <\n                    \n                       >\n                         +\n-                      </button>\n+                      </>\n                     </div>\n \n                     {/* text */}\n                     <div style={{ display: \"flex\" }}>\n"
+                },
+                {
+                    "date": 1743037755302,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -251,12 +251,14 @@\n                       ) : (\n                         <p>{t(\"No Image Available\")}</p>\n                       )}\n                       <MAddToWishList\n+                      \n                    \n                       >\n                         +\n-                      </MAddToWishList>\n+                      </MAddToWishList\n+                      >\n                     </div>\n \n                     {/* text */}\n                     <div style={{ display: \"flex\" }}>\n"
+                },
+                {
+                    "date": 1743037764923,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -251,14 +251,14 @@\n                       ) : (\n                         <p>{t(\"No Image Available\")}</p>\n                       )}\n                       <MAddToWishList\n-                      positiion=\n+                      positiion={}\n                    \n                       >\n                         +\n                       </MAddToWishList\n-                      positiion=>\n+                      positiion={}>\n                     </div>\n \n                     {/* text */}\n                     <div style={{ display: \"flex\" }}>\n"
                 }
             ],
             "date": 1742741565115,

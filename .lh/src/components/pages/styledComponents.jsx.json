@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/components/pages/styledComponents.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1743034607768,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1743034997067,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n const categoryOptions = {\n+    \n     1: \"0px 0px 10px 1px red\",\n     2: \"0px 0px 10px 1px yellow\",\n     3: \"0px 0px 10px 1px orange\",\n     4: \"0px 0px 10px 1px blue\",\n"
+                },
+                {
+                    "date": 1743035007689,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n+import \n const categoryOptions = {\n-    \n     1: \"0px 0px 10px 1px red\",\n     2: \"0px 0px 10px 1px yellow\",\n     3: \"0px 0px 10px 1px orange\",\n     4: \"0px 0px 10px 1px blue\",\n"
+                },
+                {
+                    "date": 1743035019665,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import st\n+import sty\n const categoryOptions = {\n     1: \"0px 0px 10px 1px red\",\n     2: \"0px 0px 10px 1px yellow\",\n     3: \"0px 0px 10px 1px orange\",\n"
+                }
+            ],
+            "date": 1743034607768,
+            "name": "Commit-0",
+            "content": "const categoryOptions = {\n    1: \"0px 0px 10px 1px red\",\n    2: \"0px 0px 10px 1px yellow\",\n    3: \"0px 0px 10px 1px orange\",\n    4: \"0px 0px 10px 1px blue\",\n    5: \"0px 0px 10px 1px black\",\n    6: \"0px 0px 10px 1px violet\",\n  };\n  const categoryShadow = {\n    farm: 1,\n    computer: 2,\n    Clothing: 3,\n    accesseries: 4,\n    other: 5,\n  };\n  const CloseButton = styled.button`\n  &:hover{\n  transform: scale(1.1);\n  `;\n  \n  const BoxContainer = styled.div`\n    border: px solid red;\n    border-radius: 12px;\n    box-shadow: ${(props) => categoryOptions[props.categoryOption]};\n  \n    &:hover {\n      transform: scale(1.1);\n    }\n  `;\n  const AddtocartButton = styled.button`\n  background:none;\n  border: 1px solid RED;\n  color: red;\n  padding: 10px 20px;\n  border-radius: 15px;\n  cursor: pointer;\n  font-size: 100%,\n  transition: all 0.3s ease;\n  width: 90%;\n  margin-top:${(props) => (props.main ? \"40px\" : \"10px\")};\n  \n  \n  &:hover{\n  transform: scale(1.1);\n  border:1px solid green;\n  color:green;\n  \n  }\n  `;\n  \n  \n  const fontSizes ={\n    fr:{\n      fontSize:\"11px\"\n    },\n    en:{\n      fontSize:\"16px\"\n    }\n  }\n  const MAddtocartButton = styled.button`\n  background:none;\n  border: 1px solid red;\n  color: red;\n  padding: 10px 20px;\n  border-radius: 10px;\n  cursor: pointer;\n  font-size:${(props) => props.fontSize.fontSize};\n  transition: all 0.3s ease;\n  width:auto;\n  margin-top:${(props) => (props.main ? \"5px\" : \"-60px\")};\n  \n  \n  &:hover{\n  transform: scale(1.1);\n  border:1px solid green;\n  color:green;\n  \n  }\n  `;\n  \n  const positions ={\n    fr:{\n      left:\"102px\"\n    },\n    en:{\n      left:\"100px\"\n    }\n  }\n  const MAddToWishList = styled.button`\n    position: relative;\n    left: ${(props) => props.position.left};\n    top: -8px;\n    background: none;\n    border: none;\n    font-size: 50px;\n    \n    color: orange;\n  `;\n  const Name = styled.a`\n    font-size: ${({ fontSize }) => fontSize || \"20px\"};\n  `;\n  const DescriptionContainer = styled.label`\n    font-size: 10px;\n  `;\n  \n  const DescriptionTitle = styled.h6`\n    font-size: 13px;\n  `;\n  const DescriptionContent = styled.a`\n    font-size: 13px;\n  `;\n  const Price = styled.h4`\n    font-size: 16px;\n  `;\n  const Discount = styled.h3`\n    font-size: 13px;\n  `;\n  const StatusContainer = styled.label`\n    font-size: 13px;\n  `;\n  const StatusTitle = styled.h6`\n    font-size: 13px;\n  `;\n  const StatusContent = styled.a`\n    font-size: 13px;\n  `;"
+        }
+    ]
+}
