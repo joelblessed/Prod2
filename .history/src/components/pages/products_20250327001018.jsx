@@ -70,7 +70,7 @@ const fontSizes ={
     fontSize:"11px"
   },
   en:{
-    fontSize:"16px"
+    fontSize:"15px"
   }
 }
 const MAddtocartButton = styled.button`
@@ -96,7 +96,7 @@ color:green;
 
 const positions ={
   fr:{
-    left:"102px"
+    left:"105px"
   },
   en:{
     left:"100px"

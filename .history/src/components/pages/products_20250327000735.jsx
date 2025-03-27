@@ -70,7 +70,7 @@ const fontSizes ={
     fontSize:"11px"
   },
   en:{
-    fontSize:"16px"
+    fontSize:"0px"
   }
 }
 const MAddtocartButton = styled.button`
@@ -96,7 +96,7 @@ color:green;
 
 const positions ={
   fr:{
-    left:"102px"
+    left:"105px"
   },
   en:{
     left:"100px"
@@ -170,7 +170,7 @@ const Products = ({
   const { t, i18n } = useTranslation();
   const buttonRef = useRef(null);
   const position = positions[i18n.language] || position.en;
-  const fontSize = fontSizes[i18n.language] || fontSize.en;
+  const fontSize = font[i18n.language] || fontSize.en;
 
 
   const dispatch = useDispatch(); // Function to check screen size

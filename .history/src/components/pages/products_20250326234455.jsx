@@ -63,24 +63,14 @@ color:green;
 
 }
 `;
-
-
-const fontSizes ={
-  fr:{
-    fontSize:"11px"
-  },
-  en:{
-    fontSize:"16px"
-  }
-}
 const MAddtocartButton = styled.button`
 background:none;
-border: 1px solid red;
+border: 1px solid RED;
 color: red;
 padding: 10px 20px;
-border-radius: 10px;
+border-radius: 15px;
 cursor: pointer;
-font-size:${(props) => props.fontSize.fontSize};
+font-size: 100%,
 transition: all 0.3s ease;
 width:auto;
 margin-top:${(props) => (props.main ? "5px" : "-60px")};
@@ -96,10 +86,10 @@ color:green;
 
 const positions ={
   fr:{
-    left:"102px"
+    left:"105px"
   },
   en:{
-    left:"100px"
+    left:"90px"
   }
 }
 const MAddToWishList = styled.button`
@@ -108,8 +98,8 @@ const MAddToWishList = styled.button`
   top: -8px;
   background: none;
   border: none;
-  font-size: 50px;
-  
+  fontsize: 5px;
+  fontweight:bold;
   color: orange;
 `;
 const Name = styled.a`
@@ -170,8 +160,6 @@ const Products = ({
   const { t, i18n } = useTranslation();
   const buttonRef = useRef(null);
   const position = positions[i18n.language] || position.en;
-  const fontSize = fontSizes[i18n.language] || fontSize.en;
-
 
   const dispatch = useDispatch(); // Function to check screen size
 
@@ -447,7 +435,6 @@ const Products = ({
                         }}
                       >
                         <MAddtocartButton
-                        fontSize={fontSize}
                           main={product.discount > 0}
                           width="auto"
                           onClick={() => dispatch(addToCartAPI(product))}

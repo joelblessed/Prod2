@@ -96,7 +96,7 @@ color:green;
 
 const positions ={
   fr:{
-    left:"102px"
+    left:"100px"
   },
   en:{
     left:"100px"

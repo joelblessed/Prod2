@@ -63,24 +63,14 @@ color:green;
 
 }
 `;
-
-
-const fontSizes ={
-  fr:{
-    fontSize:"11px"
-  },
-  en:{
-    fontSize:"16px"
-  }
-}
 const MAddtocartButton = styled.button`
 background:none;
-border: 1px solid red;
+border: 1px solid RED;
 color: red;
 padding: 10px 20px;
-border-radius: 10px;
+border-radius: 15px;
 cursor: pointer;
-font-size:${(props) => props.fontSize.fontSize};
+font-size: 100%,
 transition: all 0.3s ease;
 width:auto;
 margin-top:${(props) => (props.main ? "5px" : "-60px")};
@@ -94,22 +84,16 @@ color:green;
 }
 `;
 
-const positions ={
-  fr:{
-    left:"102px"
-  },
-  en:{
-    left:"100px"
-  }
+const position ={
+  
 }
 const MAddToWishList = styled.button`
   position: relative;
-  left: ${(props) => props.position.left};
-  top: -8px;
+  left: 105px;
+  top: -15px;
   background: none;
   border: none;
-  font-size: 50px;
-  
+  fontsize: 35px;
   color: orange;
 `;
 const Name = styled.a`
@@ -167,12 +151,10 @@ const Products = ({
   const [showDetails, setShowDetails] = useState(true);
   const username = localStorage.getItem("username");
   const previewRef = useRef(null);
-  const { t, i18n } = useTranslation();
   const buttonRef = useRef(null);
-  const position = positions[i18n.language] || position.en;
-  const fontSize = fontSizes[i18n.language] || fontSize.en;
+  const positionm = positions[i18n.language] || position.en;
 
-
+  const { t } = useTranslation();
   const dispatch = useDispatch(); // Function to check screen size
 
   // Function to check screen size
@@ -373,7 +355,7 @@ const Products = ({
                         ) : (
                           <p>{t("No Image Available")}</p>
                         )}
-                        <MAddToWishList position={position}>+</MAddToWishList>
+                        <MAddToWishList>+</MAddToWishList>
                       </div>
 
                       {/* text */}
@@ -447,7 +429,6 @@ const Products = ({
                         }}
                       >
                         <MAddtocartButton
-                        fontSize={fontSize}
                           main={product.discount > 0}
                           width="auto"
                           onClick={() => dispatch(addToCartAPI(product))}
