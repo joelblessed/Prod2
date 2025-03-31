@@ -1,0 +1,62 @@
+{
+    "sourceFile": "src/components/pages/discountedProducts.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 11,
+            "patches": [
+                {
+                    "date": 1743455748618,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1743455823022,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,8 +43,9 @@\n   addToWishList,\n   handleShowAlert,\n   showAlert,\n   searchTerm,\n+  discounts\n   highlightText,\n   selectedCategory,\n   Fortop,\n }) => {\n"
+                },
+                {
+                    "date": 1743455839089,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -175,9 +175,9 @@\n   return (\n     <div>\n       <div>\n         <Box\n-          Mobject={filteredProducts}\n+          Mobject={}\n           Dobject={filteredProducts}\n           selectedDProduct={selectedProduct}\n           toggleLike={toggleLike}\n           show={show}\n"
+                },
+                {
+                    "date": 1743455848177,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -176,9 +176,9 @@\n     <div>\n       <div>\n         <Box\n           Mobject={}\n-          Dobject={filteredProducts}\n+          Dobject={discounts}\n           selectedDProduct={selectedProduct}\n           toggleLike={toggleLike}\n           show={show}\n           handleProductClick={handleProductClick}\n"
+                },
+                {
+                    "date": 1743455854037,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -175,9 +175,9 @@\n   return (\n     <div>\n       <div>\n         <Box\n-          Mobject={}\n+          Mobject={discounts}\n           Dobject={discounts}\n           selectedDProduct={selectedProduct}\n           toggleLike={toggleLike}\n           show={show}\n"
+                },
+                {
+                    "date": 1743455870781,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n   addToWishList,\n   handleShowAlert,\n   showAlert,\n   searchTerm,\n-  discounts\n+  discounts,\n   highlightText,\n   selectedCategory,\n   Fortop,\n }) => {\n"
+                },
+                {
+                    "date": 1743455892349,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,22 +10,9 @@\n import Slider from \"react-slick\";\n import { useNavigate, Link } from \"react-router-dom\";\n import \"../translations/i18n\";\n import {\n-  BoxContainer,\n-  AddtocartButton,\n-  MAddtocartButton,\n-  MAddToWishList,\n-  Price,\n-  Discount,\n-  DescriptionContainer,\n-  DescriptionTitle,\n-  DescriptionContent,\n-  StatusContainer,\n-  StatusContent,\n-  StatusTitle,\n-  CloseButton,\n-  Name,\n+ \n   positions,\n   fontSizes,\n   categoryShadow,\n } from \"./styledComponents\";\n"
+                },
+                {
+                    "date": 1743455969934,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n } from \"./styledComponents\";\n import { addToCart, removeFromCart } from \"../../cartSlice\";\n import Box from \"./boxes\";\n \n-const Products = ({\n+const DiProducts = ({\n   api,\n   loading,\n   add,\n   images,\n"
+                },
+                {
+                    "date": 1743455975563,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n } from \"./styledComponents\";\n import { addToCart, removeFromCart } from \"../../cartSlice\";\n import Box from \"./boxes\";\n \n-const DiProducts = ({\n+const DiscountProducts = ({\n   api,\n   loading,\n   add,\n   images,\n"
+                },
+                {
+                    "date": 1743455981859,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n } from \"./styledComponents\";\n import { addToCart, removeFromCart } from \"../../cartSlice\";\n import Box from \"./boxes\";\n \n-const DiscountProducts = ({\n+const Discounts = ({\n   api,\n   loading,\n   add,\n   images,\n"
+                },
+                {
+                    "date": 1743455991405,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -182,5 +182,5 @@\n     </div>\n   );\n };\n \n-export default Products;\n+export default ;\n"
+                },
+                {
+                    "date": 1743455997414,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -182,5 +182,5 @@\n     </div>\n   );\n };\n \n-export default ;\n+export default Discounts;\n"
+                }
+            ],
+            "date": 1743455748618,
+            "name": "Commit-0",
+            "content": "import React, { useEffect, useState, useRef } from \"react\";\nimport \"./products.css\";\nimport { AuthContext } from \"../../AuthContext\";\nimport { useContext } from \"react\";\nimport { useSelector, useDispatch } from \"react-redux\";\nimport { addToCartBeforeLogin, addToCartAPI } from \"../../cartAction\";\nimport { addToWishListAPI } from \"../../wishlistAction\";\nimport styled, { keyframes } from \"styled-components\";\nimport { useTranslation } from \"react-i18next\";\nimport Slider from \"react-slick\";\nimport { useNavigate, Link } from \"react-router-dom\";\nimport \"../translations/i18n\";\nimport {\n  BoxContainer,\n  AddtocartButton,\n  MAddtocartButton,\n  MAddToWishList,\n  Price,\n  Discount,\n  DescriptionContainer,\n  DescriptionTitle,\n  DescriptionContent,\n  StatusContainer,\n  StatusContent,\n  StatusTitle,\n  CloseButton,\n  Name,\n  positions,\n  fontSizes,\n  categoryShadow,\n} from \"./styledComponents\";\nimport { addToCart, removeFromCart } from \"../../cartSlice\";\nimport Box from \"./boxes\";\n\nconst Products = ({\n  api,\n  loading,\n  add,\n  images,\n  filteredProducts,\n  SelectedProduct,\n  addToCart,\n  addToWishList,\n  handleShowAlert,\n  showAlert,\n  searchTerm,\n  highlightText,\n  selectedCategory,\n  Fortop,\n}) => {\n  const [currentIndex, setCurrentIndex] = useState(0);\n  const [products, setProducts] = useState(null);\n  const [isMobile, setIsMobile] = useState(false);\n  const [selectedProduct, setSelectedProduct] = useState(null);\n  const [selectedDProduct, setDSelectedProduct] = useState(null);\n  const [selected, setSelected] = useState(false);\n  const userId = localStorage.getItem(\"userId\");\n  const [showDetails, setShowDetails] = useState(true);\n  const username = localStorage.getItem(\"username\");\n  const previewRef = useRef(null);\n  const { t, i18n } = useTranslation();\n  const buttonRef = useRef(null);\n  const position = positions[i18n.language] || position.en;\n  const fontSize = fontSizes[i18n.language] || fontSize.en;\n\n  const dispatch = useDispatch(); // Function to check screen size\n\n  // Function to check screen size\n  const handleResize = () => {\n    setIsMobile(window.innerWidth <= 1000);\n  };\n\n  useEffect(() => {\n    handleResize(); // Initial check\n    window.addEventListener(\"resize\", handleResize); // Update on resize\n    return () => window.removeEventListener(\"resize\", handleResize);\n  }, []);\n\n  const navigate = useNavigate();\n\n  const handleProductClick = (product) => {\n    SelectedProduct(product);\n    localStorage.setItem(\"selectedProduct\", product);\n    navigate(\"/selectedProduct\");\n  };\n\n  const handleProductHid = () => {\n    setSelectedProduct(null);\n  };\n  const nextImage = () => {\n    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);\n  };\n\n  // Toggle the selection state of a product\n  const toggleSelection = (id, currentSelection) => {\n    // Update the product on the server using PATCH\n    fetch(`${api}/updateProducts/${id}`, {\n      method: \"PATCH\",\n      headers: {\n        \"Content-Type\": \"application/json\",\n      },\n      body: JSON.stringify({ isSelected: !currentSelection }),\n    })\n      .then((response) => response.json())\n      .then((updatedProduct) => {\n        // Update the local state to reflect the change\n        setProducts((prevProducts) =>\n          prevProducts.map((product) =>\n            product.id === id ? updatedProduct : product\n          )\n        );\n      })\n      .catch((error) => console.error(\"Error updating product:\", error));\n  };\n\n  // Fetch all products\n  useEffect(() => {\n    const fetchProducts = async () => {\n      const response = await fetch(`${api}/products`);\n      const data = await response.json();\n      setProducts(data);\n    };\n    fetchProducts();\n  }, [api]);\n\n  // Toggle like/dislike with one button\n  const toggleLike = async (product) => {\n    if (!product) return;\n\n    const liked = product.likedBy.some((user) => user.userId === userId);\n    const endpoint = liked ? \"dislike\" : \"like\";\n\n    const response = await fetch(`${api}/products/${product.id}/${endpoint}`, {\n      method: \"PATCH\",\n      headers: { \"Content-Type\": \"application/json\" },\n      body: JSON.stringify({ userId, username }), // Send user info\n    });\n\n    const updatedProduct = await response.json();\n\n    // Update state\n    setProducts(\n      products.map((p) =>\n        p.id === product.id ? { ...p, ...updatedProduct } : p\n      )\n    );\n    setSelectedProduct({ ...product, ...updatedProduct });\n  };\n  // ////////////////////////////////////////////////////////\n\n  const handleMouseEnter = () => {\n    if (buttonRef.current) {\n      buttonRef.current.click();\n    }\n  };\n\n  // ///////////////////////////////////////////////////////////\n\n  const show = (event) => {\n    setShowDetails((prevShow) => !prevShow);\n    if (previewRef.current && !previewRef.current.contains(event.target)) {\n    }\n  };\n\n  // useEffect(() => {\n  //   // Attach event listener to the whole document\n  //   document.addEventListener(\"mousedown\", show);\n  //   return () => {\n  //     document.removeEventListener(\"mousedown\", show);\n  //   };\n  // }, []);\n \n\n  return (\n    <div>\n      <div>\n        <Box\n          Mobject={filteredProducts}\n          Dobject={filteredProducts}\n          selectedDProduct={selectedProduct}\n          toggleLike={toggleLike}\n          show={show}\n          handleProductClick={handleProductClick}\n          hanldleProductHid={handleProductHid}\n          isMobile={isMobile}\n          setSelectedProduct={setSelectedProduct}\n          selectedProduct={selectedProduct}\n          showDetails={showDetails}\n          position={position}\n          fontSize={fontSize}\n          highlightText={highlightText}\n        />\n      </div>\n    </div>\n  );\n};\n\nexport default Products;\n"
+        }
+    ]
+}
