@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 1,
+            "activePatchIndex": 13,
             "patches": [
                 {
                     "date": 1741085574839,
@@ -12,6 +12,54 @@
                 {
                     "date": 1743507786186,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n   outline: none;\n }\n \n .password-input-container {\n-  position: relative;\n+ \n   width: 100%;\n }\n \n .password-toggle-button {\n"
+                },
+                {
+                    "date": 1743512123026,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n   background-color: #ffffff;\n   border-radius: 8px;\n   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\n   text-align: center;\n+  \n }\n \n .signin-container h2 {\n   margin-bottom: 20px;\n"
+                },
+                {
+                    "date": 1743512130213,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,11 @@\n   background-color: #ffffff;\n   border-radius: 8px;\n   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\n   text-align: center;\n-  \n+  @media screen {\n+    \n+  }\n }\n \n .signin-container h2 {\n   margin-bottom: 20px;\n"
+                },
+                {
+                    "date": 1743512136317,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n   background-color: #ffffff;\n   border-radius: 8px;\n   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\n   text-align: center;\n-  @media screen {\n+  @media q {\n     \n   }\n }\n \n"
+                },
+                {
+                    "date": 1743512147840,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n   background-color: #ffffff;\n   border-radius: 8px;\n   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\n   text-align: center;\n-  @media q {\n+  @media screen {\n     \n   }\n }\n \n"
+                },
+                {
+                    "date": 1743512197225,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n   background-color: #ffffff;\n   border-radius: 8px;\n   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\n   text-align: center;\n-  @media screen {\n+\n     \n   }\n }\n \n"
+                },
+                {
+                    "date": 1743512206403,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,11 @@\n   background-color: #ffffff;\n   border-radius: 8px;\n   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\n   text-align: center;\n-\n+  @media (max-width: 768px) {\n+    margintop: 200px;\n+  }\n     \n   }\n }\n \n"
+                },
+                {
+                    "date": 1743512219534,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,14 +6,14 @@\n   border-radius: 8px;\n   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\n   text-align: center;\n   @media (max-width: 768px) {\n-    margintop: 200px;\n+    marginTop: 200px;\n   }\n     \n   }\n-}\n \n+\n .signin-container h2 {\n   margin-bottom: 20px;\n   color: #333;\n }\n"
+                },
+                {
+                    "date": 1743512240841,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n   background-color: #ffffff;\n   border-radius: 8px;\n   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\n   text-align: center;\n-  @media (max-width: 768px) {\n+  @media s (max-width: 768px) {\n     marginTop: 200px;\n   }\n     \n   }\n"
+                },
+                {
+                    "date": 1743512247951,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n   background-color: #ffffff;\n   border-radius: 8px;\n   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\n   text-align: center;\n-  @media s (max-width: 768px) {\n+  @media querry (max-width: 768px) {\n     marginTop: 200px;\n   }\n     \n   }\n"
+                },
+                {
+                    "date": 1743512253180,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n   background-color: #ffffff;\n   border-radius: 8px;\n   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\n   text-align: center;\n-  @media querry (max-width: 768px) {\n+  @media s (max-width: 768px) {\n     marginTop: 200px;\n   }\n     \n   }\n"
+                },
+                {
+                    "date": 1743512260537,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n   background-color: #ffffff;\n   border-radius: 8px;\n   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\n   text-align: center;\n-  @media s (max-width: 768px) {\n+  @media sreee (max-width: 768px) {\n     marginTop: 200px;\n   }\n     \n   }\n"
+                },
+                {
+                    "date": 1743512267433,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n   background-color: #ffffff;\n   border-radius: 8px;\n   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\n   text-align: center;\n-  @media sreee (max-width: 768px) {\n+  @media  (max-width: 768px) {\n     marginTop: 200px;\n   }\n     \n   }\n"
                 }
             ],
             "date": 1741085574839,

@@ -81,10 +81,10 @@ export const MAddtocartButton = styled.button`
 
 export const positions = {
   fr: {
-    left: "72px",
+    left: "102px",
   },
   en: {
-    left: "70px",
+    left: "0px",
   },
 };
 export const MAddToWishList = styled.button`

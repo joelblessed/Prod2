@@ -6,12 +6,10 @@
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
-  @media (max-width: 768px) {
-    marginTop: 200px;
-  }
+  @media q {
     
   }
-
+}
 
 .signin-container h2 {
   margin-bottom: 20px;
