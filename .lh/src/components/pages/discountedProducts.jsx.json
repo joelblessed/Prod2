@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 11,
+            "activePatchIndex": 33,
             "patches": [
                 {
                     "date": 1743455748618,
@@ -52,6 +52,94 @@
                 {
                     "date": 1743455997414,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -182,5 +182,5 @@\n     </div>\n   );\n };\n \n-export default ;\n+export default Discounts;\n"
+                },
+                {
+                    "date": 1743518702303,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,10 @@\n import {\n  \n   positions,\n   fontSizes,\n+  positions,\n+  fontSizes,\n   categoryShadow,\n } from \"./styledComponents\";\n import { addToCart, removeFromCart } from \"../../cartSlice\";\n import Box from \"./boxes\";\n"
+                },
+                {
+                    "date": 1743518711309,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,10 +13,10 @@\n import {\n  \n   positions,\n   fontSizes,\n-  positions,\n-  fontSizes,\n+  Ipositions,\n+  IfontSizes,\n   categoryShadow,\n } from \"./styledComponents\";\n import { addToCart, removeFromCart } from \"../../cartSlice\";\n import Box from \"./boxes\";\n"
+                },
+                {
+                    "date": 1743518726598,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -176,8 +176,9 @@\n           setSelectedProduct={setSelectedProduct}\n           selectedProduct={selectedProduct}\n           showDetails={showDetails}\n           position={position}\n+          position={position}\n           fontSize={fontSize}\n           highlightText={highlightText}\n         />\n       </div>\n"
+                },
+                {
+                    "date": 1743518734402,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -176,9 +176,9 @@\n           setSelectedProduct={setSelectedProduct}\n           selectedProduct={selectedProduct}\n           showDetails={showDetails}\n           position={position}\n-          position={position}\n+          Iposition={Iposition}\n           fontSize={fontSize}\n           highlightText={highlightText}\n         />\n       </div>\n"
+                },
+                {
+                    "date": 1743518746621,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -178,8 +178,9 @@\n           showDetails={showDetails}\n           position={position}\n           Iposition={Iposition}\n           fontSize={fontSize}\n+          fontSize={fontSize}\n           highlightText={highlightText}\n         />\n       </div>\n     </div>\n"
+                },
+                {
+                    "date": 1743518756178,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -178,9 +178,9 @@\n           showDetails={showDetails}\n           position={position}\n           Iposition={Iposition}\n           fontSize={fontSize}\n-          fontSize={fontSize}\n+          IfontSize={IfontSize}\n           highlightText={highlightText}\n         />\n       </div>\n     </div>\n"
+                },
+                {
+                    "date": 1743518800611,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n import {\n  \n   positions,\n   fontSizes,\n-  Ipositions,\n+  positions,\n   IfontSizes,\n   categoryShadow,\n } from \"./styledComponents\";\n import { addToCart, removeFromCart } from \"../../cartSlice\";\n"
+                },
+                {
+                    "date": 1743518808069,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,10 +13,10 @@\n import {\n  \n   positions,\n   fontSizes,\n-  positions,\n-  IfontSizes,\n+  iospositions,\n+  iosfontSizes,\n   categoryShadow,\n } from \"./styledComponents\";\n import { addToCart, removeFromCart } from \"../../cartSlice\";\n import Box from \"./boxes\";\n"
+                },
+                {
+                    "date": 1743518827290,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -176,9 +176,9 @@\n           setSelectedProduct={setSelectedProduct}\n           selectedProduct={selectedProduct}\n           showDetails={showDetails}\n           position={position}\n-          Iposition={Iposition}\n+          iposition={Iposition}\n           fontSize={fontSize}\n           IfontSize={IfontSize}\n           highlightText={highlightText}\n         />\n"
+                },
+                {
+                    "date": 1743518833827,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -176,9 +176,9 @@\n           setSelectedProduct={setSelectedProduct}\n           selectedProduct={selectedProduct}\n           showDetails={showDetails}\n           position={position}\n-          iposition={Iposition}\n+          iosposition={iosposition}\n           fontSize={fontSize}\n           IfontSize={IfontSize}\n           highlightText={highlightText}\n         />\n"
+                },
+                {
+                    "date": 1743518839624,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -178,9 +178,9 @@\n           showDetails={showDetails}\n           position={position}\n           iosposition={iosposition}\n           fontSize={fontSize}\n-          IfontSize={IfontSize}\n+          iosfontSize={IfontSize}\n           highlightText={highlightText}\n         />\n       </div>\n     </div>\n"
+                },
+                {
+                    "date": 1743518846824,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -178,9 +178,9 @@\n           showDetails={showDetails}\n           position={position}\n           iosposition={iosposition}\n           fontSize={fontSize}\n-          iosfontSize={IfontSize}\n+          iosfontSize={iosfontSize}\n           highlightText={highlightText}\n         />\n       </div>\n     </div>\n"
+                },
+                {
+                    "date": 1743518869594,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -178,9 +178,9 @@\n           showDetails={showDetails}\n           position={position}\n           iosposition={iosposition}\n           fontSize={fontSize}\n-          iosfontSize={iosfontSize}\n+          iosfontSizes={iosfontSize}\n           highlightText={highlightText}\n         />\n       </div>\n     </div>\n"
+                },
+                {
+                    "date": 1743518876238,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -176,11 +176,11 @@\n           setSelectedProduct={setSelectedProduct}\n           selectedProduct={selectedProduct}\n           showDetails={showDetails}\n           position={position}\n-          iosposition={iosposition}\n+          iosposition={iospositions}\n           fontSize={fontSize}\n-          iosfontSizes={iosfontSize}\n+          iosfontSizes={iosfontSizes}\n           highlightText={highlightText}\n         />\n       </div>\n     </div>\n"
+                },
+                {
+                    "date": 1743518918625,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,10 +13,9 @@\n import {\n  \n   positions,\n   fontSizes,\n-  iospositions,\n-  iosfontSizes,\n+ \n   categoryShadow,\n } from \"./styledComponents\";\n import { addToCart, removeFromCart } from \"../../cartSlice\";\n import Box from \"./boxes\";\n@@ -176,9 +175,9 @@\n           setSelectedProduct={setSelectedProduct}\n           selectedProduct={selectedProduct}\n           showDetails={showDetails}\n           position={position}\n-          iosposition={iospositions}\n+          iospositions={iospositions}\n           fontSize={fontSize}\n           iosfontSizes={iosfontSizes}\n           highlightText={highlightText}\n         />\n"
+                },
+                {
+                    "date": 1743518977723,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,10 @@\n import {\n  \n   positions,\n   fontSizes,\n- \n+  iospositions,\n+  iosfontSizes,\n   categoryShadow,\n } from \"./styledComponents\";\n import { addToCart, removeFromCart } from \"../../cartSlice\";\n import Box from \"./boxes\";\n@@ -175,9 +176,9 @@\n           setSelectedProduct={setSelectedProduct}\n           selectedProduct={selectedProduct}\n           showDetails={showDetails}\n           position={position}\n-          iospositions={iospositions}\n+          iosposition={iospositions}\n           fontSize={fontSize}\n           iosfontSizes={iosfontSizes}\n           highlightText={highlightText}\n         />\n"
+                },
+                {
+                    "date": 1743518983194,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -176,9 +176,9 @@\n           setSelectedProduct={setSelectedProduct}\n           selectedProduct={selectedProduct}\n           showDetails={showDetails}\n           position={position}\n-          iosposition={iospositions}\n+        \n           fontSize={fontSize}\n           iosfontSizes={iosfontSizes}\n           highlightText={highlightText}\n         />\n"
+                },
+                {
+                    "date": 1743519013683,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,12 @@\n   const { t, i18n } = useTranslation();\n   const buttonRef = useRef(null);\n   const position = positions[i18n.language] || position.en;\n   const fontSize = fontSizes[i18n.language] || fontSize.en;\n+  const Iposition = iospositions[i18n.language] || position.en;\n+  const IfontSize = iosfontSizes[i18n.language] || fontSize.en;\n \n+\n   const dispatch = useDispatch(); // Function to check screen size\n \n   // Function to check screen size\n   const handleResize = () => {\n@@ -178,9 +181,9 @@\n           showDetails={showDetails}\n           position={position}\n         \n           fontSize={fontSize}\n-          iosfontSizes={iosfontSizes}\n+         \n           highlightText={highlightText}\n         />\n       </div>\n     </div>\n"
+                },
+                {
+                    "date": 1743519032122,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -179,9 +179,9 @@\n           setSelectedProduct={setSelectedProduct}\n           selectedProduct={selectedProduct}\n           showDetails={showDetails}\n           position={position}\n-        \n+          \n           fontSize={fontSize}\n          \n           highlightText={highlightText}\n         />\n"
+                },
+                {
+                    "date": 1743519037622,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -179,9 +179,9 @@\n           setSelectedProduct={setSelectedProduct}\n           selectedProduct={selectedProduct}\n           showDetails={showDetails}\n           position={position}\n-          \n+          Iposition={}\n           fontSize={fontSize}\n          \n           highlightText={highlightText}\n         />\n"
+                },
+                {
+                    "date": 1743519045758,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -179,11 +179,11 @@\n           setSelectedProduct={setSelectedProduct}\n           selectedProduct={selectedProduct}\n           showDetails={showDetails}\n           position={position}\n-          Iposition={}\n+          Iposition={Iposition}\n           fontSize={fontSize}\n-         \n+          I\n           highlightText={highlightText}\n         />\n       </div>\n     </div>\n"
+                },
+                {
+                    "date": 1743519051797,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -181,9 +181,9 @@\n           showDetails={showDetails}\n           position={position}\n           Iposition={Iposition}\n           fontSize={fontSize}\n-          I\n+          IfontSize={IfontSize}\n           highlightText={highlightText}\n         />\n       </div>\n     </div>\n"
                 }
             ],
             "date": 1743455748618,

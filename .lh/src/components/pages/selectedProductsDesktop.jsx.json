@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 6,
+            "activePatchIndex": 7,
             "patches": [
                 {
                     "date": 1743502894048,
@@ -32,6 +32,10 @@
                 {
                     "date": 1743503641187,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n   return (\n     <ModalOverlay>\n       <ProductContainer>\n         {/* Close Button */}\n-        <CloseButton onClick={han}>X</CloseButton>\n+        <CloseButton onClick={handle}>X</CloseButton>\n \n         {/* Product Image & Details */}\n         <ContentWrapper>\n           <ImageSection>\n"
+                },
+                {
+                    "date": 1743521476533,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n   if (!selectedProduct) {\n     return <LoadingMessage>Loading product...</LoadingMessage>;\n \n   }\n-const text = lor  \n+const text = lore  \n   const displayText = isExpanded ? text : text.slice(0, maxLength);\n   \n   // Slider settings\n   const sliderSettings = {\n"
                 }
             ],
             "date": 1743502894048,
