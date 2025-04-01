@@ -3,11 +3,15 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 1,
             "patches": [
                 {
                     "date": 1741085574839,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1743507786186,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n   outline: none;\n }\n \n .password-input-container {\n-  position: relative;\n+ \n   width: 100%;\n }\n \n .password-toggle-button {\n"
                 }
             ],
             "date": 1741085574839,
