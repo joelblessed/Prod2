@@ -71,7 +71,7 @@ export const iosfontSizes = {
     fontSize: "10px",
   },
   en: {
-    fontSize: "15px",
+    fontSize: "115px",
   },
 };
 
