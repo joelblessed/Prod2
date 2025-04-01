@@ -92,7 +92,7 @@ export const iospositions = {
     left: "72px",
   },
   en: {
-    left: "70px",
+    left: "80px",
   },
 };
 const getOS = () =>
