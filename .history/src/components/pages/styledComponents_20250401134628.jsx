@@ -102,21 +102,21 @@ const getOS = () =>
     ? "ios"
     : "other";
 
-export const MAddToWishList = styled.button`
-  position: relative;
-  left: ${(props) =>
-    getOS() === "android"
-      ? props.position?.left
-      : getOS() === "ios"
-      ? props.Iposition?.left
-      : props.position?.left};
-  top: -8px;
-  background: none;
-  border: none;
-  font-size: 50px;
-  z-index: 1;
-  color: orange;
-`;
+    export const MAddToWishList = styled.button`
+    position: relative;
+    left: ${(props) =>
+      getOS() === "android"
+        ? props.position?.left
+        : getOS() === "ios"
+        ? props.Iposition?.left
+        : props.position?.left};
+    top: -8px;
+    background: none;
+    border: none;
+    font-size: 50px;
+    z-index: 1;
+    color: orange;
+  `;
 export const Name = styled.a`
   font-size: ${({ fontSize }) => fontSize || "20px"};
 `;

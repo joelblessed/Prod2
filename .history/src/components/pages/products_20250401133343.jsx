@@ -190,7 +190,6 @@ const Products = ({
           selectedProduct={selectedProduct}
           showDetails={showDetails}
           position={position}
-          Iposition={Iposition}
           fontSize={fontSize}
           highlightText={highlightText}
         />

@@ -109,7 +109,7 @@ export const MAddToWishList = styled.button`
       ? props.position?.left
       : getOS() === "ios"
       ? props.Iposition?.left
-      : props.position?.left};
+      : props.Iposition?.left};
   top: -8px;
   background: none;
   border: none;

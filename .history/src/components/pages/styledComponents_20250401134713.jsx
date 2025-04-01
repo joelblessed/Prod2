@@ -106,7 +106,7 @@ export const MAddToWishList = styled.button`
   position: relative;
   left: ${(props) =>
     getOS() === "android"
-      ? props.position?.left
+      ? props.Iposition?.left
       : getOS() === "ios"
       ? props.Iposition?.left
       : props.position?.left};

@@ -104,17 +104,17 @@ const getOS = () =>
 
 export const MAddToWishList = styled.button`
   position: relative;
-  left: ${(props) =>
-    getOS() === "android"
-      ? props.position?.left
-      : getOS() === "ios"
-      ? props.Iposition?.left
-      : props.position?.left};
+  left: ${getOS() === "android"
+    ? `${(props) => props.position.left}`
+    : getOS() === "ios"
+    ? `${(props) => props.Iposition.left}`
+    : `${(props) => props.position.left}`};
   top: -8px;
   background: none;
   border: none;
   font-size: 50px;
   z-index: 1;
+
   color: orange;
 `;
 export const Name = styled.a`

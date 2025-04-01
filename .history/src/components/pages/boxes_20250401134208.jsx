@@ -161,7 +161,7 @@ const Box = ({
                         ) : (
                           <p>{t("No Image Available")}</p>
                         )}
-                        <MAddToWishList position={position} Iposition={Iposition} >+</MAddToWishList>
+                        <MAddToWishList position={position} >+</MAddToWishList>
                       </div>
 
                       {/* text */}

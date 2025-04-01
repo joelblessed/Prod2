@@ -87,14 +87,6 @@ export const positions = {
     left: "100px",
   },
 };
-export const iospositions = {
-  fr: {
-    left: "82px",
-  },
-  en: {
-    left: "80px",
-  },
-};
 const getOS = () =>
   /android/i.test(navigator.userAgent)
     ? "android"
@@ -104,17 +96,17 @@ const getOS = () =>
 
 export const MAddToWishList = styled.button`
   position: relative;
-  left: ${(props) =>
-    getOS() === "android"
-      ? props.position?.left
-      : getOS() === "ios"
-      ? props.Iposition?.left
-      : props.position?.left};
+  left: ${getOS() === "android"
+    ? `${(props) => props.position.left}`
+    : getOS() === "ios"
+    ? `${(props) => props.position.left}`
+    : `${(props) => props.position.left}`};
   top: -8px;
   background: none;
   border: none;
   font-size: 50px;
   z-index: 1;
+
   color: orange;
 `;
 export const Name = styled.a`

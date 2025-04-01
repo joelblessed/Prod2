@@ -61,7 +61,7 @@ const Products = ({
   const previewRef = useRef(null);
   const { t, i18n } = useTranslation();
   const buttonRef = useRef(null);
-  const position = positions[i18n.language] || position.en;
+  const position = positions[i18n.language]|| || position.en;
 
   const Iposition = iospositions[i18n.language] || position.en;
   const fontSize = fontSizes[i18n.language] || fontSize.en;

@@ -60,7 +60,6 @@ const Box = ({
   selectedProduct,
   showDetails,
   position,
-  Iposition,
   fontSize,
 }) => {
   const userId = localStorage.getItem("userId");
@@ -161,7 +160,7 @@ const Box = ({
                         ) : (
                           <p>{t("No Image Available")}</p>
                         )}
-                        <MAddToWishList position={position} Iposition={Iposition} >+</MAddToWishList>
+                        <MAddToWishList position={position} posi>+</MAddToWishList>
                       </div>
 
                       {/* text */}
