@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 13,
+            "activePatchIndex": 21,
             "patches": [
                 {
                     "date": 1741085574839,
@@ -60,6 +60,38 @@
                 {
                     "date": 1743512267433,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n   background-color: #ffffff;\n   border-radius: 8px;\n   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\n   text-align: center;\n-  @media sreee (max-width: 768px) {\n+  @media  (max-width: 768px) {\n     marginTop: 200px;\n   }\n     \n   }\n"
+                },
+                {
+                    "date": 1743516026029,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,11 +5,9 @@\n   background-color: #ffffff;\n   border-radius: 8px;\n   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\n   text-align: center;\n-  @media  (max-width: 768px) {\n-    marginTop: 200px;\n-  }\n+\n     \n   }\n \n \n"
+                },
+                {
+                    "date": 1743516032544,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,5 +75,10 @@\n .error-message {\n   color: red;\n   font-size: 14px;\n   margin-top: 10px;\n+}\n+\n+\n+@media  (max-width: 768px) {\n+  marginTop: 200px;\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1743516037861,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -79,6 +79,6 @@\n }\n \n \n @media  (max-width: 768px) {\n-  marginTop: 200px;\n+\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1743516068748,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -79,6 +79,6 @@\n }\n \n \n @media  (max-width: 768px) {\n-\n+   .si\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1743516078150,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -79,6 +79,8 @@\n }\n \n \n @media  (max-width: 768px) {\n-   .si\n+   .signin-container{\n+    ma\n+   }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1743516085007,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -80,7 +80,7 @@\n \n \n @media  (max-width: 768px) {\n    .signin-container{\n-    ma\n+    margin-top: 150;\n    }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1743516128138,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -80,7 +80,7 @@\n \n \n @media  (max-width: 768px) {\n    .signin-container{\n-    margin-top: 150;\n+    margin-top: 550px;\n    }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1743516138308,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -80,7 +80,7 @@\n \n \n @media  (max-width: 768px) {\n    .signin-container{\n-    margin-top: 550px;\n+    margin-top: 200px;\n    }\n }\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1741085574839,

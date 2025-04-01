@@ -89,7 +89,7 @@ export const positions = {
 };
 export const iospositions = {
   fr: {
-    left: "62px",
+    left: "72px",
   },
   en: {
     left: "60px",

@@ -77,10 +77,3 @@
   font-size: 14px;
   margin-top: 10px;
 }
-
-
-@media  (max-width: 768px) {
-   .signin-container{
-    margin-top: 200px;
-   }
-}

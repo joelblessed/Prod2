@@ -6,7 +6,9 @@
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
-
+  @media  (max-width: 768px) {
+    marginTop: 200px;
+  }
     
   }
 
@@ -76,11 +78,4 @@
   color: red;
   font-size: 14px;
   margin-top: 10px;
-}
-
-
-@media  (max-width: 768px) {
-   .signin-container{
-    margin-top: 200px;
-   }
 }
