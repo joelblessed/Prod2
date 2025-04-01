@@ -28,7 +28,7 @@ import {
   positions,
   iospositions,
   fontSizes,
-  iosfontSizes,
+  iosfontSizes
   categoryShadow,
 } from "./styledComponents";
 import { addToCart, removeFromCart } from "../../cartSlice";

@@ -1,13 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-const getOS = () =>
-  /android/i.test(navigator.userAgent)
-    ? "android"
-    : /iPad|iPhone|iPod/.test(navigator.userAgent)
-    ? "ios"
-    : "other";
-
 export const categoryOptions = {
   1: "0px 0px 10px 1px red",
   2: "0px 0px 10px 1px yellow",
@@ -74,7 +67,7 @@ export const iosfontSizes = {
     fontSize: "14px",
   },
 };
-
+props.fontSize.fontSize
 export const MAddtocartButton = styled.button`
   background: none;
   border: 1px solid red;
@@ -84,10 +77,10 @@ export const MAddtocartButton = styled.button`
   cursor: pointer;
   font-size:${(props) =>
     getOS() === "android"
-      ? props.fontSize?.fontSize
+      ? props
       : getOS() === "ios"
-      ? props.IfontSize?.fontSize
-      : props.fontSize?.fontSize};
+      ? props.Iposition?.left
+      : props.position?.left};;
   transition: all 0.3s ease;
   width: auto;
   margin-top: ${(props) => (props.main ? "5px" : "-60px")};
@@ -115,7 +108,12 @@ export const iospositions = {
     left: "59px",
   },
 };
-
+const getOS = () =>
+  /android/i.test(navigator.userAgent)
+    ? "android"
+    : /iPad|iPhone|iPod/.test(navigator.userAgent)
+    ? "ios"
+    : "other";
 
 export const MAddToWishList = styled.button`
   position: relative;

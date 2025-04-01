@@ -28,7 +28,7 @@ import {
   positions,
   iospositions,
   fontSizes,
-  iosfontSizes,
+  iosfo
   categoryShadow,
 } from "./styledComponents";
 import { addToCart, removeFromCart } from "../../cartSlice";
@@ -195,7 +195,6 @@ const Products = ({
           position={position}
           Iposition={Iposition}
           fontSize={fontSize}
-          IfontSize={IfontSize}
           highlightText={highlightText}
         />
       </div>

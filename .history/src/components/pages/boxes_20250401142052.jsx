@@ -62,7 +62,7 @@ const Box = ({
   position,
   Iposition,
   fontSize,
-  IfontSize,
+  
 }) => {
   const userId = localStorage.getItem("userId");
   const { t, i18n } = useTranslation();
@@ -237,7 +237,6 @@ const Box = ({
                       >
                         <MAddtocartButton
                           fontSize={fontSize}
-                          IfontSize={IfontSize}
                           main={product.discount > 0}
                           width="auto"
                           onClick={() => dispatch(addToCartAPI(product))}

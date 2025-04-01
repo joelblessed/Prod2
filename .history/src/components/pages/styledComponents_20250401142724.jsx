@@ -87,7 +87,7 @@ export const MAddtocartButton = styled.button`
       ? props.fontSize?.fontSize
       : getOS() === "ios"
       ? props.IfontSize?.fontSize
-      : props.fontSize?.fontSize};
+      : props.fontSize?.fontSize};;
   transition: all 0.3s ease;
   width: auto;
   margin-top: ${(props) => (props.main ? "5px" : "-60px")};

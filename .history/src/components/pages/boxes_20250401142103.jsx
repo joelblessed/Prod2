@@ -237,7 +237,6 @@ const Box = ({
                       >
                         <MAddtocartButton
                           fontSize={fontSize}
-                          IfontSize={IfontSize}
                           main={product.discount > 0}
                           width="auto"
                           onClick={() => dispatch(addToCartAPI(product))}

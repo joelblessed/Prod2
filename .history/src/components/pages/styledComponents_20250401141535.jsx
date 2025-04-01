@@ -1,13 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-const getOS = () =>
-  /android/i.test(navigator.userAgent)
-    ? "android"
-    : /iPad|iPhone|iPod/.test(navigator.userAgent)
-    ? "ios"
-    : "other";
-
 export const categoryOptions = {
   1: "0px 0px 10px 1px red",
   2: "0px 0px 10px 1px yellow",
@@ -66,12 +59,12 @@ export const fontSizes = {
     fontSize: "16px",
   },
 };
-export const iosfontSizes = {
+export const IfontSizes = {
   fr: {
     fontSize: "9px",
   },
   en: {
-    fontSize: "14px",
+    fontSize: "16px",
   },
 };
 
@@ -79,15 +72,10 @@ export const MAddtocartButton = styled.button`
   background: none;
   border: 1px solid red;
   color: red;
-  padding: 10px 20px;
+  padding: 10px 17px;
   border-radius: 10px;
   cursor: pointer;
-  font-size:${(props) =>
-    getOS() === "android"
-      ? props.fontSize?.fontSize
-      : getOS() === "ios"
-      ? props.IfontSize?.fontSize
-      : props.fontSize?.fontSize};
+  font-size: ${(props) => props.fontSize.fontSize};
   transition: all 0.3s ease;
   width: auto;
   margin-top: ${(props) => (props.main ? "5px" : "-60px")};
@@ -115,7 +103,12 @@ export const iospositions = {
     left: "59px",
   },
 };
-
+const getOS = () =>
+  /android/i.test(navigator.userAgent)
+    ? "android"
+    : /iPad|iPhone|iPod/.test(navigator.userAgent)
+    ? "ios"
+    : "other";
 
 export const MAddToWishList = styled.button`
   position: relative;

@@ -74,7 +74,7 @@ export const iosfontSizes = {
     fontSize: "14px",
   },
 };
-
+props.fontSize.fontSize
 export const MAddtocartButton = styled.button`
   background: none;
   border: 1px solid red;
@@ -87,7 +87,7 @@ export const MAddtocartButton = styled.button`
       ? props.fontSize?.fontSize
       : getOS() === "ios"
       ? props.IfontSize?.fontSize
-      : props.fontSize?.fontSize};
+      : props.fontSize?.fontSize};;
   transition: all 0.3s ease;
   width: auto;
   margin-top: ${(props) => (props.main ? "5px" : "-60px")};

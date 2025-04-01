@@ -28,7 +28,6 @@ import {
   positions,
   iospositions,
   fontSizes,
-  iosfontSizes,
   categoryShadow,
 } from "./styledComponents";
 import { addToCart, removeFromCart } from "../../cartSlice";
@@ -66,7 +65,7 @@ const Products = ({
 
   const Iposition = iospositions[i18n.language] || position.en;
   const fontSize = fontSizes[i18n.language] || fontSize.en;
-  const IfontSize = iosfontSizes[i18n.language] || fontSize.en;
+  const fontSize = fontSizes[i18n.language] || fontSize.en;
 
 
   const dispatch = useDispatch(); // Function to check screen size
@@ -195,7 +194,6 @@ const Products = ({
           position={position}
           Iposition={Iposition}
           fontSize={fontSize}
-          IfontSize={IfontSize}
           highlightText={highlightText}
         />
       </div>
