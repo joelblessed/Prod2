@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 31,
+            "activePatchIndex": 39,
             "patches": [
                 {
                     "date": 1737555333001,
@@ -132,6 +132,38 @@
                 {
                     "date": 1742402221949,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,15 +5,16 @@\n import ReactDom from \"react-dom\";\n import { Provider } from \"react-redux\";\n import store from \"./store\";\n import reportWebVitals from './reportWebVitals';\n+import \"./components/translations/i18n\";\n \n \n const root = ReactDOM.createRoot(document.getElementById('root'));\n root.render(\n   <Provider store={store}>\n   <App />\n-</>\n+</Provider>\n );\n \n // If you want to start measuring performance in your app, pass a function\n // to log results (for example: reportWebVitals(console.log))\n"
+                },
+                {
+                    "date": 1743617513842,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n import App from './App';\n import ReactDom from \"react-dom\";\n import { Provider } from \"react-redux\";\n import store from \"./store\";\n+\n import reportWebVitals from './reportWebVitals';\n import \"./components/translations/i18n\";\n \n \n"
+                },
+                {
+                    "date": 1743617526845,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import App from './App';\n import ReactDom from \"react-dom\";\n import { Provider } from \"react-redux\";\n import store from \"./store\";\n-\n+import stre\n import reportWebVitals from './reportWebVitals';\n import \"./components/translations/i18n\";\n \n \n"
+                },
+                {
+                    "date": 1743617643854,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import App from './App';\n import ReactDom from \"react-dom\";\n import { Provider } from \"react-redux\";\n import store from \"./store\";\n-import stre\n+import wishstore from './wishListStore';\n import reportWebVitals from './reportWebVitals';\n import \"./components/translations/i18n\";\n \n \n"
+                },
+                {
+                    "date": 1743617652648,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,16 +4,16 @@\n import App from './App';\n import ReactDom from \"react-dom\";\n import { Provider } from \"react-redux\";\n import store from \"./store\";\n-import wishstore from './wishListStore';\n+import wishliststore from './wishListStore';\n import reportWebVitals from './reportWebVitals';\n import \"./components/translations/i18n\";\n \n \n const root = ReactDOM.createRoot(document.getElementById('root'));\n root.render(\n-  <Provider store={store}>\n+  <Provider store={store} >\n   <App />\n </Provider>\n );\n \n"
+                },
+                {
+                    "date": 1743617658622,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n \n \n const root = ReactDOM.createRoot(document.getElementById('root'));\n root.render(\n-  <Provider store={store} >\n+  <Provider store={store} wishliststore={}>\n   <App />\n </Provider>\n );\n \n"
+                },
+                {
+                    "date": 1743617665652,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n \n \n const root = ReactDOM.createRoot(document.getElementById('root'));\n root.render(\n-  <Provider store={store} wishliststore={}>\n+  <Provider store={store} wishliststore={wishliststore}>\n   <App />\n </Provider>\n );\n \n"
+                },
+                {
+                    "date": 1743622660188,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import App from './App';\n import ReactDom from \"react-dom\";\n import { Provider } from \"react-redux\";\n import store from \"./store\";\n-import wishliststore from './wishListStore';\n+\n import reportWebVitals from './reportWebVitals';\n import \"./components/translations/i18n\";\n \n \n"
+                },
+                {
+                    "date": 1743623429855,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n \n \n const root = ReactDOM.createRoot(document.getElementById('root'));\n root.render(\n-  <Provider store={store} wishliststore={wishliststore}>\n+  <Provider store={store} >\n   <App />\n </Provider>\n );\n \n"
                 }
             ],
             "date": 1737555333001,

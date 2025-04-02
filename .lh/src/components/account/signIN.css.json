@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 21,
+            "activePatchIndex": 26,
             "patches": [
                 {
                     "date": 1741085574839,
@@ -92,6 +92,26 @@
                 {
                     "date": 1743516138308,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -80,7 +80,7 @@\n \n \n @media  (max-width: 768px) {\n    .signin-container{\n-    margin-top: 550px;\n+    margin-top: 200px;\n    }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1743611591232,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n   outline: none;\n }\n \n .password-input-container {\n- \n+  position: relative;\n   width: 100%;\n }\n \n .password-toggle-button {\n"
+                },
+                {
+                    "date": 1743611597561,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,8 +38,9 @@\n \n .password-input-container {\n   position: relative;\n   width: 100%;\n+  z\n }\n \n .password-toggle-button {\n   position: absolute;\n"
+                },
+                {
+                    "date": 1743611606011,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,9 @@\n \n .password-input-container {\n   position: relative;\n   width: 100%;\n-  z\n+  z-index: 1;\n }\n \n .password-toggle-button {\n   position: absolute;\n"
+                },
+                {
+                    "date": 1743611632183,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,9 @@\n \n .password-input-container {\n   position: relative;\n   width: 100%;\n-  z-index: 1;\n+  z-index: ;\n }\n \n .password-toggle-button {\n   position: absolute;\n"
+                },
+                {
+                    "date": 1743611660179,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,9 @@\n \n .password-input-container {\n   position: relative;\n   width: 100%;\n-  z-index: ;\n+  z-index: 1;\n }\n \n .password-toggle-button {\n   position: absolute;\n"
                 }
             ],
             "date": 1741085574839,

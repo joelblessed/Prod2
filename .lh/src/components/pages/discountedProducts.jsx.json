@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 33,
+            "activePatchIndex": 34,
             "patches": [
                 {
                     "date": 1743455748618,
@@ -140,6 +140,10 @@
                 {
                     "date": 1743519051797,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -181,9 +181,9 @@\n           showDetails={showDetails}\n           position={position}\n           Iposition={Iposition}\n           fontSize={fontSize}\n-          I\n+          IfontSize={IfontSize}\n           highlightText={highlightText}\n         />\n       </div>\n     </div>\n"
+                },
+                {
+                    "date": 1743613715514,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,8 @@\n import { AuthContext } from \"../../AuthContext\";\n import { useContext } from \"react\";\n import { useSelector, useDispatch } from \"react-redux\";\n import { addToCartBeforeLogin, addToCartAPI } from \"../../cartAction\";\n-import { addToWishListAPI } from \"../../wishlistAction\";\n import styled, { keyframes } from \"styled-components\";\n import { useTranslation } from \"react-i18next\";\n import Slider from \"react-slick\";\n import { useNavigate, Link } from \"react-router-dom\";\n"
                 }
             ],
             "date": 1743455748618,
