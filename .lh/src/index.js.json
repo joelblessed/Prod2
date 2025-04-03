@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 39,
+            "activePatchIndex": 44,
             "patches": [
                 {
                     "date": 1737555333001,
@@ -164,6 +164,26 @@
                 {
                     "date": 1743623429855,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n \n \n const root = ReactDOM.createRoot(document.getElementById('root'));\n root.render(\n-  <Provider store={store} wishliststore={wishliststore}>\n+  <Provider store={store} >\n   <App />\n </Provider>\n );\n \n"
+                },
+                {
+                    "date": 1743675340953,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import App from './App';\n import ReactDom from \"react-dom\";\n import { Provider } from \"react-redux\";\n import store from \"./store\";\n-\n+import \n import reportWebVitals from './reportWebVitals';\n import \"./components/translations/i18n\";\n \n \n"
+                },
+                {
+                    "date": 1743675351491,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import App from './App';\n import ReactDom from \"react-dom\";\n import { Provider } from \"react-redux\";\n import store from \"./store\";\n-import \n+import wstore from\n import reportWebVitals from './reportWebVitals';\n import \"./components/translations/i18n\";\n \n \n"
+                },
+                {
+                    "date": 1743675357891,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import App from './App';\n import ReactDom from \"react-dom\";\n import { Provider } from \"react-redux\";\n import store from \"./store\";\n-import wstore from\n+import wstore from \"./\"\n import reportWebVitals from './reportWebVitals';\n import \"./components/translations/i18n\";\n \n \n"
+                },
+                {
+                    "date": 1743675370092,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n \n \n const root = ReactDOM.createRoot(document.getElementById('root'));\n root.render(\n-  <Provider store={store}  >\n+  <Provider store={store} store={store} >\n   <App />\n </Provider>\n );\n \n"
+                },
+                {
+                    "date": 1743675547767,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,23 @@\n+import React from 'react';\n+import ReactDOM from 'react-dom/client';\n+import './index.css';\n+import App from './App';\n+import ReactDom from \"react-dom\";\n+import { Provider } from \"react-redux\";\n+import store from \"./store\";\n+import wstore from \"./wStore\"\n+import reportWebVitals from './reportWebVitals';\n+import \"./components/translations/i18n\";\n+\n+\n+const root = ReactDOM.createRoot(document.getElementById('root'));\n+root.render(\n+  <Provider store={store}  >\n+  <App />\n+</Provider>\n+);\n+\n+// If you want to start measuring performance in your app, pass a function\n+// to log results (for example: reportWebVitals(console.log))\n+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals\n+reportWebVitals();\n"
                 }
             ],
             "date": 1737555333001,
