@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 6,
+            "activePatchIndex": 8,
             "patches": [
                 {
                     "date": 1742917697864,
@@ -32,6 +32,14 @@
                 {
                     "date": 1742918061745,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \n const Orders2 = () => {\n   const [orders, setOrders] = useState([]);\n   const [loading, setLoading] = useState(true);\n-  const [error, setError] = useState('');\n+ \n \n  const userId = localStorage.getItem(\"userId\")\n   const token = localStorage.getItem(\"token\")\n \n"
+                },
+                {
+                    "date": 1743761253061,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n  const userId = localStorage.getItem(\"userId\")\n   const token = localStorage.getItem(\"token\")\n \n   useEffect(() => {\n-    fetch(`http://localhost:5000/orders/${userId}`, {\n+    fetch(`http://localhost:5000/orders`, {\n       headers: { Authorization: `Bearer ${token}` },\n     })\n       .then((res) => res.json())\n       .then((data) => setOrders(data))\n"
+                },
+                {
+                    "date": 1743761273838,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n  const userId = localStorage.getItem(\"userId\")\n   const token = localStorage.getItem(\"token\")\n \n   useEffect(() => {\n-    fetch(`http://localhost:5000/orders`, {\n+    fetch(`http://localhost:5000/orders/${userId}`, {\n       headers: { Authorization: `Bearer ${token}` },\n     })\n       .then((res) => res.json())\n       .then((data) => setOrders(data))\n"
                 }
             ],
             "date": 1742917697864,
