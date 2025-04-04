@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 34,
+            "activePatchIndex": 49,
             "patches": [
                 {
                     "date": 1743455748618,
@@ -144,6 +144,66 @@
                 {
                     "date": 1743613715514,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,8 @@\n import { AuthContext } from \"../../AuthContext\";\n import { useContext } from \"react\";\n import { useSelector, useDispatch } from \"react-redux\";\n import { addToCartBeforeLogin, addToCartAPI } from \"../../cartAction\";\n-import { addToWishListAPI } from \"../../wishlistAction\";\n import styled, { keyframes } from \"styled-components\";\n import { useTranslation } from \"react-i18next\";\n import Slider from \"react-slick\";\n import { useNavigate, Link } from \"react-router-dom\";\n"
+                },
+                {
+                    "date": 1743725338618,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,15 +54,9 @@\n   const Iposition = iospositions[i18n.language] || position.en;\n   const IfontSize = iosfontSizes[i18n.language] || fontSize.en;\n \n \n-  const dispatch = useDispatch(); // Function to check screen size\n-\n-  // Function to check screen size\n-  const handleResize = () => {\n-    setIsMobile(window.innerWidth <= 1000);\n-  };\n-\n+  \n   useEffect(() => {\n     handleResize(); // Initial check\n     window.addEventListener(\"resize\", handleResize); // Update on resize\n     return () => window.removeEventListener(\"resize\", handleResize);\n"
+                },
+                {
+                    "date": 1743725353187,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,14 +54,9 @@\n   const Iposition = iospositions[i18n.language] || position.en;\n   const IfontSize = iosfontSizes[i18n.language] || fontSize.en;\n \n \n-  \n-  useEffect(() => {\n-    handleResize(); // Initial check\n-    window.addEventListener(\"resize\", handleResize); // Update on resize\n-    return () => window.removeEventListener(\"resize\", handleResize);\n-  }, []);\n+  ]);\n \n   const navigate = useNavigate();\n \n   const handleProductClick = (product) => {\n@@ -69,37 +64,9 @@\n     localStorage.setItem(\"selectedProduct\", product);\n     navigate(\"/selectedProduct\");\n   };\n \n-  const handleProductHid = () => {\n-    setSelectedProduct(null);\n-  };\n-  const nextImage = () => {\n-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);\n-  };\n-\n-  // Toggle the selection state of a product\n-  const toggleSelection = (id, currentSelection) => {\n-    // Update the product on the server using PATCH\n-    fetch(`${api}/updateProducts/${id}`, {\n-      method: \"PATCH\",\n-      headers: {\n-        \"Content-Type\": \"application/json\",\n-      },\n-      body: JSON.stringify({ isSelected: !currentSelection }),\n-    })\n-      .then((response) => response.json())\n-      .then((updatedProduct) => {\n-        // Update the local state to reflect the change\n-        setProducts((prevProducts) =>\n-          prevProducts.map((product) =>\n-            product.id === id ? updatedProduct : product\n-          )\n-        );\n-      })\n-      .catch((error) => console.error(\"Error updating product:\", error));\n-  };\n-\n+  \n   // Fetch all products\n   useEffect(() => {\n     const fetchProducts = async () => {\n       const response = await fetch(`${api}/products`);\n"
+                },
+                {
+                    "date": 1743725365013,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,10 +54,10 @@\n   const Iposition = iospositions[i18n.language] || position.en;\n   const IfontSize = iosfontSizes[i18n.language] || fontSize.en;\n \n \n-  ]);\n \n+\n   const navigate = useNavigate();\n \n   const handleProductClick = (product) => {\n     SelectedProduct(product);\n"
+                },
+                {
+                    "date": 1743725396544,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,47 +75,9 @@\n     };\n     fetchProducts();\n   }, [api]);\n \n-  // Toggle like/dislike with one button\n-  const toggleLike = async (product) => {\n-    if (!product) return;\n-\n-    const liked = product.likedBy.some((user) => user.userId === userId);\n-    const endpoint = liked ? \"dislike\" : \"like\";\n-\n-    const response = await fetch(`${api}/products/${product.id}/${endpoint}`, {\n-      method: \"PATCH\",\n-      headers: { \"Content-Type\": \"application/json\" },\n-      body: JSON.stringify({ userId, username }), // Send user info\n-    });\n-\n-    const updatedProduct = await response.json();\n-\n-    // Update state\n-    setProducts(\n-      products.map((p) =>\n-        p.id === product.id ? { ...p, ...updatedProduct } : p\n-      )\n-    );\n-    setSelectedProduct({ ...product, ...updatedProduct });\n-  };\n-  // ////////////////////////////////////////////////////////\n-\n-  const handleMouseEnter = () => {\n-    if (buttonRef.current) {\n-      buttonRef.current.click();\n-    }\n-  };\n-\n-  // ///////////////////////////////////////////////////////////\n-\n-  const show = (event) => {\n-    setShowDetails((prevShow) => !prevShow);\n-    if (previewRef.current && !previewRef.current.contains(event.target)) {\n-    }\n-  };\n-\n+  \n   // useEffect(() => {\n   //   // Attach event listener to the whole document\n   //   document.addEventListener(\"mousedown\", show);\n   //   return () => {\n"
+                },
+                {
+                    "date": 1743725438742,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,29 +64,9 @@\n     localStorage.setItem(\"selectedProduct\", product);\n     navigate(\"/selectedProduct\");\n   };\n \n-  \n-  // Fetch all products\n-  useEffect(() => {\n-    const fetchProducts = async () => {\n-      const response = await fetch(`${api}/products`);\n-      const data = await response.json();\n-      setProducts(data);\n-    };\n-    fetchProducts();\n-  }, [api]);\n \n-  \n-  // useEffect(() => {\n-  //   // Attach event listener to the whole document\n-  //   document.addEventListener(\"mousedown\", show);\n-  //   return () => {\n-  //     document.removeEventListener(\"mousedown\", show);\n-  //   };\n-  // }, []);\n- \n-\n   return (\n     <div>\n       <div>\n         <Box\n"
+                },
+                {
+                    "date": 1743725450050,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,24 +36,8 @@\n   highlightText,\n   selectedCategory,\n   Fortop,\n }) => {\n-  const [currentIndex, setCurrentIndex] = useState(0);\n-  const [products, setProducts] = useState(null);\n-  const [isMobile, setIsMobile] = useState(false);\n-  const [selectedProduct, setSelectedProduct] = useState(null);\n-  const [selectedDProduct, setDSelectedProduct] = useState(null);\n-  const [selected, setSelected] = useState(false);\n-  const userId = localStorage.getItem(\"userId\");\n-  const [showDetails, setShowDetails] = useState(true);\n-  const username = localStorage.getItem(\"username\");\n-  const previewRef = useRef(null);\n-  const { t, i18n } = useTranslation();\n-  const buttonRef = useRef(null);\n-  const position = positions[i18n.language] || position.en;\n-  const fontSize = fontSizes[i18n.language] || fontSize.en;\n-  const Iposition = iospositions[i18n.language] || position.en;\n-  const IfontSize = iosfontSizes[i18n.language] || fontSize.en;\n \n \n \n \n"
+                },
+                {
+                    "date": 1743725456239,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,13 +20,9 @@\n import { addToCart, removeFromCart } from \"../../cartSlice\";\n import Box from \"./boxes\";\n \n const Discounts = ({\n-  api,\n-  loading,\n-  add,\n-  images,\n-  filteredProducts,\n+  \n   SelectedProduct,\n   addToCart,\n   addToWishList,\n   handleShowAlert,\n"
+                },
+                {
+                    "date": 1743725462691,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,17 +22,12 @@\n \n const Discounts = ({\n   \n   SelectedProduct,\n-  addToCart,\n-  addToWishList,\n-  handleShowAlert,\n-  showAlert,\n-  searchTerm,\n+  \n   discounts,\n   highlightText,\n-  selectedCategory,\n-  Fortop,\n+  \n }) => {\n \n \n \n"
+                },
+                {
+                    "date": 1743725475455,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n \n const Discounts = ({\n   \n   SelectedProduct,\n-  \n+\n   discounts,\n   highlightText,\n   \n }) => {\n"
+                },
+                {
+                    "date": 1743725485210,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,17 +22,14 @@\n \n const Discounts = ({\n   \n   SelectedProduct,\n-\n   discounts,\n   highlightText,\n   \n }) => {\n \n \n-\n-\n   const navigate = useNavigate();\n \n   const handleProductClick = (product) => {\n     SelectedProduct(product);\n"
+                },
+                {
+                    "date": 1743725497544,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,8 @@\n   highlightText,\n   \n }) => {\n \n-\n   const navigate = useNavigate();\n \n   const handleProductClick = (product) => {\n     SelectedProduct(product);\n@@ -44,10 +43,9 @@\n         <Box\n           Mobject={discounts}\n           Dobject={discounts}\n           selectedDProduct={selectedProduct}\n-          toggleLike={toggleLike}\n-          show={show}\n+          \n           handleProductClick={handleProductClick}\n           hanldleProductHid={handleProductHid}\n           isMobile={isMobile}\n           setSelectedProduct={setSelectedProduct}\n"
+                },
+                {
+                    "date": 1743725505289,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,16 +46,10 @@\n           selectedDProduct={selectedProduct}\n           \n           handleProductClick={handleProductClick}\n           hanldleProductHid={handleProductHid}\n-          isMobile={isMobile}\n-          setSelectedProduct={setSelectedProduct}\n-          selectedProduct={selectedProduct}\n-          showDetails={showDetails}\n-          position={position}\n-          Iposition={Iposition}\n-          fontSize={fontSize}\n-          IfontSize={IfontSize}\n+          \n+         \n           highlightText={highlightText}\n         />\n       </div>\n     </div>\n"
+                },
+                {
+                    "date": 1743725515528,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,9 @@\n           Dobject={discounts}\n           selectedDProduct={selectedProduct}\n           \n           handleProductClick={handleProductClick}\n-          hanldleProductHid={handleProductHid}\n+         \n           \n          \n           highlightText={highlightText}\n         />\n"
+                },
+                {
+                    "date": 1743725522043,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n       <div>\n         <Box\n           Mobject={discounts}\n           Dobject={discounts}\n-          selectedDProduct={selectedProduct}\n+          electedDProduct={selectedProduct}\n           \n           handleProductClick={handleProductClick}\n          \n           \n"
+                },
+                {
+                    "date": 1743725527940,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n       <div>\n         <Box\n           Mobject={discounts}\n           Dobject={discounts}\n-          SelectedDProduct={electedProduct}\n+          SelectedDProduct={SelectedProduct}\n           \n           handleProductClick={handleProductClick}\n          \n           \n"
                 }
             ],
             "date": 1743455748618,
