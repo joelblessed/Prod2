@@ -39,14 +39,8 @@ const Products = ({
     if (fetched.length === 0) setHasMore(false);
 
     // Set filtered products based on fetched data
-    const uniqueProducts = (prev, newItems) => {
-      const ids = new Set(prev.map((p) => p.id));
-      return [...prev, ...newItems.filter((item) => !ids.has(item.id))];
-    };
-    
-    setFilteredProducts((prev) => uniqueProducts(prev, fetched));
-    setProducts((prev) => uniqueProducts(prev, fetched));
-  
+    setFilteredProducts((prev) => [...prev, ...fetched]);
+    setProducts((prev) => [...prev, ...fetched]);
   }, [page ]);
 
   useEffect(() => {
@@ -72,33 +66,28 @@ const Products = ({
     };
   }, [hasMore]);
 
+  // useEffect(() => {
+  //   if (!searchTerm || searchTerm.trim() === "") {
+      
+  //     setFilteredProducts(products);
+  //     return;
+  //   }
 
-  useEffect(() => {
-    if (searchTerm && window.innerWidth < 768) {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-  }, [searchTerm]);
+  //   const normalizedTerm = searchTerm.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 
-  useEffect(() => {
-    if (searchTerm && searchTerm.trim() !== "") {
-      // Use fuse search if products already loaded
-      const fuse = new Fuse(glofilteredProducts, {
-        keys: ["name", "category", "owner", "brand.name"],
-        threshold: 0.3,
-      });
-  
-      const results = fuse.search(searchTerm.trim());
-      const matched = results.map((res) => res.item);
-      setFilteredProducts(matched);
-      setHasMore(false); // Stop pagination on search
-    } else {
-      setFilteredProducts(products); // Reset when search clears
-      setHasMore(true); // Enable pagination again
-    }
-  }, [searchTerm, glofilteredProducts, products]);
+  //   const fuse = new Fuse(glofilteredProducts, {
+  //     keys: ["name", "category", "owner", "brand.name"],
+  //     threshold: 0.3,
+  //     includeScore: false,
+  //     useExtendedSearch: true,
+  //   });
 
+  //   const results = fuse.search(normalizedTerm);
+  //   const matched = results.map((res) => res.item);
+  //   setFilteredProducts(matched);
+  //   setProducts(matched);
+  // }, [searchTerm, products]);
 
- 
   const fetchSearchResults = async (query) => {
     if (!query) {
       setFilteredProducts([]); // Or fetch default list
@@ -125,6 +114,35 @@ const Products = ({
       debouncedSearch.cancel();
     };
   }, [searchTerm]);
+
+
+  // useEffect(() => {
+  //   const query = searchTerm.trim().toLowerCase();
+
+  //   let filtered = filteredProducts.filter((product) => {
+  //     const categoryMatch = product.category.toLowerCase().includes(query);
+  //     const productNameMatch = product.name.toLowerCase().includes(query);
+  //     const ownerNameMatch = product.owner.toLowerCase().includes(query);
+  //     const brandMatch = product.brand.some((b) =>
+  //       b.name.toLowerCase().includes(query)
+  //     );
+
+  //     return categoryMatch || productNameMatch || brandMatch || ownerNameMatch;
+  //   });
+
+  //   // Optional: Filter by selected category
+  //   // if (selectedCategory) {
+  //   //   filtered = filtered.filter(
+  //   //     (product) => product.category === selectedCategory
+  //   //   );
+  //   // }
+
+  //   setFilteredProducts(filtered);
+  //   // setSearchTerm(""); // Optional: Clear input after search
+  // }, [searchTerm]);
+
+
+
 
 
  

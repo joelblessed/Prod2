@@ -39,14 +39,8 @@ const Products = ({
     if (fetched.length === 0) setHasMore(false);
 
     // Set filtered products based on fetched data
-    const uniqueProducts = (prev, newItems) => {
-      const ids = new Set(prev.map((p) => p.id));
-      return [...prev, ...newItems.filter((item) => !ids.has(item.id))];
-    };
-    
-    setFilteredProducts((prev) => uniqueProducts(prev, fetched));
-    setProducts((prev) => uniqueProducts(prev, fetched));
-  
+    setFilteredProducts((prev) => [...prev, ...fetched]);
+    setProducts((prev) => [...prev, ...fetched]);
   }, [page ]);
 
   useEffect(() => {
@@ -73,11 +67,7 @@ const Products = ({
   }, [hasMore]);
 
 
-  useEffect(() => {
-    if (searchTerm && window.innerWidth < 768) {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-  }, [searchTerm]);
+
 
   useEffect(() => {
     if (searchTerm && searchTerm.trim() !== "") {
@@ -125,6 +115,35 @@ const Products = ({
       debouncedSearch.cancel();
     };
   }, [searchTerm]);
+
+
+  // useEffect(() => {
+  //   const query = searchTerm.trim().toLowerCase();
+
+  //   let filtered = filteredProducts.filter((product) => {
+  //     const categoryMatch = product.category.toLowerCase().includes(query);
+  //     const productNameMatch = product.name.toLowerCase().includes(query);
+  //     const ownerNameMatch = product.owner.toLowerCase().includes(query);
+  //     const brandMatch = product.brand.some((b) =>
+  //       b.name.toLowerCase().includes(query)
+  //     );
+
+  //     return categoryMatch || productNameMatch || brandMatch || ownerNameMatch;
+  //   });
+
+  //   // Optional: Filter by selected category
+  //   // if (selectedCategory) {
+  //   //   filtered = filtered.filter(
+  //   //     (product) => product.category === selectedCategory
+  //   //   );
+  //   // }
+
+  //   setFilteredProducts(filtered);
+  //   // setSearchTerm(""); // Optional: Clear input after search
+  // }, [searchTerm]);
+
+
+
 
 
  

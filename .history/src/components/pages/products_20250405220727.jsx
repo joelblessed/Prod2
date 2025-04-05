@@ -73,11 +73,7 @@ const Products = ({
   }, [hasMore]);
 
 
-  useEffect(() => {
-    if (searchTerm && window.innerWidth < 768) {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-  }, [searchTerm]);
+
 
   useEffect(() => {
     if (searchTerm && searchTerm.trim() !== "") {

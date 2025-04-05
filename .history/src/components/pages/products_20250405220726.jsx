@@ -39,13 +39,6 @@ const Products = ({
     if (fetched.length === 0) setHasMore(false);
 
     // Set filtered products based on fetched data
-    const uniqueProducts = (prev, newItems) => {
-      const ids = new Set(prev.map((p) => p.id));
-      return [...prev, ...newItems.filter((item) => !ids.has(item.id))];
-    };
-    
-    setFilteredProducts((prev) => uniqueProducts(prev, fetched));
-    setProducts((prev) => uniqueProducts(prev, fetched));
   
   }, [page ]);
 
@@ -73,11 +66,7 @@ const Products = ({
   }, [hasMore]);
 
 
-  useEffect(() => {
-    if (searchTerm && window.innerWidth < 768) {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-  }, [searchTerm]);
+
 
   useEffect(() => {
     if (searchTerm && searchTerm.trim() !== "") {
