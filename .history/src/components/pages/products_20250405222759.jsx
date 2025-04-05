@@ -75,15 +75,12 @@ const Products = ({
 
   useEffect(() => {
     if (searchTerm && window.innerWidth < 768) {
-      setTimeout(() => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }, 300); // delay allows render
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   }, [searchTerm]);
 
+ const hadleSearchButton = () =>{
 
-
-  useEffect(() => {
     if (searchTerm && searchTerm.trim() !== "") {
       // Use fuse search if products already loaded
       const fuse = new Fuse(glofilteredProducts, {
@@ -101,8 +98,8 @@ const Products = ({
       setProducts(products); // Reset to original products
       setHasMore(true); // Enable pagination again
     }
-  }, [searchTerm, glofilteredProducts, products]);
-
+    
+  }
 
  
   const fetchSearchResults = async (query) => {
@@ -120,7 +117,7 @@ const Products = ({
   // Debounced search function
   const debouncedSearch = debounce((query) => {
     fetchSearchResults(query);
-  },200); // Delay in milliseconds
+  }, 500); // Delay in milliseconds
 
   useEffect(() => {
     // Trigger the debounced search when the search term changes

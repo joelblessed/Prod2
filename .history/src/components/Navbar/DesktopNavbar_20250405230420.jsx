@@ -176,7 +176,7 @@ function DesktopNavbar({
   categories,
   search,
   searchFunction,
-  changeLanguage,
+  changeLanguage
   handleProductSearch,
  
 }) {

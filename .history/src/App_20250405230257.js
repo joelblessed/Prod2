@@ -344,7 +344,7 @@ function App() {
             cartCount={cartCount}
             search={handleSearch}
             searchFunction={searchFunction}
-            handleProductSearch={handleProductSearch}
+            had
             categories={categories}
             searchTerm={searchTerm}
             setSearchTerm={setSearchTerm}

@@ -73,7 +73,7 @@ const Products = ({
   }, [hasMore]);
 
 
-  useEffect(() => {
+  uuseEffect(() => {
     if (searchTerm && window.innerWidth < 768) {
       setTimeout(() => {
         window.scrollTo({ top: 0, behavior: "smooth" });

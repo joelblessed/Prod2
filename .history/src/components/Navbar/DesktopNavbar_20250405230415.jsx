@@ -176,8 +176,8 @@ function DesktopNavbar({
   categories,
   search,
   searchFunction,
-  changeLanguage,
-  handleProductSearch,
+  changeLanguage
+  handle
  
 }) {
   const { username,profileImage } = useContext(AuthContext);

@@ -344,7 +344,6 @@ function App() {
             cartCount={cartCount}
             search={handleSearch}
             searchFunction={searchFunction}
-            handleProductSearch={handleProductSearch}
             categories={categories}
             searchTerm={searchTerm}
             setSearchTerm={setSearchTerm}
@@ -387,7 +386,7 @@ function App() {
                 SelectedProduct={setSelectedProduct}
                 highlightText={highlightText}
              loaderRef={loaderRef}
-            handleSearchButton={setHandleProductSearch}
+            handleSearchButton={
                 api={api}
                 searchTerm={searchTerm}
                 glofilteredProducts={filteredProducts} 

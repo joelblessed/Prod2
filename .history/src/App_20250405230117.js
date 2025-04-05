@@ -99,7 +99,7 @@ function App() {
   const [ownersProducts, setOwnersProducts] = useState([]);
   const [discounts, setDiscount] = useState([]);
   const [inwishlist, setInWishList] = useState([null]);
-  const [handleProductSearch, setHandleProductSearch] = useState(null);
+  const [handleProductSearc
   const [currentPage, setCurrentPage] = useState(1); // Track current page
   const [itemsPerPage] = useState(1); // Number of items per p
   const [likedProducts, setLikedProducts] = useState([]);
@@ -344,7 +344,6 @@ function App() {
             cartCount={cartCount}
             search={handleSearch}
             searchFunction={searchFunction}
-            handleProductSearch={handleProductSearch}
             categories={categories}
             searchTerm={searchTerm}
             setSearchTerm={setSearchTerm}
@@ -387,7 +386,7 @@ function App() {
                 SelectedProduct={setSelectedProduct}
                 highlightText={highlightText}
              loaderRef={loaderRef}
-            handleSearchButton={setHandleProductSearch}
+            handleSearchButton={setSearchFunction}
                 api={api}
                 searchTerm={searchTerm}
                 glofilteredProducts={filteredProducts} 

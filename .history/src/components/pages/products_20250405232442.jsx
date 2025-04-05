@@ -73,13 +73,7 @@ const Products = ({
   }, [hasMore]);
 
 
-  useEffect(() => {
-    if (searchTerm && window.innerWidth < 768) {
-      setTimeout(() => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }, 300); // delay allows render
-    }
-  }, [searchTerm]);
+  u
 
 
 

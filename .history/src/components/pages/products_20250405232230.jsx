@@ -75,9 +75,7 @@ const Products = ({
 
   useEffect(() => {
     if (searchTerm && window.innerWidth < 768) {
-      setTimeout(() => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }, 300); // delay allows render
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   }, [searchTerm]);
 
@@ -92,7 +90,7 @@ const Products = ({
       });
   
       const results = fuse.search(searchTerm.trim());
-      const matched = results.map((res) => res.item);
+      const matched = results.map((res) => res.item);F
       setFilteredProducts(matched);
       setProducts(matched);
       setHasMore(false); // Stop pagination on search
@@ -120,7 +118,7 @@ const Products = ({
   // Debounced search function
   const debouncedSearch = debounce((query) => {
     fetchSearchResults(query);
-  },200); // Delay in milliseconds
+  }, 500); // Delay in milliseconds
 
   useEffect(() => {
     // Trigger the debounced search when the search term changes

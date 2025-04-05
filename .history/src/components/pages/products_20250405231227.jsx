@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { addToWishlist, removeFromWishlist } from "../../wishlistSlice";
-import React, { useEffect, useState, useRef, useCallback } from "react";
+import React, { useEffect, useState, useRef, useCallback, use } from "react";
 import Fuse from "fuse.js";
 import { useTranslation } from "react-i18next";
 import "./products.css";
@@ -8,6 +8,7 @@ import { useNavigate, Link } from "react-router-dom";
 import "../translations/i18n";
 import { debounce } from 'lodash';
 import Box from "./boxes";
+import DesktopNavbar from "../Navbar/DesktopNavbar";
 
 const Products = ({
   glofilteredProducts,
@@ -16,6 +17,7 @@ const Products = ({
   loaderRef,
   searchTerm,
   setSearchTerm,
+  handleSearchButton,
   category,
   api,
   Search,
@@ -28,6 +30,10 @@ const Products = ({
 
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
+
+  useEffect (()=>{
+    handleSearchButton (handleSearch);
+  },[])
 
   const fetchProducts = useCallback(async () => {
     // Handle fetching new products based on page or other conditions
@@ -75,15 +81,14 @@ const Products = ({
 
   useEffect(() => {
     if (searchTerm && window.innerWidth < 768) {
-      setTimeout(() => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }, 300); // delay allows render
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   }, [searchTerm]);
 
+ 
 
+ const handleSearch = () =>{
 
-  useEffect(() => {
     if (searchTerm && searchTerm.trim() !== "") {
       // Use fuse search if products already loaded
       const fuse = new Fuse(glofilteredProducts, {
@@ -101,8 +106,8 @@ const Products = ({
       setProducts(products); // Reset to original products
       setHasMore(true); // Enable pagination again
     }
-  }, [searchTerm, glofilteredProducts, products]);
-
+    
+  }
 
  
   const fetchSearchResults = async (query) => {
@@ -120,7 +125,7 @@ const Products = ({
   // Debounced search function
   const debouncedSearch = debounce((query) => {
     fetchSearchResults(query);
-  },200); // Delay in milliseconds
+  }, 500); // Delay in milliseconds
 
   useEffect(() => {
     // Trigger the debounced search when the search term changes
@@ -143,6 +148,9 @@ const Products = ({
 
   return (
     <div>
+<DesktopNavbar
+
+/>
       <div>
         <Box
           Mobject={products}

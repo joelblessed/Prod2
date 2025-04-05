@@ -75,32 +75,16 @@ const Products = ({
 
   useEffect(() => {
     if (searchTerm && window.innerWidth < 768) {
-      setTimeout(() => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }, 300); // delay allows render
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   }, [searchTerm]);
 
-
+  hadleSearchButton = () =>{
+    
+  }
 
   useEffect(() => {
-    if (searchTerm && searchTerm.trim() !== "") {
-      // Use fuse search if products already loaded
-      const fuse = new Fuse(glofilteredProducts, {
-        keys: ["name", "category", "owner", "brand.name"],
-        threshold: 0.3,
-      });
   
-      const results = fuse.search(searchTerm.trim());
-      const matched = results.map((res) => res.item);
-      setFilteredProducts(matched);
-      setProducts(matched);
-      setHasMore(false); // Stop pagination on search
-    } else {
-      setFilteredProducts(products); // Reset when search clears
-      setProducts(products); // Reset to original products
-      setHasMore(true); // Enable pagination again
-    }
   }, [searchTerm, glofilteredProducts, products]);
 
 
@@ -120,7 +104,7 @@ const Products = ({
   // Debounced search function
   const debouncedSearch = debounce((query) => {
     fetchSearchResults(query);
-  },200); // Delay in milliseconds
+  }, 500); // Delay in milliseconds
 
   useEffect(() => {
     // Trigger the debounced search when the search term changes
