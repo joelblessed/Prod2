@@ -90,11 +90,9 @@ const Products = ({
       const results = fuse.search(searchTerm.trim());
       const matched = results.map((res) => res.item);
       setFilteredProducts(matched);
-      setProducts(matched);
       setHasMore(false); // Stop pagination on search
     } else {
       setFilteredProducts(products); // Reset when search clears
-      setProducts(products); // Reset to original products
       setHasMore(true); // Enable pagination again
     }
   }, [searchTerm, glofilteredProducts, products]);
@@ -141,7 +139,7 @@ const Products = ({
     <div>
       <div>
         <Box
-          Mobject={products}
+          Mobject={fil}
           Dobject={filteredProducts}
        
           loaderRef={loaderRef}

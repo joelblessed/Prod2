@@ -94,7 +94,6 @@ const Products = ({
       setHasMore(false); // Stop pagination on search
     } else {
       setFilteredProducts(products); // Reset when search clears
-      setProducts(products); // Reset to original products
       setHasMore(true); // Enable pagination again
     }
   }, [searchTerm, glofilteredProducts, products]);
