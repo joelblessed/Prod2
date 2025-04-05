@@ -96,8 +96,5 @@
     "@types/react-intersection-observer": "^8.0.0",
     "@types/react-scroll": "^1.8.0",
     "@types/react-bootstrap": "^2.0.0"
- 
-
-
   }
 }

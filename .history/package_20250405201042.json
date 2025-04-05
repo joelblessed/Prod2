@@ -95,9 +95,22 @@
     "@types/i18next-browser-languagedetector": "^8.0.0",
     "@types/react-intersection-observer": "^8.0.0",
     "@types/react-scroll": "^1.8.0",
-    "@types/react-bootstrap": "^2.0.0"
- 
-
-
+    "@types/react-bootstrap": "^2.0.0",
+    "@types/react-slick": "^0.23.14",
+    "@types/react-toastify": "^9.0.1",
+    "@types/react-datepicker": "^4.6.0",
+    "@types/react-chartjs-2": "^5.0.1",
+    "@types/chart.js": "^4.0.0",
+    "@types/lodash": "^4.14.195",
+    "@types/fuse.js": "^6.4.0",
+    "@types/localstorage": "^1.0.0",
+    "@types/date-fns": "^2.23.0",
+    "@types/i18next": "^24.0.0",
+    "@types/i18next-browser-languagedetector": "^8.0.0",
+    "@types/react-intersection-observer": "^8.0.0",
+    "@types/react-scroll": "^1.8.0",
+    "@types/react-bootstrap": "^2.0.0",
+    "@types/react-slick": "^0.23.14",
+    "@types/react-toastify": "^9.0.1",
   }
 }
