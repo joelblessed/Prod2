@@ -1,4 +1,4 @@
-import React, {useRef,useEffect} from "react";
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import "../../translations/i18n";
 import { useTranslation } from "react-i18next";
@@ -10,6 +10,7 @@ import {
   MAddToWishList,
   Price,
   Discount,
+  loadMore
   DescriptionContainer,
   DescriptionTitle,
   DescriptionContent,
@@ -39,20 +40,37 @@ const MobileCard = ({
   fontSize,
   IfontSize,
   maxLength,
-
-loaderRef,
   isExpanded,
   showDetails,
   handleWishlistToggle,
   isInWishlist,
-
+  loaderRef,
   category,
 }) => {
   const { t, i18n } = useTranslation();
   const dispatch = useDispatch(); // Function to check screen size
 
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          loadMore(); // Load more products when loader is visible
+        }
+      },
+      {
+        root: null,
+        rootMargin: "100px",
+        threshold: 1.0,
+      }
+    );
 
+    if (loaderRef.current) observer.observe(loaderRef.current);
+
+    return () => {
+      if (loaderRef.current) observer.unobserve(loaderRef.current);
+    };
+  }, [loadMore]);
 
 
   const mstyles = {

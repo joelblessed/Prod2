@@ -39,7 +39,7 @@ const MobileCard = ({
   fontSize,
   IfontSize,
   maxLength,
-
+  loadMore,
 loaderRef,
   isExpanded,
   showDetails,
@@ -50,7 +50,7 @@ loaderRef,
 }) => {
   const { t, i18n } = useTranslation();
   const dispatch = useDispatch(); // Function to check screen size
-
+  const loaderRef = useRef();
 
 
 

@@ -39,8 +39,8 @@ const MobileCard = ({
   fontSize,
   IfontSize,
   maxLength,
+  loadMore,
 
-loaderRef,
   isExpanded,
   showDetails,
   handleWishlistToggle,
@@ -52,7 +52,26 @@ loaderRef,
   const dispatch = useDispatch(); // Function to check screen size
 
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          loadMore(); // Load more products when loader is visible
+        }
+      },
+      {
+        root: null,
+        rootMargin: "100px",
+        threshold: 1.0,
+      }
+    );
 
+    if (loaderRef.current) observer.observe(loaderRef.current);
+
+    return () => {
+      if (loaderRef.current) observer.unobserve(loaderRef.current);
+    };
+  }, [loadMore]);
 
 
   const mstyles = {

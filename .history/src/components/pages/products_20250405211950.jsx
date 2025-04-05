@@ -85,7 +85,6 @@ const Products = ({
     const results = fuse.search(normalizedTerm);
     const matched = results.map((res) => res.item);
     setFilteredProducts(matched);
-    setProducts(matched);
   }, [searchTerm, products]);
 
   const fetchSearchResults = async (query) => {
@@ -97,7 +96,6 @@ const Products = ({
     const res = await fetch(`${api}/search?query=${query}`);
     const data = await res.json();
     setFilteredProducts(data);
-    setProducts(data);
   };
 
   // Debounced search function
@@ -145,7 +143,36 @@ const Products = ({
 
 
 
- 
+  // //////////////////////////////////////////////////////////////////
+
+  // mobile
+  
+
+  useEffect(() => {
+    loadMore(); // Initial fetch
+  }, []);
+
+
+  const loadMore = async () => {
+    try {
+      const res = await fetch(`${api}/products?page=${page}&limit=5`);
+      const data = await res.json();
+  
+      const productsData = data.products || data; // handle either structure
+  
+      if (productsData.length === 0) {
+        setHasMore(false); // no more products to load
+        return;
+      }
+  
+      // Append paginated data
+      setMProducts((prev) => [...prev, ...productsData]);
+    } catch (error) {
+      console.error("Error fetching products:", error);
+    }
+  };
+
+// //////////////////////////////////////////////////////////
   const handleProductClick = (product) => {
     SelectedProduct(product);
     localStorage.setItem("selectedProduct", product);
@@ -158,9 +185,9 @@ const Products = ({
     <div>
       <div>
         <Box
-          Mobject={products}
+          Mobject={filteredProducts}
           Dobject={filteredProducts}
-       
+          loadMore={loadMore}
           loaderRef={loaderRef}
           SelectedProduct={handleProductClick}
           handleProductClick={handleProductClick}

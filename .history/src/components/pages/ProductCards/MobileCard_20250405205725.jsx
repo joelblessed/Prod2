@@ -39,7 +39,7 @@ const MobileCard = ({
   fontSize,
   IfontSize,
   maxLength,
-
+  loadMore,
 loaderRef,
   isExpanded,
   showDetails,

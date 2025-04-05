@@ -52,7 +52,7 @@ const Box = ({
   selectedCategory,
   Fortop,
 loaderRef,
-loadMore,
+loadmore,
 category,
   toggleLike,
   // show,
@@ -130,7 +130,6 @@ category,
           handleProductClick={handleProductClick}
           show={show}
           loaderRef={loaderRef}
-          
           category={category}
           position={position}
           Iposition={Iposition}

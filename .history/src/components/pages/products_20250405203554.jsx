@@ -21,9 +21,7 @@ const Products = ({
   Search,
 }) => {
   const [filteredProducts, setFilteredProducts] = useState([]);
-  const [products, setProducts] = useState([]);
-  const [mproducts, setMProducts] = useState([]);
-
+  const [products, setProduts] = useState([]);
   const navigate = useNavigate();
 
   const [page, setPage] = useState(1);
@@ -40,7 +38,7 @@ const Products = ({
 
     // Set filtered products based on fetched data
     setFilteredProducts((prev) => [...prev, ...fetched]);
-    setProducts((prev) => [...prev, ...fetched]);
+    setProduts((prev) => [...prev, ...fetched]);
   }, [page ]);
 
   useEffect(() => {
@@ -85,7 +83,6 @@ const Products = ({
     const results = fuse.search(normalizedTerm);
     const matched = results.map((res) => res.item);
     setFilteredProducts(matched);
-    setProducts(matched);
   }, [searchTerm, products]);
 
   const fetchSearchResults = async (query) => {
@@ -97,7 +94,6 @@ const Products = ({
     const res = await fetch(`${api}/search?query=${query}`);
     const data = await res.json();
     setFilteredProducts(data);
-    setProducts(data);
   };
 
   // Debounced search function
@@ -144,23 +140,19 @@ const Products = ({
 
 
 
-
- 
+  // //////////////////////////////////////////////////////////////////
   const handleProductClick = (product) => {
     SelectedProduct(product);
     localStorage.setItem("selectedProduct", product);
     navigate("/selectedProduct");
   };
-  console.log("filteredProducts", filteredProducts);
-  console.log("glofilteredProducts", glofilteredProducts);
 
   return (
     <div>
       <div>
         <Box
-          Mobject={products}
+          Mobject={filteredProducts}
           Dobject={filteredProducts}
-       
           loaderRef={loaderRef}
           SelectedProduct={handleProductClick}
           handleProductClick={handleProductClick}

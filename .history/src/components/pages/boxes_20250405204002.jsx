@@ -130,7 +130,7 @@ category,
           handleProductClick={handleProductClick}
           show={show}
           loaderRef={loaderRef}
-          
+          loadMore
           category={category}
           position={position}
           Iposition={Iposition}

@@ -56,7 +56,7 @@ const Products = ({
           setPage((prev) => prev + 1);
         }
       },
-      { rootMargin: "100px" }
+      { rootMargin: "1000px" }
     );
 
     if (loaderRef.current) observer.observe(loaderRef.current);

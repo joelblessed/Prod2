@@ -160,7 +160,7 @@ const Products = ({
         <Box
           Mobject={products}
           Dobject={filteredProducts}
-       
+          loadMore={loadMore}
           loaderRef={loaderRef}
           SelectedProduct={handleProductClick}
           handleProductClick={handleProductClick}

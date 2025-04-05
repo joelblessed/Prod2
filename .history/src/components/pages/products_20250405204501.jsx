@@ -85,7 +85,6 @@ const Products = ({
     const results = fuse.search(normalizedTerm);
     const matched = results.map((res) => res.item);
     setFilteredProducts(matched);
-    setProducts(matched);
   }, [searchTerm, products]);
 
   const fetchSearchResults = async (query) => {
@@ -97,7 +96,6 @@ const Products = ({
     const res = await fetch(`${api}/search?query=${query}`);
     const data = await res.json();
     setFilteredProducts(data);
-    setProducts(data);
   };
 
   // Debounced search function
@@ -145,22 +143,33 @@ const Products = ({
 
 
 
- 
+  // //////////////////////////////////////////////////////////////////
+
+  // mobile
+  const loadMore = async () => {
+    const res = await fetch(`/api/products?page=${page}&limit=10`);
+    const data = await res.json();
+    setMProducts((prev) => [...prev, ...data]);
+    setPage((prev) => prev + 1);
+  };
+
+  useEffect(() => {
+    loadMore(); // Initial fetch
+  }, []);
+// //////////////////////////////////////////////////////////
   const handleProductClick = (product) => {
     SelectedProduct(product);
     localStorage.setItem("selectedProduct", product);
     navigate("/selectedProduct");
   };
-  console.log("filteredProducts", filteredProducts);
-  console.log("glofilteredProducts", glofilteredProducts);
 
   return (
     <div>
       <div>
         <Box
-          Mobject={products}
+          Mobject}
           Dobject={filteredProducts}
-       
+          loadMore={loadMore}
           loaderRef={loaderRef}
           SelectedProduct={handleProductClick}
           handleProductClick={handleProductClick}
