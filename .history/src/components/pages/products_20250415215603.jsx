@@ -34,7 +34,7 @@ const Products = ({
 
   // Fetch products with pagination
   const fetchProducts = useCallback(async () => {
-    const res = await fetch(`${api}/products?page=${page}&limit=10`);
+    const res = await fetch(`${api}/products?page=${page}&limit=6`);
     const data = await res.json();
     const fetched = data.products || data;
 

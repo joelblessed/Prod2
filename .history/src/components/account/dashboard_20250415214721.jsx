@@ -36,10 +36,8 @@ const ResponsiveDashboardContainer = styled(DashboardContainer)`
 const ResponsiveSidebar = styled(Sidebar)`
   width: 100%;
   margin-bottom: 16px;
-  display: ${(props) => (props.isVisible ? "block" : "none")};
 
   @media (min-width: 768px) {
-    display: block;
     width: 250px;
     margin-bottom: 0;
   }
@@ -67,21 +65,6 @@ const ResponsiveGrid = styled(Grid)`
   }
 `;
 
-const ToggleButton = styled.button`
-  display: block;
-  margin: 8px auto;
-  padding: 8px 16px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-
-  @media (min-width: 768px) {
-    display: none;
-  }
-`;
-
 // Mock data (replace with API calls)
 const mockProducts = [
   { id: 1, name: "Product A", price: 100, stock: 10 },
@@ -104,11 +87,6 @@ const Dashboard = ({ api, user, error, ownersProducts, changeLanguage }) => {
   const [loading, setLoading] = useState(true);
   const ownerId = localStorage.getItem("userId");
   const { t } = useTranslation();
-  const [isSidebarVisible, setIsSidebarVisible] = useState(false);
-
-  const toggleSidebar = () => {
-    setIsSidebarVisible(!isSidebarVisible);
-  };
 
   // Delete product by ID
   const handleDelete = (id) => {
@@ -125,13 +103,8 @@ const Dashboard = ({ api, user, error, ownersProducts, changeLanguage }) => {
 
   return (
     <ResponsiveDashboardContainer>
-      {/* Toggle Button for Sidebar */}
-      <ToggleButton onClick={toggleSidebar}>
-        {isSidebarVisible ? t("Hide Options") : t("Show Options")}
-      </ToggleButton>
-
       {/* Sidebar */}
-      <ResponsiveSidebar isVisible={isSidebarVisible}>
+      <ResponsiveSidebar>
         <h2 style={{ marginBottom: "16px" }}>{t("DashBoard")}</h2>
         <nav>
           <NavLink to="/d">{t("DashBoard")}</NavLink>

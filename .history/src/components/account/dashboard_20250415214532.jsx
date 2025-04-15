@@ -36,10 +36,8 @@ const ResponsiveDashboardContainer = styled(DashboardContainer)`
 const ResponsiveSidebar = styled(Sidebar)`
   width: 100%;
   margin-bottom: 16px;
-  display: ${(props) => (props.isVisible ? "block" : "none")};
 
   @media (min-width: 768px) {
-    display: block;
     width: 250px;
     margin-bottom: 0;
   }
@@ -67,21 +65,6 @@ const ResponsiveGrid = styled(Grid)`
   }
 `;
 
-const ToggleButton = styled.button`
-  display: block;
-  margin: 8px auto;
-  padding: 8px 16px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-
-  @media (min-width: 768px) {
-    display: none;
-  }
-`;
-
 // Mock data (replace with API calls)
 const mockProducts = [
   { id: 1, name: "Product A", price: 100, stock: 10 },
@@ -104,11 +87,6 @@ const Dashboard = ({ api, user, error, ownersProducts, changeLanguage }) => {
   const [loading, setLoading] = useState(true);
   const ownerId = localStorage.getItem("userId");
   const { t } = useTranslation();
-  const [isSidebarVisible, setIsSidebarVisible] = useState(false);
-
-  const toggleSidebar = () => {
-    setIsSidebarVisible(!isSidebarVisible);
-  };
 
   // Delete product by ID
   const handleDelete = (id) => {
@@ -125,13 +103,8 @@ const Dashboard = ({ api, user, error, ownersProducts, changeLanguage }) => {
 
   return (
     <ResponsiveDashboardContainer>
-      {/* Toggle Button for Sidebar */}
-      <ToggleButton onClick={toggleSidebar}>
-        {isSidebarVisible ? t("Hide Options") : t("Show Options")}
-      </ToggleButton>
-
       {/* Sidebar */}
-      <ResponsiveSidebar isVisible={isSidebarVisible}>
+      <ResponsiveSidebar>
         <h2 style={{ marginBottom: "16px" }}>{t("DashBoard")}</h2>
         <nav>
           <NavLink to="/d">{t("DashBoard")}</NavLink>
@@ -328,27 +301,23 @@ const Analytics = () => {
 const Wallet = ({ user }) => {
   const referralCode = user.referralCode;
   const referralLink = `https://apaxt.netlify.app/signUp?ref=${referralCode}`;
+  
 
-  return (
-    <>
+  return (<>
       <h3>Your Referral Code: {referralCode}</h3>
 
-      <div style={{ display: "flex", gap: "20px" }}>
-        <div>
-          <a href={referralLink} target="_blank" rel="noopener noreferrer">
-            {referralLink}
-          </a>
-        </div>
-        <div>
-          <button onClick={() => navigator.clipboard.writeText(referralLink)}>
-            Copy Referral Link
-          </button>
-        </div>
-      </div>
+    <div style={{display:"flex", gap:"20px"}}>
+      <div><a href={referralLink} target="_blank" rel= "noopener noreferrer">{referralLink}</a></div>
+    <div>
+    <button onClick={() => navigator.clipboard.writeText(referralLink)}>
+        Copy Referral Link
+      </button>
+    </div>
+    </div>
 
-      <div>
-        <h3>Wallet Balance: {user.discount}</h3>
-      </div>
+    <div>
+      <h3>Wallet Balance: {user.discount}</h3>
+    </div>
     </>
   );
 };
@@ -357,7 +326,7 @@ const Profile = ({ api, user, error, useDispatch }) => {
   // const [user, setUser] = useState(null);
   // const [error, setError] = useState(null);
   const dispatch = useDispatch();
-  const [imageError, setImageError] = useState(false); // Fix typo in state variable name
+  const [imageError, setiImageError] = useState(false);
   const { t } = useTranslation();
 
   // useEffect(() => {
@@ -399,7 +368,7 @@ const Profile = ({ api, user, error, useDispatch }) => {
     <ProfileContainer>
       <h2>{t("User Profile")}</h2>
       <div>
-        {imageError ? ( // Fix typo in state variable usage
+        {imageError ? (
           <NavLink to="/deditProfilePicture">
             <ProfileImage
               src={
@@ -415,7 +384,7 @@ const Profile = ({ api, user, error, useDispatch }) => {
             <ProfileImage
               src={user.profileImage}
               alt=""
-              onError={() => setImageError(true)} // Fix typo in state variable usage
+              onError={() => setiImageError(true)}
             />
           </NavLink>
         )}
@@ -424,7 +393,7 @@ const Profile = ({ api, user, error, useDispatch }) => {
       <p>
         <strong>{t("User Name")}:</strong> {user.userName}
       </p>
-      <p>
+      <p></p>
         <strong>{t("Full Names")}:</strong> {user.fullName}
       </p>
       <p>
