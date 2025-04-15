@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 6,
+            "activePatchIndex": 7,
             "patches": [
                 {
                     "date": 1740489139477,
@@ -32,6 +32,10 @@
                 {
                     "date": 1743922948284,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -473,4 +473,26 @@\n     } catch (error) {\n       console.error(\"Error uploading product:\", error);\n     }\n   };\n+\n+\n+\n+\n+ // const handleSearchClick = () => {\n+  //   if (searchTerm && searchTerm.trim() !== \"\") {\n+  //     const fuse = new Fuse(glofilteredProducts, {\n+  //       keys: [\"name\", \"category\", \"owner\", \"brand.name\"],\n+  //       threshold: 0.3,\n+  //     });\n+\n+  //     const results = fuse.search(searchTerm.trim());\n+  //     const matched = results.map((res) => res.item);\n+  //     setFilteredProducts(matched);\n+  //     setProducts(matched);\n+  //     setHasMore(false);\n+  //   } else {\n+  //     setFilteredProducts(products);\n+  //     setProducts(products);\n+  //     setHasMore(true);\n+  //   }\n+  // };\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1744714715846,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -494,5 +494,50 @@\n   //     setFilteredProducts(products);\n   //     setProducts(products);\n   //     setHasMore(true);\n   //   }\n-  // };\n\\ No newline at end of file\n+  // };\n+\n+\n+\n+\n+  useEffect(() => {\n+    fetch(`${api}/products`)\n+      .then((response) => response.json())\n+      .then((data) => {\n+        const productsData = data.products || data;\n+        setProducts(productsData);\n+        setFilteredProducts(productsData);\n+\n+        // Extract unique categories from the products\n+        const uniqueCategories = [\n+          ...new Set(productsData.map((product) => product.category)),\n+        ];\n+        setCategories(uniqueCategories);\n+\n+        // Filter products that have a discount\n+        const discountedProducts = productsData.filter(\n+          (product) => product.discount > 0\n+        );\n+\n+        // Set the filtered products to state\n+        setDiscount(discountedProducts);\n+\n+        // Extract unique brands from the products\n+        const uniqueBrands = [\n+          ...new Set(\n+            productsData.flatMap((product) =>\n+              product.brand.map((bra) => bra.name)\n+            )\n+          ),\n+        ];\n+\n+        setBrands(uniqueBrands);\n+      })\n+\n+      .catch((error) => console.error(\"Error fetching products:\", error));\n+  }, []);\n+\n+  const mobilefilteredProducts =\n+    category === \"All\"\n+      ? products\n+      : products.filter((product) => product.category === category);\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1740489139477,
