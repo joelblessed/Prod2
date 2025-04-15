@@ -352,7 +352,7 @@ function MobileNavbar({
               setIsMenuOpen(!isMenuOpen);
               goToProducts();
             }}
-              to="/products"
+              to="/"
           >
             {t("Products")}
           </MobileNavLink>

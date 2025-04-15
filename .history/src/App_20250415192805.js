@@ -38,7 +38,7 @@ import NewProduct from "./components/pages/formUpload";
 import Account from "./components/account/signUP";
 import Discounts from "./components/pages/discountedProducts";
 import SelectedProduct from "./components/pages/selectedProduct";
-import Category from "./components/pages/category";
+import Category from "./components/pages/categorySelect";
 import CategoryPage from "./components/pages/categoryPage";
 import EditProfilePicture from "./components/account/editProfilPicture";
 import DesktopCards from "./components/pages/ProductCards/desktopCards";
@@ -372,7 +372,7 @@ function App() {
           ></Route>
 
           <Route
-            path="/category/:selectedCategory"
+            path="/categorySelect/:categorName"
             element={
               <Category
                 filteredProducts={filteredProducts}

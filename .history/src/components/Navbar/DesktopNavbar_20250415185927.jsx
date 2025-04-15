@@ -181,7 +181,7 @@ function DesktopNavbar({
   const { username, profileImage } = useContext(AuthContext);
   const { t } = useTranslation();
   const [imageError, setImageError] = useState(false);
-  const [categoryName, setCategoryName] = useState("All Categories");
+  const [categoryName, setCategoryName] = useState("");
   const [category, setCategory] = useState("");
 
   const navigate = useNavigate();
@@ -241,22 +241,32 @@ function DesktopNavbar({
           </NavLinkStyled>
         </NavItem>
         <NavItem>
-          <NavLinkStyled to={`/category/${categoryName}`} onClick={clearSearch}>
+          <NavLinkStyled to={`/categorySelect/${categoryName}`} {category} onClick={clearSearch}>
             <StyledSelect
-              value={category}
-              onChange={(e) => {
-                const selectedCategory = e.target.value;
-                setCategory(selectedCategory);
-                setCategoryName(selectedCategory || "All Categories");
-                if (selectedCategory) {
-                  navigate(`/category/${selectedCategory}`);
-                }
-              }}
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
             >
-              <StyledOption value="">{t("All Categories")}</StyledOption>
+              <StyledOption value="">{categoryName}</StyledOption>
+              <StyledOption
+                value=""
+                onClick={() => {
+                
+                  setCategoryName("");
+                }}
+              >
+                All Categories
+              </StyledOption>
               {categories.map((category, index) => (
-                <StyledOption key={index} value={category}>
-                  {category}
+                <StyledOption
+                  onClick={() => {
+                    setCategoryName(category);
+                  }}
+                  key={index}
+                  value={category}
+                >
+                  {" "}
+                  <Link to={`/categorySelect/${category}`}>{category}</Link>
+                 
                 </StyledOption>
               ))}
             </StyledSelect>

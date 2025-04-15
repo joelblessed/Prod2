@@ -352,7 +352,7 @@ function MobileNavbar({
               setIsMenuOpen(!isMenuOpen);
               goToProducts();
             }}
-              to="/products"
+            
           >
             {t("Products")}
           </MobileNavLink>
@@ -389,8 +389,8 @@ function MobileNavbar({
                   }}
                   style={{
                     cursor: "pointer",
-                    fontWeight: categoryName === cat ? "bold" : "normal",
-                    color: categoryName === cat ? "blue" : "black",
+                    fontWeight: category === cat ? "bold" : "normal",
+                    color: category === cat ? "blue" : "black",
 
                     marginBottom: "5px",
                     padding: "5px",

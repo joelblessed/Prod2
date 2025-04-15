@@ -236,8 +236,8 @@ function MobileNavbar({
   const navigate = useNavigate();
   const { t } = useTranslation();
 
-  const goToCategory = (cat) => {
-    navigate(`/category/${cat}`);
+  const goToCategory = () => {
+    navigate("/category");
   };
   const goToProducts = () => {
     navigate("/products");
@@ -352,7 +352,7 @@ function MobileNavbar({
               setIsMenuOpen(!isMenuOpen);
               goToProducts();
             }}
-              to="/products"
+            
           >
             {t("Products")}
           </MobileNavLink>
@@ -383,14 +383,14 @@ function MobileNavbar({
                 <li
                   key={index}
                   onClick={() => {
-                    setCategoryName(cat);
-                    goToCategory(cat);
+                    setCategory(cat);
+                    goToCategory();
                     setIsMenuOpen(false);
                   }}
                   style={{
                     cursor: "pointer",
-                    fontWeight: categoryName === cat ? "bold" : "normal",
-                    color: categoryName === cat ? "blue" : "black",
+                    fontWeight: category === cat ? "bold" : "normal",
+                    color: category === cat ? "blue" : "black",
 
                     marginBottom: "5px",
                     padding: "5px",

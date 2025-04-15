@@ -241,25 +241,37 @@ function DesktopNavbar({
           </NavLinkStyled>
         </NavItem>
         <NavItem>
-          <NavLinkStyled to={`/category/${categoryName}`} onClick={clearSearch}>
-            <StyledSelect
-              value={category}
-              onChange={(e) => {
-                const selectedCategory = e.target.value;
-                setCategory(selectedCategory);
-                setCategoryName(selectedCategory || "All Categories");
-                if (selectedCategory) {
-                  navigate(`/category/${selectedCategory}`);
-                }
-              }}
+
+        <StyledSelect
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
             >
-              <StyledOption value="">{t("All Categories")}</StyledOption>
+              <StyledOption value="">{categoryName}</StyledOption>
+              <StyledOption
+                value=""
+                onClick={() => {
+                
+                  setCategoryName("");
+                }}
+              >
+                All Categories
+              </StyledOption>
               {categories.map((category, index) => (
-                <StyledOption key={index} value={category}>
-                  {category}
+                <StyledOption
+                  onClick={() => {
+                    setCategoryName(category);
+                  }}
+                  key={index}
+                  value={category}
+                >
+                  {" "}
+                  <Link to={`/categorySelect/${category}`}>{category}</Link>
+                 
                 </StyledOption>
               ))}
             </StyledSelect>
+          <NavLinkStyled  to={`/categorySelect/${categoryName}`} onClick={clearSearch}>
+            
           </NavLinkStyled>
         </NavItem>
 
