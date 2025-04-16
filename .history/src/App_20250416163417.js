@@ -1,8 +1,17 @@
 import logo from "./logo.svg";
-import React, { createContext, useEffect, useState } from "react";
+import React, {
+  createContext,
+  useEffect,
+  useCallback,
+  useRef,
+  useState,
+} from "react";
 import { AuthContext, AuthProvider } from "./AuthContext";
-import { useDispatch } from "react-redux";
-import {api} from "./config";
+import { api } from "./config";
+import { addToWishlist, removeFromWishlist } from "./wishlistSlice";
+import { useMemo } from "react";
+import { debounce } from "lodash";
+import Fuse from "fuse.js";
 import {
   BrowserRouter as Router,
   Route,
@@ -10,7 +19,10 @@ import {
   Navigate,
   Link,
 } from "react-router-dom";
-import { useSelector } from "react-redux";
+import LanguageSwitcher from "./components/translations/languageSwitcher";
+import "./components/translations/i18n";
+import { useTranslation } from "react-i18next";
+import { useDispatch, useSelector } from "react-redux";
 import { loadCartAfterLogin } from "./cartAction";
 import { ToastContainer } from "react-toastify";
 import "./App.css";
@@ -19,15 +31,21 @@ import "react-toastify/dist/ReactToastify.css";
 import Products from "./components/pages/products";
 import Cart from "./components/Cart/cart";
 import Cart1 from "./components/Cart/cart1";
+import Box from "./components/pages/boxes";
 import Cart2 from "./components/Cart/Cart2";
 import Home from "./components/pages/Home";
 import NewProduct from "./components/pages/formUpload";
 import Account from "./components/account/signUP";
+import Discounts from "./components/pages/discountedProducts";
 import SelectedProduct from "./components/pages/selectedProduct";
 import Category from "./components/pages/category";
 import CategoryPage from "./components/pages/categoryPage";
-import WishList from "./components/Cart/wishList";
-import Brand from "./components/pages/brand";
+import EditProfilePicture from "./components/account/editProfilPicture";
+import DesktopCards from "./components/pages/ProductCards/desktopCards";
+import WishlistPage from "./components/pages/wishListPage";
+import WishlistButton from "./components/pages/wishlistButton";
+// import WishList from "./components/pages/wishList";
+// import Brand from "./components/pages/brands";
 import BrandPage from "./components/pages/brandPage";
 import Payment from "./components/Payment/Payment";
 import Alert from "./components/others/alert";
@@ -45,18 +63,19 @@ import Dashboard from "./components/account/dashboard";
 import CalculateDistance from "./components/pages/calculateDistance";
 import Customer from "./components/others/customer";
 import Test from "./components/pages/test";
+import Orders from "./components/orders/orders";
+import Orders2 from "./components/orders/orders2";
 import EditProduct from "./components/pages/editProduct";
 import ProductsByOwner from "./components/pages/productsByOwner";
-import ShoppingCart from "./components/others/incrementCart";
-import DeleteCart from "./components/others/deleteCart";
+
 import Checkout from "./components/Cart/checkout";
 import ProtectedRoute from "./ProtectedRoute";
 import ForgotPassword from "./components/account/forgotPasword";
 import ResetPassword from "./components/account/resetPassword";
 import FormUpload from "./components/pages/formUpload";
-import ProductSelection from "./components/pages/productSelection";
+// import ProductSelection from "./components/pages/productSelection";
 import { addToCart } from "./cartSlice";
-import DBProducts from "./components/account/dashboard/";
+import DeleteProduct from "./components/pages/deleteProduct";
 import Footer from "./components/pages/footer";
 
 function App() {
@@ -68,8 +87,8 @@ function App() {
   const [wishlist, setWishList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showAlert, setShowAlert] = useState(false);
-  const [selectedProduct, setSelectedProduct] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("");
+  const [selectedProduct, setSelectedProduct] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState([]);
   const [isMobile, setIsMobile] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState();
   const [displayusername, displayusernameupdate] = useState();
@@ -81,28 +100,54 @@ function App() {
   const [filteredProducts, setFilteredProducts] = useState([]); // filtered list
   const [searchTerm, setSearchTerm] = useState(""); // single input for filtering
   const [categories, setCategories] = useState([]); // Unique categories
+  const [category, setCategory] = useState("All");
+  const [brands, setBrands] = useState([]);
+  const [brand, setBrand] = useState("All");
+  const [ownersProducts, setOwnersProducts] = useState([]);
+  const [discounts, setDiscount] = useState([]);
   const [inwishlist, setInWishList] = useState([null]);
-  const [searchFunction, setSearchFunction] = useState(null);
+  const [handleProductSearch, setHandleProductSearch] = useState(null);
   const [currentPage, setCurrentPage] = useState(1); // Track current page
   const [itemsPerPage] = useState(1); // Number of items per p
   const [likedProducts, setLikedProducts] = useState([]);
-  const [user, setUser] = useState();
+  const [user, setUser] = useState([]);
+  const [allProfiles, setAllProfiles] = useState([]);
   const [error, setError] = useState(null);
+  const token = localStorage.getItem("token");
   const dispatch = useDispatch();
- 
+  const [allProducts, setAllProducts] = useState([]);
+  const { t, i18n } = useTranslation();
+  const [searchFunction, setSearchFunction] = useState(null);
+  const [page, setPage] = useState(1); // Track current page for infinite scroll
+  const [hasMore, setHasMore] = useState(true);
+  const [isEnglish, setIsEnglish] = useState(i18n.language === "en");
+  const loaderRef = useRef();
+
+  // Load saved language from localStorage or default to "en"
+  useEffect(() => {
+    const savedLanguage = localStorage.getItem("language") || "en";
+    i18n.changeLanguage(savedLanguage);
+    setIsEnglish(savedLanguage === "en");
+  }, [i18n]);
+
+  // Function to toggle between English and French
+  const changeLanguage = () => {
+    const newLanguage = isEnglish ? "fr" : "en";
+    i18n.changeLanguage(newLanguage); // Change the language
+    localStorage.setItem("language", newLanguage); // Save the selected language
+    setIsEnglish(!isEnglish); // Update the toggle state
+  };
 
   const cartItems = useSelector((state) => state.cart.items);
   const cartCount = cartItems.length;
 
-  const userId = localStorage.getItem("userId");
+  const userId = Number(localStorage.getItem("userId" || "guest"));
 
   useEffect(() => {
     if (userId) {
       dispatch(loadCartAfterLogin(userId));
     }
   }, [userId, dispatch]);
-
- 
 
   // Function to check screen size
   const handleResize = () => {
@@ -115,70 +160,99 @@ function App() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  /////////////////////////////////////////////////
+
   useEffect(() => {
-    fetch(`${api}/products`)
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+      setError("No token found");
+      return;
+    }
+
+    fetch(`${api}/profile`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`, // Add token in the headers
+      },
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to fetch user data");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setUser(data);
+        localStorage.setItem("username", data.userName);
+        localStorage.setItem("profileImage", data.profileImage);
+      })
+
+      .catch((error) => setError(error.message));
+  }, []);
+
+  useEffect(() => {
+    fetch(`${api}/AllProfiles`)
       .then((response) => response.json())
       .then((data) => {
-        const productsData = data.products || data;
-        setProducts(productsData);
-        setFilteredProducts(productsData);
+        setAllProfiles(data);
+      })
+      .catch((error) => console.error("Error fetching profies:", error));
+  }, []);
+
+  useEffect(() => {
+    fetch(`${api}/allProducts`)
+      .then((response) => response.json())
+      .then((data) => {
+        setAllProducts(data);
+        setFilteredProducts(data);
+
+        const filteredProducts = data.filter(
+          (product) => product.ownerId === userId
+        );
+        setOwnersProducts(filteredProducts);
+
 
         // Extract unique categories from the products
         const uniqueCategories = [
-          ...new Set(productsData.map((product) => product.category)),
+          ...new Set(data.map((product) => product.category)),
         ];
         setCategories(uniqueCategories);
+
+          // Filter products that have a discount
+          const discountedProducts = data.filter(
+            (product) => product.discount > 0
+          );
+  
+          // Set the filtered products to state
+          setDiscount(discountedProducts);
+  
+          // Extract unique brands from the products
+          const uniqueBrands = [
+            ...new Set(
+              data.flatMap((product) =>
+                product.brand.map((bra) => bra.name)
+              )
+            ),
+          ];
+  
+          setBrands(uniqueBrands);
+        
+  
+
       })
-      .catch((error) => console.error("Error fetching products:", error));
+      .catch((error) => console.error("Error fetching profies:", error));
   }, []);
 
+  const mobilefilteredProducts =
+    category === "All"
+      ? products
+      : products.filter((product) => product.category === category);
+
   // Handle filtering logic
-  const handleSearch = () => {
-    const query = searchTerm.trim().toLowerCase();
-
-    let filtered = products.filter((product) => {
-      const categoryMatch = product.category.toLowerCase().includes(query);
-      const productNameMatch = product.name.toLowerCase().includes(query);
-      const brandMatch = product.brand.some((b) =>
-        b.name.toLowerCase().includes(query)
-      );
-
-      return categoryMatch || productNameMatch || brandMatch;
-    });
-
-    // Apply category filter if a category is selected
-    if (selectedCategory) {
-      filtered = filtered.filter(
-        (product) => product.category === selectedCategory
-      );
-    }
-
-    setFilteredProducts(filtered);
-    setSearchTerm(""); // Clear input after search
-  };
-
-  const handleAddToCart = () => {
-    dispatch(addToCart(product));
-  };
-
-  const addToWishList = async (item) => {
-    setWishList((prevCart) => [...prevCart, item]);
-
-    await fetch(`${api}/addTowishlist`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(item),
-    });
-  };
-
-  const toggleLike = (product) => {
-    setLikedProducts((prevLiked) =>
-      prevLiked.includes(product.id)
-        ? prevLiked.filter((id) => id !== product.id)
-        : [...prevLiked, product.id]
-    );
+  const handleSearch = (query) => {
+    setSearchTerm(query);
   };
 
   useEffect(() => {
@@ -204,10 +278,6 @@ function App() {
     return <p>loading...</p>;
   }
 
-  const sendSearchFunction = (fn) => {
-    setSearchFunction(() => fn);
-  };
-
   return (
     <AuthProvider>
       <ToastContainer theme="colored" position="top-center"></ToastContainer>
@@ -219,9 +289,15 @@ function App() {
             cartCount={cartCount}
             search={handleSearch}
             searchFunction={searchFunction}
+            setCategory={setCategory}
+            setBrand={setBrand}
+            brand={brand}
+            brands={brands}
             categories={categories}
             searchTerm={searchTerm}
             setSearchTerm={setSearchTerm}
+            category={category}
+            glofilteredProducts={allProducts}
             displayusername={displayusername}
             selectedCategory={selectedCategory}
             setSelectedCategory={setSelectedCategory}
@@ -233,12 +309,14 @@ function App() {
             cartCount={cartCount}
             search={handleSearch}
             searchFunction={searchFunction}
+            handleProductSearch={handleProductSearch}
             categories={categories}
             searchTerm={searchTerm}
             setSearchTerm={setSearchTerm}
             displayusername={displayusername}
             selectedCategory={selectedCategory}
             setSelectedCategory={setSelectedCategory}
+            changeLanguage={changeLanguage}
           />
         )}
 
@@ -248,12 +326,18 @@ function App() {
             element={
               <Home
                 api={api}
-                filteredProducts={filteredProducts}
-                setSelectedProduct={setSelectedProduct}
+                brands={brands}
+                categories={categories}
+                glofilteredProducts={allProducts}
+
+                discounts={discounts}
+                SelectedProduct={setSelectedProduct}
                 addToCart={addToCart}
-                addToWishList={addToWishList}
-                inwishlist={inwishlist}
+                filteredProducts={filteredProducts}
+                ownersProducts={ownersProducts}
+                mobilefilteredProducts={mobilefilteredProducts}
                 searchTerm={searchTerm}
+                search={handleSearch}
                 product={setProduct}
                 getProducts={products}
                 setSearchTerm={setSearchTerm}
@@ -267,16 +351,27 @@ function App() {
             element={
               <Products
                 filteredProducts={filteredProducts}
-                setSelectedProduct={setSelectedProduct}
-                addToCart={addToCart}
-                addToWishList={addToWishList}
-                inwishlist={inwishlist}
-                cart={cart}
-                toggleLike={toggleLike}
-                likedProducts={likedProducts}
+                SelectedProduct={setSelectedProduct}
+                highlightText={highlightText}
+                products={products}
+                loaderRef={loaderRef}
+                handleSearchButton={setHandleProductSearch}
                 api={api}
                 searchTerm={searchTerm}
-                selectedCategory={selectedCategory}
+                setSearchTerm={setSearchTerm}
+                glofilteredProducts={allProducts}
+                category={category}
+              />
+            }
+          ></Route>
+
+          <Route
+            path="/discountedProducts"
+            element={
+              <Discounts
+                discounts={discounts}
+                filteredProducts={filteredProducts}
+                SelectedProduct={setSelectedProduct}
                 highlightText={highlightText}
               />
             }
@@ -288,42 +383,57 @@ function App() {
               <SelectedProduct
                 api={api}
                 selectedProduct={selectedProduct}
-                addToCart={addToCart}
-                addToWishList={addToWishList}
-                inwishlist={inwishlist}
-                searchTerm={searchTerm}
                 filteredProducts={filteredProducts}
                 setSelectedProduct={setSelectedProduct}
                 cart={cart}
-                toggleLike={toggleLike}
+                searchTerm={searchTerm}
+                setSearchTerm={setSearchTerm}
                 likedProducts={likedProducts}
                 selectedCategory={selectedCategory}
                 highlightText={highlightText}
               />
             }
           ></Route>
+
           <Route
-            path="/category"
+            path="/category/:selectedCategory"
             element={
               <Category
-                api={api}
-                items={products}
                 filteredProducts={filteredProducts}
-                selectedCategory={selectedCategory}
+                SelectedProduct={setSelectedProduct}
                 highlightText={highlightText}
-                addToCart={addToCart}
-                addToWishList={addToWishList}
-                inwishlist={inwishlist}
+                products={products}
+                loaderRef={loaderRef}
+                handleSearchButton={setHandleProductSearch}
+                api={api}
+                allProducts={allProducts}
+                searchTerm={searchTerm}
+                setSearchTerm={setSearchTerm}
+
+                glofilteredProducts={allProducts}
+                category={category}
+              />
+            }
+          ></Route>
+
+          <Route
+            path="/boxes"
+            element={
+              <Box
+                api={api}
+                selectedCategory={selectedCategory}
+                SelectedProduct={setSelectedProduct}
+                mobilefilteredProducts={mobilefilteredProducts}
+                highlightText={highlightText}
                 searchTerm={searchTerm}
                 setSearchTerm={setSearchTerm}
                 getProducts={products}
                 categories={categories}
                 setCategories={setCategories}
-                sendSearchFunction={sendSearchFunction}
-                setSelectedProduct={setSelectedProduct}
               />
             }
-          ></Route>
+          />
+
           <Route
             path="/customer"
             element={
@@ -333,14 +443,39 @@ function App() {
             }
           ></Route>
           <Route path="/signIN" element={<SignIN api={api} />} />
-          <Route path="/signUP" element={<SignUP api={api} />} />
+          <Route
+            path="/wishlistButton"
+            element={<WishlistButton api={api} />}
+          />
+          <Route
+            path="/signUP"
+            element={<SignUP api={api} allProfiles={allProfiles} />}
+          />
+          <Route
+            path="/orders"
+            element={
+              <Orders
+                token={token}
+                userId={userId}
+                api={api}
+                allProfiles={allProfiles}
+              />
+            }
+          />
+          <Route
+            path="/orders2"
+            element={
+              <Orders2
+                token={token}
+                userId={userId}
+                api={api}
+                allProfiles={allProfiles}
+              />
+            }
+          />
           <Route
             path="/profile"
-            element={
-              <ProtectedRoute allowedRoles={["admin", "user"]}>
-                <Profile api={api} user={user} error={error} />
-              </ProtectedRoute>
-            }
+            element={<Profile api={api} user={user} error={error} />}
           />
           <Route
             path="/editProfile"
@@ -351,77 +486,86 @@ function App() {
             }
           />
           <Route
-            path="/wishlist"
-            element={
-              <ProtectedRoute allowedRoles={["admin", "user"]}>
-                <WishList api={api} />
-              </ProtectedRoute>
-            }
+            path="/desktopCards"
+            element={<DesktopCards Dobject={filteredProducts} api={api} />}
           />
-          <Route
-            path="/editProduct/:id"
-            element={
-             
-                <EditProduct api={api} />
-          
-            }
-          />
+          <Route path="/editProduct/:id" element={<EditProduct api={api} />} />
 
-<Route
-            path="/DBProducts"
-            element={
-             
-                <DBProducts api={api} />
-          
-            }
-          />
+          <Route path="/deleteProduct" element={<DeleteProduct api={api} />} />
           <Route
             path="/calculateDistance"
             element={<CalculateDistance api={api} />}
           />
           <Route
-            path="/productsByOwner"
+            path="/editProfilePicture"
+            element={<EditProfilePicture api={api} />}
+          />
+          <Route
+            path="/productsByOwner/:ownerName"
             element={
-              
-                <ProductsByOwner api={api} highlightText={highlightText} searchTerm={searchTerm} />
-              
+              <ProductsByOwner
+                api={api}
+                items={products}
+                filteredProducts={filteredProducts}
+                selectedCategory={selectedCategory}
+                SelectedProduct={setSelectedProduct}
+                mobilefilteredProducts={mobilefilteredProducts}
+                highlightText={highlightText}
+                getProducts={products}
+                categories={categories}
+                setCategories={setCategories}
+                searchTerm={searchTerm}
+                setSearchTerm={setSearchTerm}
+                glofilteredProducts={allProducts}
+                loaderRef={loaderRef}
+                setSelectedProduct={setSelectedProduct}
+              />
             }
           />
+
           <Route
             path="/test"
             element={
               <Test
                 api={api}
+                token={token}
+                product={product}
                 likedProducts={likedProducts}
                 filteredProducts={filteredProducts}
               />
             }
           />
+
           <Route
-            path="/productSelection"
+            path="/languageSwitcher"
+            element={<LanguageSwitcher api={api} />}
+          />
+
+          <Route
+            path="/brand/:brandName"
             element={
-              <ProductSelection api={api} addToWishList={addToWishList} />
+              <BrandPage
+                api={api}
+                items={products}
+                mobilefilteredProducts={mobilefilteredProducts}
+                filteredProducts={filteredProducts}
+                selectedCategory={selectedCategory}
+                highlightText={highlightText}
+                searchTerm={searchTerm}
+                setSearchTerm={setSearchTerm}
+                setSelectedProduct={setSelectedProduct}
+              />
             }
           />
 
           <Route
-            path="/brand"
+            path="/wishlistPage"
             element={
-              <Brand
+              <WishlistPage
                 api={api}
-                filteredProducts={filteredProducts}
                 searchTerm={searchTerm}
-                addToWishList={addToWishList}
-              />
-            }
-          />
-          <Route
-            path="/brand/:brandId"
-            element={
-              <BrandPage
-                api={api}
+                highlightText={highlightText}
                 filteredProducts={filteredProducts}
-                searchTerm={searchTerm}
               />
             }
           />
@@ -433,19 +577,17 @@ function App() {
           <Route path="/resetPassword" element={<ResetPassword api={api} />} />
 
           <Route
-            path="/category/:categoryName"
+            path="/category"
             element={
               <CategoryPage
                 api={api}
                 items={products}
-                filteredProducts={filteredProducts}
+               
+                glofilteredProducts={allProducts}
                 selectedCategory={selectedCategory}
                 highlightText={highlightText}
-                addToCart={addToCart}
-                addToWishList={addToWishList}
-                inwishlist={inwishlist}
-                searchTerm={searchTerm}
-                setSearchTerm={setSearchTerm}
+                SelectedProduct={setSelectedProduct}
+               
                 setSelectedProduct={setSelectedProduct}
               />
             }
@@ -476,18 +618,20 @@ function App() {
               />
             }
           ></Route>
+
           <Route
             path="/cart"
             element={
               <Cart
                 api={api}
+                product={product}
                 user={user}
                 searchTerm={searchTerm}
                 highlightText={highlightText}
                 inwishlist={inwishlist}
               />
             }
-          ></Route>
+          />
 
           <Route
             path="/formUpload"
@@ -499,11 +643,18 @@ function App() {
           />
 
           <Route
-            path="/dashboard"
+            path="/*"
             element={
               <ProtectedRoute allowedRoles={["admin", "user"]}>
-                <Dashboard api={api} user={user} error={error} />
-              </ProtectedRoute>
+              <Dashboard
+                api={api}
+                user={user}
+                error={error}
+                ownersProducts={ownersProducts}
+                changeLanguage={changeLanguage}
+                
+              />
+                 </ProtectedRoute>
             }
           />
 
@@ -513,6 +664,8 @@ function App() {
               <ProtectedRoute allowedRoles={["admin", "user"]}>
                 <Checkout
                   api={api}
+                  userId={userId}
+                  user={user}
                   setCalculateTotal={setCalculateTotal}
                   setCheckOut={setCheckOut}
                   paymentStatus={paymentStatus}
@@ -522,6 +675,7 @@ function App() {
               </ProtectedRoute>
             }
           />
+          <Route path="/" element={<Home />} />
 
           {/* Redirect unknown routes */}
           <Route path="*" element={<Navigate to="/" />} />

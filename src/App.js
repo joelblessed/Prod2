@@ -213,34 +213,28 @@ function App() {
         );
         setOwnersProducts(filteredProducts);
 
-
         // Extract unique categories from the products
         const uniqueCategories = [
           ...new Set(data.map((product) => product.category)),
         ];
         setCategories(uniqueCategories);
 
-          // Filter products that have a discount
-          const discountedProducts = data.filter(
-            (product) => product.discount > 0
-          );
-  
-          // Set the filtered products to state
-          setDiscount(discountedProducts);
-  
-          // Extract unique brands from the products
-          const uniqueBrands = [
-            ...new Set(
-              data.flatMap((product) =>
-                product.brand.map((bra) => bra.name)
-              )
-            ),
-          ];
-  
-          setBrands(uniqueBrands);
-        
-  
+        // Filter products that have a discount
+        const discountedProducts = data.filter(
+          (product) => product.discount > 0
+        );
 
+        // Set the filtered products to state
+        setDiscount(discountedProducts);
+
+        // Extract unique brands from the products
+        const uniqueBrands = [
+          ...new Set(
+            data.flatMap((product) => product.brand.map((bra) => bra.name))
+          ),
+        ];
+
+        setBrands(uniqueBrands);
       })
       .catch((error) => console.error("Error fetching profies:", error));
   }, []);
@@ -329,7 +323,6 @@ function App() {
                 brands={brands}
                 categories={categories}
                 glofilteredProducts={allProducts}
-
                 discounts={discounts}
                 SelectedProduct={setSelectedProduct}
                 addToCart={addToCart}
@@ -409,7 +402,6 @@ function App() {
                 allProducts={allProducts}
                 searchTerm={searchTerm}
                 setSearchTerm={setSearchTerm}
-
                 glofilteredProducts={allProducts}
                 category={category}
               />
@@ -582,12 +574,10 @@ function App() {
               <CategoryPage
                 api={api}
                 items={products}
-               
                 glofilteredProducts={allProducts}
                 selectedCategory={selectedCategory}
                 highlightText={highlightText}
                 SelectedProduct={setSelectedProduct}
-               
                 setSelectedProduct={setSelectedProduct}
               />
             }
@@ -645,13 +635,15 @@ function App() {
           <Route
             path="/*"
             element={
-              <Dashboard
-                api={api}
-                user={user}
-                error={error}
-                ownersProducts={ownersProducts}
-                changeLanguage={changeLanguage}
-              />
+              <ProtectedRoute allowedRoles={["admin", "user"]}>
+                <Dashboard
+                  api={api}
+                  user={user}
+                  error={error}
+                  ownersProducts={ownersProducts}
+                  changeLanguage={changeLanguage}
+                />
+              </ProtectedRoute>
             }
           />
 
