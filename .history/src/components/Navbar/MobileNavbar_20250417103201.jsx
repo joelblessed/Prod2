@@ -241,7 +241,7 @@ function MobileNavbar({
   const [isBrandOpen, setIsBrandOpen] = useState(false);
   const [imageError, setImageError] = useState(false);
   const [categoryName, setCategoryName] = useState("All Categories");
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const previewRef = useRef(null);
   const [catName, setCatName] = useState("");
   const [brandName, setaBrandName] = useState("");
@@ -255,7 +255,7 @@ function MobileNavbar({
     navigate("/products");
   };
   const goToAllCategories = () => {
-    navigate(`/category/${encodeURIComponent("All Categories")}`);
+    navigate(`/category/${encodeURIComponent(cat)}`);
   };
   const handleClick = (brandName) => {
     navigate(`/brand/${encodeURIComponent(brandName)}`);
@@ -463,8 +463,7 @@ function MobileNavbar({
                   border: "1px solid #ccc",
                   borderRadius: "4px",
                 }}
-              
-                onClick={() => { setIsMenuOpen(false); goToAllCategories()}}
+                onClick={() => goToAllCategories()}
               >
                 All Categories
               </h4>

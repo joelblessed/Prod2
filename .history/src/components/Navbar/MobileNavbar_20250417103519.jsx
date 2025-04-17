@@ -241,7 +241,7 @@ function MobileNavbar({
   const [isBrandOpen, setIsBrandOpen] = useState(false);
   const [imageError, setImageError] = useState(false);
   const [categoryName, setCategoryName] = useState("All Categories");
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const previewRef = useRef(null);
   const [catName, setCatName] = useState("");
   const [brandName, setaBrandName] = useState("");
@@ -464,7 +464,7 @@ function MobileNavbar({
                   borderRadius: "4px",
                 }}
               
-                onClick={() => { setIsMenuOpen(false); goToAllCategories()}}
+                onClick={() => { set goToAllCategories()}}
               >
                 All Categories
               </h4>

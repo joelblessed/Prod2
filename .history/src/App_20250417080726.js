@@ -544,6 +544,7 @@ function App() {
                 selectedCategory={selectedCategory}
                 highlightText={highlightText}
                 SelectedProduct={setSelectedProduct}
+
                 searchTerm={searchTerm}
                 setSearchTerm={setSearchTerm}
                 setSelectedProduct={setSelectedProduct}

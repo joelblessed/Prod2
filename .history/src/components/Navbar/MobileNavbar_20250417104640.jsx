@@ -570,7 +570,7 @@ function MobileNavbar({
                         cursor: "pointer",
                         fontWeight:
                           brandName === brand.name ? "bold" : "normal",
-                        color: brandName === brand.name ? "blue" : "black",
+                        color: brandName === brand.name ? "blue" : "",
                         width: "40%",
                         marginLeft: "0px",
 

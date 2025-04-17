@@ -201,10 +201,41 @@ const MobileNavLink = styled(NavLink)`
   color: red;
   margin: 0px;
   padding: 0px;
-  margin-top: "20px";
   background: ;
   font-size: 20px;
   cursor: pointer;
+`;
+
+const CategoryItem = styled.li`
+  cursor: pointer;
+  font-weight: ${(props) => (props.isActive ? "bold" : "normal")};
+  color: ${(props) => (props.isActive ? "blue" : "black")};
+  margin-bottom: 5px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: ${(props) => (props.isActive ? "#f0f8ff" : "white")};
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &:hover {
+    background-color: #f9f9f9;
+    color: #f19e39;
+  }
+`;
+
+const BrandItem = styled.h6`
+  cursor: pointer;
+  color: ${(props) => (props.isActive ? "#f19e39" : "blue")};
+  margin: 5px 0;
+  padding: 8px;
+  border-radius: 5px;
+  background-color: ${(props) => (props.isActive ? "#fff5e6" : "transparent")};
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &:hover {
+    background-color: #f9f9f9;
+    color: #f19e39;
+  }
 `;
 
 const style = {
@@ -241,10 +272,9 @@ function MobileNavbar({
   const [isBrandOpen, setIsBrandOpen] = useState(false);
   const [imageError, setImageError] = useState(false);
   const [categoryName, setCategoryName] = useState("All Categories");
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const previewRef = useRef(null);
   const [catName, setCatName] = useState("");
-  const [brandName, setaBrandName] = useState("");
   const navigate = useNavigate();
   const { t } = useTranslation();
 
@@ -253,9 +283,6 @@ function MobileNavbar({
   };
   const goToProducts = () => {
     navigate("/products");
-  };
-  const goToAllCategories = () => {
-    navigate(`/category/${encodeURIComponent("All Categories")}`);
   };
   const handleClick = (brandName) => {
     navigate(`/brand/${encodeURIComponent(brandName)}`);
@@ -416,209 +443,77 @@ function MobileNavbar({
               show();
             }}
           >
-            <MobileNavLink>
-              {t("Categories")}
-              {!isOpen ? (
-                <svg
-                  width="20px"
-                  fill="red"
-                  height="20px"
-                  viewBox="0 0 48 48"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M0 0h48v48H0z" fill="none" />
-                  <g id="Shopicon">
-                    <g>
-                      <polygon points="24,29.171 9.414,14.585 6.586,17.413 24,34.827 41.414,17.413 38.586,14.585 		" />
-                    </g>
-                  </g>
-                </svg>
-              ) : (
-                <svg
-                  width="20px"
-                  height="20px"
-                  viewBox="0 0 48 48"
-                  fill="red"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M0 0h48v48H0z" fill="none" />
-                  <g id="Shopicon">
-                    <polygon points="6.586,30.586 9.414,33.414 24,18.828 38.586,33.414 41.414,30.586 24,13.172 	" />
-                  </g>
-                </svg>
-              )}
-            </MobileNavLink>
+            {" "}
+            categories{" "}
+            <img src="/images/expand_all_24dp_FC0202_FILL0_wght400_GRAD0_opsz24.svg" />
           </MobileNavLink>
-          <div style={{ marginTop: "20px" }}>
-            {isOpen && (
-              <h4
-                style={{
-                  cursor: "pointer",
-                  fontWeight: "normal",
-                  color: "red",
-                  width: "50%",
-                  fontSize: "20px",
-                  marginBottom: "5px",
-                  padding: "5px",
-                  border: "1px solid #ccc",
-                  borderRadius: "4px",
-                }}
-              
-                onClick={() => { setIsMenuOpen(false); goToAllCategories()}}
-              >
-                All Categories
-              </h4>
-            )}
-            {categories.map((cat, index) => (
-              <div>
-                <div style={{ display: "flex" }}>
-                  <div>
-                    {" "}
-                    {isOpen && (
-                      <div>
-                        <li
-                          key={index}
-                          style={{
-                            cursor: "pointer",
-                            fontWeight:
-                              categoryName === cat ? "bold" : "normal",
-                            color: categoryName === cat ? "blue" : "black",
-
-                            marginBottom: "5px",
-                            padding: "5px",
-                            border: "1px solid #ccc",
-                            borderRadius: "4px",
-                          }}
-                        >
-                          <div style={{ display: "flex", gap: "5px" }}>
-                            <div>
-                              <h4
-                                style={{ color: "red", margin: 0 }}
-                                onClick={() => {
-                                  setCategoryName(cat);
-                                  goToCategory(cat);
-                                  setIsMenuOpen(false);
-                                }}
-                              >
-                                {cat}
-                              </h4>
-                            </div>
-                            <div>
-                              {" "}
-                              {isOpen === true && (
-                                <button
-                                  style={{
-                                    borderRadius: "5px",
-                                    border: "1px solid orange",
-                                    background: "none",
-                                    color: "",
-                                  }}
-                                  onClick={() => brandShow(cat)}
-                                >
-                                  Brands{" "}
-                                  {!isBrandOpen ? (
-                                    <svg
-                                      width="20px"
-                                      height="20px"
-                                      viewBox="0 0 48 48"
-                                      fill="red"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path d="M0 0h48v48H0z" fill="none" />
-                                      <g id="Shopicon">
-                                        <g>
-                                          <polygon points="24,29.171 9.414,14.585 6.586,17.413 24,34.827 41.414,17.413 38.586,14.585 		" />
-                                        </g>
-                                      </g>
-                                    </svg>
-                                  ) : (
-                                    <svg
-                                      width="20px"
-                                      height="20px"
-                                      viewBox="0 0 48 48"
-                                      fill="red"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path d="M0 0h48v48H0z" fill="none" />
-                                      <g id="Shopicon">
-                                        <polygon points="6.586,30.586 9.414,33.414 24,18.828 38.586,33.414 41.414,30.586 24,13.172 	" />
-                                      </g>
-                                    </svg>
-                                  )}
-                                </button>
-                              )}{" "}
-                            </div>
-                          </div>
-                        </li>
-                      </div>
-                    )}
-                  </div>
-                  <div></div>
-                </div>
-                {isBrandOpen &&
-                  cat === catName &&
-                  [
-                    ...new Map(
-                      groupedBrandsByCategory[cat]?.map((brand) => [
-                        brand.name,
-                        brand,
-                      ])
-                    ).values(),
-                  ].map((brand, idx) => (
-                    <h6
-                      style={{
-                        cursor: "pointer",
-                        fontWeight:
-                          brandName === brand.name ? "bold" : "normal",
-                        color: brandName === brand.name ? "blue" : "black",
-                        width: "40%",
-                        marginLeft: "0px",
-
-                        marginBottom: "5px",
-                        padding: "5px",
-                        border: "1px solid #ccc",
-                        borderRadius: "4px",
-                      }}
-                      key={idx}
+          {categories.map((cat, index) => (
+            <div key={index}>
+              <div style={{ display: "flex" }}>
+                <div>
+                  {isOpen && (
+                    <CategoryItem
+                      isActive={categoryName === cat}
                       onClick={() => {
-                        clearSearch();
+                        setCategoryName(cat);
+                        goToCategory(cat);
                         setIsMenuOpen(false);
-                        setaBrandName(brand.name);
-                        handleClick(brand.name);
                       }}
                     >
-                      {brand.name}
-                    </h6>
-                  ))}
+                      <h4
+                        style={{ margin: 0 }}
+                        onClick={() => {
+                          setIsMenuOpen(!isMenuOpen);
+                        }}
+                      >
+                        {cat}
+                      </h4>
+                    </CategoryItem>
+                  )}
+                </div>
+                <div>
+                  {isOpen && (
+                    <button
+                      style={{
+                        marginLeft: "10px",
+                        padding: "5px 10px",
+                        borderRadius: "5px",
+                        backgroundColor: "#f19e39",
+                        color: "white",
+                        border: "none",
+                        cursor: "pointer",
+                      }}
+                      onClick={() => brandShow(cat)}
+                    >
+                      Brand
+                    </button>
+                  )}
+                </div>
               </div>
-            ))}
-          </div>
-        </li>
-        {/* <ul style={{ listStyleType: "none", padding: 0 }}>
-          <h4> brands:</h4>
-          {brands.map((bra, index) => (
-            <li
-              key={index}
-              onClick={() => {
-                setBrand(bra);
-                goToCategory();
-                setIsMenuOpen(false);
-              }}
-              style={{
-                cursor: "pointer",
-                fontWeight: brand === bra ? "bold" : "normal",
-                color: brand === bra ? "blue" : "black",
-
-                marginBottom: "5px",
-                padding: "5px",
-                border: "1px solid #ccc",
-                borderRadius: "4px",
-              }}
-            >
-              <h4 style={{ color: "red", margin: 0 }}>{bra}</h4>
-            </li>
+              {isBrandOpen &&
+                cat === catName &&
+                [
+                  ...new Map(
+                    groupedBrandsByCategory[cat]?.map((brand) => [
+                      brand.name,
+                      brand,
+                    ])
+                  ).values(),
+                ].map((brand, idx) => (
+                  <BrandItem
+                    key={idx}
+                    onClick={() => {
+                      clearSearch();
+                      setIsMenuOpen(false);
+                      handleClick(brand.name);
+                    }}
+                  >
+                    {brand.name}
+                  </BrandItem>
+                ))}
+            </div>
           ))}
-        </ul> */}
+        </li>
       </MobileMenu>
     </>
   );

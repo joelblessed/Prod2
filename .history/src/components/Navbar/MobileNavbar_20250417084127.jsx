@@ -201,7 +201,6 @@ const MobileNavLink = styled(NavLink)`
   color: red;
   margin: 0px;
   padding: 0px;
-  margin-top: "20px";
   background: ;
   font-size: 20px;
   cursor: pointer;
@@ -241,10 +240,9 @@ function MobileNavbar({
   const [isBrandOpen, setIsBrandOpen] = useState(false);
   const [imageError, setImageError] = useState(false);
   const [categoryName, setCategoryName] = useState("All Categories");
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const previewRef = useRef(null);
   const [catName, setCatName] = useState("");
-  const [brandName, setaBrandName] = useState("");
   const navigate = useNavigate();
   const { t } = useTranslation();
 
@@ -253,9 +251,6 @@ function MobileNavbar({
   };
   const goToProducts = () => {
     navigate("/products");
-  };
-  const goToAllCategories = () => {
-    navigate(`/category/${encodeURIComponent("All Categories")}`);
   };
   const handleClick = (brandName) => {
     navigate(`/brand/${encodeURIComponent(brandName)}`);
@@ -416,183 +411,83 @@ function MobileNavbar({
               show();
             }}
           >
-            <MobileNavLink>
-              {t("Categories")}
-              {!isOpen ? (
-                <svg
-                  width="20px"
-                  fill="red"
-                  height="20px"
-                  viewBox="0 0 48 48"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M0 0h48v48H0z" fill="none" />
-                  <g id="Shopicon">
-                    <g>
-                      <polygon points="24,29.171 9.414,14.585 6.586,17.413 24,34.827 41.414,17.413 38.586,14.585 		" />
-                    </g>
-                  </g>
-                </svg>
-              ) : (
-                <svg
-                  width="20px"
-                  height="20px"
-                  viewBox="0 0 48 48"
-                  fill="red"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M0 0h48v48H0z" fill="none" />
-                  <g id="Shopicon">
-                    <polygon points="6.586,30.586 9.414,33.414 24,18.828 38.586,33.414 41.414,30.586 24,13.172 	" />
-                  </g>
-                </svg>
-              )}
-            </MobileNavLink>
+             <MobileNavLink
+           
+            
+          >
+            {t("Categories")}
+            <img src="/images/expand_all_24dp_FC0202_FILL0_wght400_GRAD0_opsz24.svg" />
           </MobileNavLink>
-          <div style={{ marginTop: "20px" }}>
-            {isOpen && (
-              <h4
-                style={{
-                  cursor: "pointer",
-                  fontWeight: "normal",
-                  color: "red",
-                  width: "50%",
-                  fontSize: "20px",
-                  marginBottom: "5px",
-                  padding: "5px",
-                  border: "1px solid #ccc",
-                  borderRadius: "4px",
-                }}
-              
-                onClick={() => { setIsMenuOpen(false); goToAllCategories()}}
-              >
-                All Categories
-              </h4>
-            )}
-            {categories.map((cat, index) => (
-              <div>
-                <div style={{ display: "flex" }}>
-                  <div>
-                    {" "}
-                    {isOpen && (
-                      <div>
-                        <li
-                          key={index}
-                          style={{
-                            cursor: "pointer",
-                            fontWeight:
-                              categoryName === cat ? "bold" : "normal",
-                            color: categoryName === cat ? "blue" : "black",
-
-                            marginBottom: "5px",
-                            padding: "5px",
-                            border: "1px solid #ccc",
-                            borderRadius: "4px",
-                          }}
-                        >
-                          <div style={{ display: "flex", gap: "5px" }}>
-                            <div>
-                              <h4
-                                style={{ color: "red", margin: 0 }}
-                                onClick={() => {
-                                  setCategoryName(cat);
-                                  goToCategory(cat);
-                                  setIsMenuOpen(false);
-                                }}
-                              >
-                                {cat}
-                              </h4>
-                            </div>
-                            <div>
-                              {" "}
-                              {isOpen === true && (
-                                <button
-                                  style={{
-                                    borderRadius: "5px",
-                                    border: "1px solid orange",
-                                    background: "none",
-                                    color: "",
-                                  }}
-                                  onClick={() => brandShow(cat)}
-                                >
-                                  Brands{" "}
-                                  {!isBrandOpen ? (
-                                    <svg
-                                      width="20px"
-                                      height="20px"
-                                      viewBox="0 0 48 48"
-                                      fill="red"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path d="M0 0h48v48H0z" fill="none" />
-                                      <g id="Shopicon">
-                                        <g>
-                                          <polygon points="24,29.171 9.414,14.585 6.586,17.413 24,34.827 41.414,17.413 38.586,14.585 		" />
-                                        </g>
-                                      </g>
-                                    </svg>
-                                  ) : (
-                                    <svg
-                                      width="20px"
-                                      height="20px"
-                                      viewBox="0 0 48 48"
-                                      fill="red"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path d="M0 0h48v48H0z" fill="none" />
-                                      <g id="Shopicon">
-                                        <polygon points="6.586,30.586 9.414,33.414 24,18.828 38.586,33.414 41.414,30.586 24,13.172 	" />
-                                      </g>
-                                    </svg>
-                                  )}
-                                </button>
-                              )}{" "}
-                            </div>
-                          </div>
-                        </li>
-                      </div>
-                    )}
-                  </div>
-                  <div></div>
-                </div>
-                {isBrandOpen &&
-                  cat === catName &&
-                  [
-                    ...new Map(
-                      groupedBrandsByCategory[cat]?.map((brand) => [
-                        brand.name,
-                        brand,
-                      ])
-                    ).values(),
-                  ].map((brand, idx) => (
-                    <h6
+           
+          </MobileNavLink sty>
+          {categories.map((cat, index) => (
+            <div>
+              <div style={{ display: "flex" }}>
+                <div>
+                  {" "}
+                  {isOpen && (
+                    <li
+                      key={index}
+                   
                       style={{
                         cursor: "pointer",
-                        fontWeight:
-                          brandName === brand.name ? "bold" : "normal",
-                        color: brandName === brand.name ? "blue" : "black",
-                        width: "40%",
-                        marginLeft: "0px",
+                        fontWeight: categoryName === cat ? "bold" : "normal",
+                        color: categoryName === cat ? "blue" : "black",
 
                         marginBottom: "5px",
                         padding: "5px",
                         border: "1px solid #ccc",
                         borderRadius: "4px",
                       }}
-                      key={idx}
-                      onClick={() => {
-                        clearSearch();
-                        setIsMenuOpen(false);
-                        setaBrandName(brand.name);
-                        handleClick(brand.name);
-                      }}
                     >
-                      {brand.name}
-                    </h6>
-                  ))}
+                   <div style={{ display: "flex" , gap:"5px"}}>
+                   <div>
+                    <h4
+                        style={{ color: "red", margin: 0 }}
+                          onClick={() => {
+                        setCategoryName(cat);
+                        goToCategory(cat);
+                        setIsMenuOpen(false);
+                      }}
+                      >
+                        {cat}
+                      </h4>
+                    </div>
+                   <div>   {isOpen === true && (
+                    <button onClick={() => brandShow(cat)}>Brands</button>
+                  )}{" "}</div>
+                   </div>
+                    </li>
+                  )}
+                </div>
+                <div>
+                  
+                </div>
               </div>
-            ))}
-          </div>
+              {isBrandOpen &&
+                cat === catName &&
+                [
+                  ...new Map(
+                    groupedBrandsByCategory[cat]?.map((brand) => [
+                      brand.name,
+                      brand,
+                    ])
+                  ).values(),
+                ].map((brand, idx) => (
+                  <h6
+                    style={{ cursor: "pointer", color: "blue" }}
+                    key={idx}
+                    onClick={() => {
+                      clearSearch();
+                      setIsMenuOpen(false);
+                      handleClick(brand.name);
+                    }}
+                  >
+                    {brand.name}
+                  </h6>
+                ))}
+            </div>
+          ))}
         </li>
         {/* <ul style={{ listStyleType: "none", padding: 0 }}>
           <h4> brands:</h4>
