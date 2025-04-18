@@ -1,0 +1,58 @@
+{
+    "sourceFile": "src/components/account/wallet.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 10,
+            "patches": [
+                {
+                    "date": 1744907569326,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1744907580348,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,27 +1,27 @@\n const Wallet = ({ user }) => {\n-    const referralCode = user.referralCode;\n-    const referralLink = `https://apaxt.netlify.app/signUp?ref=${referralCode}`;\n-  \n-    return (\n-      <>\n-        <h3>Your Referral Code: {referralCode}</h3>\n-  \n-        <div style={{ display: \"flex\", gap: \"20px\" }}>\n-          <div>\n-            <a href={referralLink} target=\"_blank\" rel=\"noopener noreferrer\">\n-              {referralLink}\n-            </a>\n-          </div>\n-          <div>\n-            <button onClick={() => navigator.clipboard.writeText(referralLink)}>\n-              Copy Referral Link\n-            </button>\n-          </div>\n+  const referralCode = user.referralCode;\n+  const referralLink = `https://apaxt.netlify.app/signUp?ref=${referralCode}`;\n+\n+  return (\n+    <>\n+      <h3>Your Referral Code: {referralCode}</h3>\n+\n+      <div style={{ display: \"flex\", gap: \"20px\" }}>\n\\ No newline at end of file\n+        <div>\n+          <a href={referralLink} target=\"_blank\" rel=\"noopener noreferrer\">\n+            {referralLink}\n+          </a>\n         </div>\n-  \n         <div>\n-          <h3>Wallet Balance: {user.discount}</h3>\n+          <button onClick={() => navigator.clipboard.writeText(referralLink)}>\n+            Copy Referral Link\n+          </button>\n         </div>\n-      </>\n-    );\n-  };\n+      </div>\n+\n+      <div>\n+        <h3>Wallet Balance: {user.discount}</h3>\n+      </div>\n+    </>\n+  );\n+};\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1744907778470,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,6 @@\n+\n+import React, { useState, useContext, useEffect } from \"react\";\n const Wallet = ({ user }) => {\n   const referralCode = user.referralCode;\n   const referralLink = `https://apaxt.netlify.app/signUp?ref=${referralCode}`;\n \n"
+                },
+                {
+                    "date": 1744907783902,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,5 @@\n-\n-import React, { useState, useContext, useEffect } from \"react\";\n+mport React, { useState, useContext, useEffect } from \"react\";\n const Wallet = ({ user }) => {\n   const referralCode = user.referralCode;\n   const referralLink = `https://apaxt.netlify.app/signUp?ref=${referralCode}`;\n \n"
+                },
+                {
+                    "date": 1744907807779,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n-mport React, { useState, useContext, useEffect } from \"react\";\n+import React, { useState, useContext, useEffect } from \"react\";\n+\n const Wallet = ({ user }) => {\n   const referralCode = user.referralCode;\n   const referralLink = `https://apaxt.netlify.app/signUp?ref=${referralCode}`;\n \n@@ -24,5 +25,7 @@\n         <h3>Wallet Balance: {user.discount}</h3>\n       </div>\n     </>\n   );\n-};\n\\ No newline at end of file\n+};\n+\n+export default BrandPage;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1744907813108,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,5 +27,5 @@\n     </>\n   );\n };\n \n-export default BrandPage;\n\\ No newline at end of file\n+export default Wallet;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1744908245761,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n const Wallet = ({ user }) => {\n   const referralCode = user.referralCode;\n   const referralLink = `https://apaxt.netlify.app/signUp?ref=${referralCode}`;\n-\n+console.log\n   return (\n     <>\n       <h3>Your Referral Code: {referralCode}</h3>\n \n"
+                },
+                {
+                    "date": 1744908254854,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n const Wallet = ({ user }) => {\n   const referralCode = user.referralCode;\n   const referralLink = `https://apaxt.netlify.app/signUp?ref=${referralCode}`;\n-console.log\n+console.log(\"\")\n   return (\n     <>\n       <h3>Your Referral Code: {referralCode}</h3>\n \n"
+                },
+                {
+                    "date": 1744908260616,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n const Wallet = ({ user }) => {\n   const referralCode = user.referralCode;\n   const referralLink = `https://apaxt.netlify.app/signUp?ref=${referralCode}`;\n-console.log(\"\")\n+console.log(\"u,\")\n   return (\n     <>\n       <h3>Your Referral Code: {referralCode}</h3>\n \n"
+                },
+                {
+                    "date": 1744908286539,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n const Wallet = ({ user }) => {\n   const referralCode = user.referralCode;\n   const referralLink = `https://apaxt.netlify.app/signUp?ref=${referralCode}`;\n-console.log(\"u,\")\n+console.log( user)\n   return (\n     <>\n       <h3>Your Referral Code: {referralCode}</h3>\n \n"
+                },
+                {
+                    "date": 1744908497370,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n         </div>\n       </div>\n \n       <div>\n-        <h3>Wallet Balance: {user.discount}</h3>\n+        <h3>Wallet Balance: {user.wallet}</h3>\n       </div>\n     </>\n   );\n };\n"
+                }
+            ],
+            "date": 1744907569325,
+            "name": "Commit-0",
+            "content": "const Wallet = ({ user }) => {\n    const referralCode = user.referralCode;\n    const referralLink = `https://apaxt.netlify.app/signUp?ref=${referralCode}`;\n  \n    return (\n      <>\n        <h3>Your Referral Code: {referralCode}</h3>\n  \n        <div style={{ display: \"flex\", gap: \"20px\" }}>\n          <div>\n            <a href={referralLink} target=\"_blank\" rel=\"noopener noreferrer\">\n              {referralLink}\n            </a>\n          </div>\n          <div>\n            <button onClick={() => navigator.clipboard.writeText(referralLink)}>\n              Copy Referral Link\n            </button>\n          </div>\n        </div>\n  \n        <div>\n          <h3>Wallet Balance: {user.discount}</h3>\n        </div>\n      </>\n    );\n  };"
+        }
+    ]
+}
