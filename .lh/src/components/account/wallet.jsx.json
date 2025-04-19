@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 19,
+            "activePatchIndex": 23,
             "patches": [
                 {
                     "date": 1744907569326,
@@ -84,6 +84,22 @@
                 {
                     "date": 1745082603388,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n const Wallet = ({ api}) => {\n \n     const { user } = useContext(AuthContext);\n   \n-  const referralCode = user.referralcode;\n+  const referralCode = user.referralCode;\n   const referralLink = `https://apaxt.netlify.app/signUp?ref=${referralCode}`;\n console.log( user)\n   return (\n     <>\n"
+                },
+                {
+                    "date": 1745087129011,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,13 +3,13 @@\n \n \n const Wallet = ({ api}) => {\n \n-    const { user } = useContext(AuthContext);\n+    const { User } = useContext(AuthContext);\n   \n-  const referralCode = user.referralCode;\n+  const referralCode = User.referralCode;\n   const referralLink = `https://apaxt.netlify.app/signUp?ref=${referralCode}`;\n-console.log( user)\n+console.log( User)\n   return (\n     <>\n       <h3>Your Referral Code: {referralCode}</h3>\n \n@@ -26,9 +26,9 @@\n         </div>\n       </div>\n \n       <div>\n-        <h3>Wallet Balance: {user.wallet}</h3>\n+        <h3>Wallet Balance: {User.wallet}</h3>\n       </div>\n     </>\n   );\n };\n"
+                },
+                {
+                    "date": 1745087140705,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \n \n const Wallet = ({ api}) => {\n \n-    const { User } = useContext(AuthContext);\n+    const { ser } = useContext(AuthContext);\n   \n   const referralCode = User.referralCode;\n   const referralLink = `https://apaxt.netlify.app/signUp?ref=${referralCode}`;\n console.log( User)\n"
+                },
+                {
+                    "date": 1745087146370,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,10 @@\n \n \n const Wallet = ({ api}) => {\n \n-    const { ser } = useContext(AuthContext);\n-  \n+    const { user } = useContext(AuthContext);\n+  con\n   const referralCode = User.referralCode;\n   const referralLink = `https://apaxt.netlify.app/signUp?ref=${referralCode}`;\n console.log( User)\n   return (\n"
+                },
+                {
+                    "date": 1745087154122,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n const Wallet = ({ api}) => {\n \n     const { user } = useContext(AuthContext);\n-  con\n+  const [User, setUser] = useState(user || []);\n   const referralCode = User.referralCode;\n   const referralLink = `https://apaxt.netlify.app/signUp?ref=${referralCode}`;\n console.log( User)\n   return (\n"
                 }
             ],
             "date": 1744907569325,
